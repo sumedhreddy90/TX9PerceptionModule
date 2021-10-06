@@ -68,7 +68,7 @@ An open-source library for computer vision, machine learning, and image processi
 ![Activity](https://user-images.githubusercontent.com/24978535/136276138-d19d2618-fbd7-42c5-8b42-fba1ceafc184.png)
 
 ## Video Link
-[Video](https://drive.google.com/file/d/1yaVNrSy1hKZMoulElvQm95Ozd2-_Fv4d/view?usp=sharing)
+[Video link](https://drive.google.com/file/d/1y3IG4E8LxjugA8rqg2jjViYQlF68eZcT/view?usp=sharing)[Alternate Video link](https://drive.google.com/file/d/1yaVNrSy1hKZMoulElvQm95Ozd2-_Fv4d/view?usp=sharing) 
 
 ## UML
 
