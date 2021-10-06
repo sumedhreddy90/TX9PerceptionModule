@@ -43,6 +43,7 @@ In order to perform deep neural computation we are using open source computer vi
  
 The YOLO algorithm uses convolutional neural networks (CNN) to detect multi objects in real-time. This algorithm uses a single forward propagation through a neural network to detect objects in a single run. Here the role of CNN is to simultaneously predict various class probabilities and bounding boxes. Object detection in YOLO is done as a regression problem and provides the class probabilities of the detected images.
 
+![Midterm_Proposal_img1](https://user-images.githubusercontent.com/24978535/136276058-9714fecf-60d9-4164-b8c6-25416cbfbb2b.png)
 
 Figure: input video being processed by YOLO vision algorithms outputting boxed video as image detection.
 
@@ -59,10 +60,15 @@ An open-source library for computer vision, machine learning, and image processi
 
 ## Activity Diagram
 
+![Activity](https://user-images.githubusercontent.com/24978535/136276138-d19d2618-fbd7-42c5-8b42-fba1ceafc184.png)
 
 ## UML
 
+![UML](https://user-images.githubusercontent.com/24978535/136276097-481b2869-2c2b-42fb-a242-0367a1321137.png)
+
 ## Quad Chart
+
+![QUADChart](https://user-images.githubusercontent.com/24978535/136276120-7825086c-082c-42dc-8747-a32be78ff40f.png)
 
 ## Risk and Mitigations
 
