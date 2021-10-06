@@ -2,6 +2,8 @@
 [![Build Status](https://app.travis-ci.com/pratik-a99/TX9PerceptionModule.svg?branch=main)](https://app.travis-ci.com/pratik-a99/TX9PerceptionModule)
 
 [![Coverage Status](https://coveralls.io/repos/github/pratik-a99/TX9PerceptionModule/badge.svg?branch=main)](https://coveralls.io/github/pratik-a99/TX9PerceptionModule?branch=main)
+
+[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)]()
 ---
 
 ---
@@ -17,6 +19,9 @@ The mobile robot will have a monocular camera placed on it to receive live video
 We plan to use Machine Learning, specifically Convolution Neural Network Algorithms to detect, classify and track objects from a video stream. 
 
 In order to perform deep neural computation we are using open source computer vision libraries such as openCV and YOLO v4. 
+
+### AIP Document 
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://docs.google.com/spreadsheets/d/1OEmAD93dIXbGDD9Y4btW-zSI0-1M7EjK/edit?usp=sharing&ouid=103747145171777693299&rtpof=true&sd=true)
 
 ## Assumptions
 1. For deep learning computation we assume that *Nvidia Jetson Nano 2GB* chipset
