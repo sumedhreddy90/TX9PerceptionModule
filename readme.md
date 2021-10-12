@@ -1,4 +1,4 @@
-# ACME TX9 Mobile Robot: Pereception Module
+# ACME TX9 Mobile Robot: Perception Module
 [![Build Status](https://app.travis-ci.com/pratik-a99/TX9PerceptionModule.svg?branch=main)](https://app.travis-ci.com/pratik-a99/TX9PerceptionModule)
 
 [![Coverage Status](https://coveralls.io/repos/github/pratik-a99/TX9PerceptionModule/badge.svg?branch=main)](https://coveralls.io/github/pratik-a99/TX9PerceptionModule?branch=main)
