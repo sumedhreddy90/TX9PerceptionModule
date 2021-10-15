@@ -1,7 +1,8 @@
 /**
  * @copyright  MIT License (c) 2021 Sumedh Koppula and Pratik Acharya
- * @file  ParserIO.hpp
- * @brief ParserIO Class implementation
+ * @file  YoloConfig.hpp
+ * @brief YoloConfig Class helps us to consume Yolo cgf, Yolo weights 
+ * and coco dataset
  * @author Sumedh Koppula and Pratik Acharya
  */
 
@@ -21,21 +22,18 @@ class YoloConfig{
     /**
      * @brief private variable for yoloClassesLocation.
      */
-    std::string yoloClassesLocation =
-    "/home/sumedh/Desktop/yolo/cpp-boilerplate/coco.names";
+    std::string yoloClassesLocation ="../coco.names";
 
     /**
      * @brief private variable for yoloConfiguration.
      */
-    std::string yoloConfigurationFile =
-    "/home/sumedh/Desktop/yolo/cpp-boilerplate/yolov3.cfg";
+    std::string yoloConfigurationFile ="../yolov3.cfg";
 
 
     /**
      * @brief private variable for yoloWeights.
      */
-    std::string yoloWeights =
-    "/home/sumedh/Desktop/yolo/cpp-boilerplate/yolov3.weights";
+    std::string yoloWeights ="../yolov3.weights";
 
  public:
      /**
@@ -67,7 +65,7 @@ class YoloConfig{
      */
     void setYoloClassesLocation(const std::string& cocoPath);
     /**
-     * @brief It returns the ModelConfiguration value.
+     * @brief It returns the getYoloConfigurationFile value.
      * @param None
      * @return std::string.
      */
@@ -81,7 +79,7 @@ class YoloConfig{
     void setYoloConfigurationFile(const std::string& yoloConfigurationFile);
 
     /**
-     * @brief It returns the ModelWeights value.
+     * @brief It returns the yoloWeights value.
      * @param None
      * @return std::string.
      */
