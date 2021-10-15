@@ -14,21 +14,13 @@ Acme Robotics is building a next generation mobile robot to be used on sports fi
 
 The mobile robot will have a monocular camera placed on it to receive live video feed of the field. A perception module on the robot will receive the video feed and will label each player and store their location with respect to the robot. The output of the module will be the labels and location of the players. This will be fed to a path planner, so that the mobile robot can track a player to ensure that the player is in its field of vision.
 
-## Implementation Summary
-
-We plan to use Machine Learning, specifically Convolution Neural Network Algorithms to detect, classify and track objects from a video stream. 
-
-In order to perform deep neural computation we are using open source computer vision libraries such as openCV and YOLO v4. 
-
 ### AIP Document 
-[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://docs.google.com/spreadsheets/d/1OEmAD93dIXbGDD9Y4btW-zSI0-1M7EjK/edit?usp=sharing&ouid=103747145171777693299&rtpof=true&sd=true)
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://docs.google.com/spreadsheets/d/1xySDFZ3LB8iaYRV7OXNlhccmeYK0k-ZA7r3EBrgCAMA/edit?usp=sharing)
 
 ## Assumptions
 1. For deep learning computation we assume that *Nvidia Jetson Nano 2GB* chipset
 
 2. The targets are assumed to be 180cm in height, which will be used to calculate distance from the robot in the forward direction. 
-
-3. Assuming MX219-160 Camera with 3280 × 2464 Resolution, 8 Megapixels and 160° FOV for video feed.
 
 ## Technologies
 *Programing language*: C++ 
@@ -41,7 +33,7 @@ In order to perform deep neural computation we are using open source computer vi
 
 ## Algorithms
 
-1. YOLO v4 under YOLO LICENSE
+1. YOLO v3 under YOLO LICENSE
 2. OpenCV version 4.2, under Apache 2 License
 
 ### YOLO Functionality
@@ -63,20 +55,8 @@ An open-source library for computer vision, machine learning, and image processi
 
 #include <opencv2/opencv.hpp>
 
-## Activity Diagram
-
-![Activity](https://user-images.githubusercontent.com/24978535/136276138-d19d2618-fbd7-42c5-8b42-fba1ceafc184.png)
-
 ## Video Link
 Phase 0: [Video link](https://drive.google.com/file/d/1y3IG4E8LxjugA8rqg2jjViYQlF68eZcT/view?usp=sharing)
-
-## UML
-
-![UML](https://user-images.githubusercontent.com/24978535/136276097-481b2869-2c2b-42fb-a242-0367a1321137.png)
-
-## Quad Chart
-
-![QUADChart](https://user-images.githubusercontent.com/24978535/136276120-7825086c-082c-42dc-8747-a32be78ff40f.png)
 
 ## Risk and Mitigations
 
@@ -85,7 +65,6 @@ Solution: OpenCv will be used to detect humans based on the jersey color and the
 
 Risk 2: The software fails to track the detected humans
 Solution: The final product will be delivered only for human detection and the tracking update will be provided in a future release.
-
 
 ## Testing:
 Google’s Open Images Dataset V6+ will be used for testing and quality assurance. The dataset contains labelled images of humans with the information about bounding boxes provided in it. 
