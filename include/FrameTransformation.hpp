@@ -38,6 +38,13 @@ class FrameTransformation {
    */
   void setTransformationMatrix(vector<vector<double>> matrix);
   /**
+   * @fn vector<vector<double>> getTransformationMatrix()
+   * @brief Function to get the transformation matrix
+   * @param None
+   * @return Transformation Matrix in 2D vector form
+   */
+  vector<vector<double>> getTransformationMatrix();
+  /**
    * @fn vector<double> transformFrame(vector<double>)
    * @brief function to get the input from YOLO and transform
    * the position of detected humans into robot's frame
