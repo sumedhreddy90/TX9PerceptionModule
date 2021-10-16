@@ -110,11 +110,49 @@ void HumanDetection::drawBox(int classId, float conf, int left, int top,
 int right, int bottom, cv::Mat &frame,
 std::vector<std::string> classes) {
 }
- /* @brief This method returns the label
+/* @brief This method returns the label
    * names of the detected objects
    * @param net
    * @return type std::vector<std::string>
-   */
+*/
 std::vector<std::string> HumanDetection::getOutputNames(
 const cv::dnn::Net& net) {
 }
+/*
+   * @brief Our Human Detection algorithm is implemented in 
+   this method. This performs detection of input stream.
+   It also stores video and displays output with Bounding Boxes.
+   * @param parser
+   * @param SensorIO
+   * @param HumanDetection
+   * @param YoloConfig
+*/
+  void humanDetection(cv::CommandLineParser parser, SensorIO io,
+  HumanDetection human_detection, YoloConfig config) {
+  }
+/**
+   * @brief humanDistance method calculates the distance between the robot
+   * and detected human by assuming the height of the human to as 
+   * 178cm
+   * 
+   * @param averageHeight 
+   * @param boxHeight 
+   * @param focalLength 
+   * @param sensorHeight 
+   * @param frameHeight 
+   * @return double 
+*/
+  double humanDistance(int averageHeight, int boxHeight, double focalLength,
+  double sensorHeight, int frameHeight) {
+      return 0;
+  }
+/**
+   * @brief humanPosition combines the distance parameter and bounding box paramters
+   * to get 3D positon which can be outputed.  
+   * 
+   * @param humanId 
+   * @param distance 
+*/
+  void humanPosition(string humanId, double distance){
+  }
+};
