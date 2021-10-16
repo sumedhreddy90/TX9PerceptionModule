@@ -23,24 +23,24 @@ class HumanDetection {
   /**
   * @brief private variable for inputWidth.
   */
-  int inputWidth{0};
+  int inputWidth;
   /**
   * @brief private variable for inputHeight.
   */
-  int inputHeight{0};
+  int inputHeight;
   /**
    * @brief private variable for averageHeight.
    * 
    */
-  int averageHeight{0};
+  int averageHeight;
   /**
   * @brief private variable for configurationThreshold.
   */
-  float confidenceThreshold{0};
+  float confidenceThreshold;
   /**
   * @brief private variable for nmsThreshold.
   */
-  float nmsThreshold{0};
+  float nmsThreshold;
 
  public:
   /**
@@ -49,13 +49,13 @@ class HumanDetection {
   HumanDetection();
   /**
   * @brief set the inputWidth value.
-  * @param width
+  * @param[in] width
   * @return type void.
   */
   void setInputWidth(int width);
   /**
   * @brief set the inputHeight value.
-  * @param height
+  * @param[in] height
   * @return type void.
   */
   void setInputHeight(int height);
@@ -66,7 +66,7 @@ class HumanDetection {
   void setConfidenceThreshold(float configThres);
   /**
   * @brief set the nmsThreshold value.
-  * @param nmsThres
+  * @param[in] nmsThres
   * @return type void.
   */
   void setNmsThreshold(float nmsThres);
@@ -88,7 +88,7 @@ class HumanDetection {
   * @return type float.
   */
   float getConfidenceThreshold();
-  /*
+  /**
   * @brief returns the nmsThreshold value.
   * @param None
   * @return type float.
@@ -97,10 +97,10 @@ class HumanDetection {
   /**
    * @brief This method predicts the best bounding box
    *for each detection and eliminates the redundant/ overlapping box 
-   * @param frame
-   * @param outs
-   * @param confThreshold
-   * @param classes
+   * @param[in] frame
+   * @param[in] outs
+   * @param[in] confThreshold
+   * @param[in] classes
    * @return None.
    */
   void eliminateBox(cv::Mat& frame, const std::vector<cv::Mat>& outs ,
@@ -108,13 +108,13 @@ class HumanDetection {
   /**
    * @brief This Method helps in drawing the bounding box
     for detected object with its label/ class ID
-   * @param classId
-   * @param conf
-   * @param left
-   * @param right
-   * @param bottom
-   * @param &frame
-   * @param classes
+   * @param[in] classId
+   * @param[in] conf
+   * @param[in] left
+   * @param[in] right
+   * @param[in] bottom
+   * @param[in] &frame
+   * @param[in] classes
    * @return None
    */
   static void drawBox(int classId, float conf, int left,
@@ -123,7 +123,7 @@ class HumanDetection {
   /**
    * @brief This method returns the label
    * names of the detected objects
-   * @param net
+   * @param[in] net
    * @return type std::vector<std::string>
    */
   static std::vector<std::string> getOutputNames(const cv::dnn::Net& net);
@@ -131,10 +131,10 @@ class HumanDetection {
    * @brief Our Human Detection algorithm is implemented in 
    this method. This performs detection of input stream.
    It also stores video and displays output with Bounding Boxes.
-   * @param parser
-   * @param SensorIO
-   * @param HumanDetection
-   * @param YoloConfig
+   * @param[in] parser
+   * @param[in] SensorIO
+   * @param[in] HumanDetection
+   * @param[in] YoloConfig
    */
   void humanDetection(cv::CommandLineParser parser, SensorIO io,
   HumanDetection human_detection, YoloConfig config);
@@ -143,11 +143,11 @@ class HumanDetection {
    * and detected human by assuming the height of the human to as 
    * 178cm
    * 
-   * @param averageHeight 
-   * @param boxHeight 
-   * @param focalLength 
-   * @param sensorHeight 
-   * @param frameHeight 
+   * @param[in] averageHeight 
+   * @param[in] boxHeight 
+   * @param[in] focalLength 
+   * @param[in] sensorHeight 
+   * @param[in] frameHeight 
    * @return double 
    */
   double humanDistance(int averageHeight, int boxHeight, double focalLength,
@@ -156,8 +156,8 @@ class HumanDetection {
    * @brief humanPosition combines the distance parameter and bounding box paramters
    * to get 3D positon which can be outputed.  
    * 
-   * @param humanId 
-   * @param distance 
+   * @param[in] humanId 
+   * @param[in] distance 
    */
   void humanPosition(std::string humanId, double distance);
 };
