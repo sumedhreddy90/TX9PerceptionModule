@@ -159,6 +159,6 @@ class HumanDetection {
    * @param humanId 
    * @param distance 
    */
-  void humanPosition(string humanId, double distance);
+  void humanPosition(std::string humanId, double distance);
 };
 
