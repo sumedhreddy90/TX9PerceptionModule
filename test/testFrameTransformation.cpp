@@ -10,8 +10,9 @@
 #include <FrameTransformation.hpp>
 
 FrameTransformation frameTransformation;
-vector<vector<double>> testMatrix { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
-vector<double> testVector { 1, 2, 3 };
+std::vector<std::vector<double>> testMatrix { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0,
+    1 } };
+std::vector<double> testVector { 1, 2, 3 };
 
 /**
  * @brief test for getTransformationMatrix() and setTransformationMatrix() methods

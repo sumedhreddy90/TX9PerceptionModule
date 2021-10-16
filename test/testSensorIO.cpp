@@ -116,7 +116,7 @@ TEST(testProcessor, testImageProcessor) {
   cv::Mat frame;
   cv::VideoCapture cap;
   cap.open("image.jpg");
-  user.setImagePath("img.jpg");
+  sensor.setImagePath("img.jpg");
   cv::VideoCapture capture = sensor.imageProcessor("read", frame);
   EXPECT_EQ(capture.get(cv::CAP_PROP_FRAME_HEIGHT),
             cap.get(cv::CAP_PROP_FRAME_HEIGHT));
@@ -129,7 +129,7 @@ TEST(testProcessor, testVideoProcessor) {
   cv::VideoCapture cap;
   cv::VideoWriter video;
   cap.open("video.mp4");
-  user.setImagePath("video.mp4");
+  sensor.setImagePath("video.mp4");
   cv::VideoCapture capture = sensor.videoProcessor("read", frame, video);
   EXPECT_EQ(capture.get(cv::CAP_PROP_FRAME_HEIGHT),
             cap.get(cv::CAP_PROP_FRAME_HEIGHT));
