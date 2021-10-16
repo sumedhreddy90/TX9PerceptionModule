@@ -71,7 +71,7 @@ int HumanDetection::getInputHeight() {
  * @return type float.
  */
 float HumanDetection::getConfidenceThreshold() {
-  return configurationThreshold;
+  return confidenceThreshold;
 }
 /**
  * @brief returns the nmsThreshold value.
