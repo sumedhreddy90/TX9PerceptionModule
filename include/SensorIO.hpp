@@ -9,21 +9,7 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
 #include <opencv2/opencv.hpp>
-
-/**
- * Adding members from std and cv namespaces into current scope
- */
-
-using std::string;
-using std::cin;
-using std::cout;
-using std::vector;
-using std::endl;
-using cv::CommandLineParser;
-using cv::VideoCapture;
-using cv::Mat;
 
 /**
  * @class SensorIO
@@ -35,11 +21,11 @@ class SensorIO {
   /**
    * @brief private variable for Image Path.
    */
-  string imagePath;
+  std::string imagePath;
   /**
    * @brief private variable for Video Path.
    */
-  string videoPath;
+  std::string videoPath;
   /**
    * @brief private variable for output frame width.
    */
@@ -84,65 +70,72 @@ class SensorIO {
    */
   int getOutputHeight();
   /**
-   * @fn void setImagePath(string)
+   * @fn void setImagePath(std::string)
    * @brief It sets the value of imagePath attribute
    * @param[in] path value to set for imagePath
    * @return None
    */
-  void setImagePath(string path);
+  void setImagePath(std::string path);
   /**
-   * @fn void setVideoPath(string)
+   * @fn void setVideoPath(std::string)
    * @brief It sets the value of videoPath attribute
    * @param[in] path value to set for videoPath
    * @return None
    */
-  void setVideoPath(string path);
+  void setVideoPath(std::string path);
   /**
-   * @fn string getImagePath()
+   * @fn std::string getImagePath()
    * @brief It gets the value of imagePath attribute
    * @param None
    * @return Value of imagePath attribute
    */
 
-  string getImagePath();
+  std::string getImagePath();
   /**
-   * @fn string getVideoPath()
+   * @fn std::string getVideoPath()
    * @brief It gets the value of videoPath attribute
    * @param None
    * @return Value of videoPath attribute
    */
-  string getVideoPath();
+  std::string getVideoPath();
   /**
-   * @fn string getDataType(const CommandLineParser)
+   * @fn std::string getDataType(const cv::CommandLineParser)
    * @brief Function to tell if the input is an image or video
    * @param[in] parser to get the parser from opencv
    * @return "image", "video" or "error"
    */
-  string getDataType(const CommandLineParser parser);
+  std::string getDataType(const cv::CommandLineParser parser);
   /**
-   * @fn string getDataPath(const CommandLineParser&, const string&)
+   * @fn std::string getDataPath(const cv::CommandLineParser&, const std::string&)
    * @brief Fucntion to get input data path
    * @param[in] parser to get parser from opencv
    * @param[in] dataType param to indicate if the input is image or video
    * @return input Path
    */
-  string getDataPath(const CommandLineParser &parser, const string &dataType);
+  std::string getDataPath(const cv::CommandLineParser &parser,
+                          const std::string &dataType);
   /**
-   * @fn VideoCapture imageProcessor(const string&, Mat)
+   * @fn cv::VideoCapture imageProcessor(const std::string&, cv::Mat)
    * @brief Function to process image
    * @param[in] rwoperation to indicate if the operation to be performed is read/write
    * @param[frame] input frame
    * @return Opens a video file or a capturing device to receive input
    */
-  VideoCapture imageProcessor(const string &rwoperation, Mat frame);
+  cv::VideoCapture imageProcessor(const std::string &rwoperation,
+                                  cv::Mat frame);
   /**
-   * @fn VideoCapture videoProcessor(const string&, Mat, VideoWriter)
+   * @fn cv::VideoCapture videoProcessor(const std::string&, cv::Mat, VideoWriter)
    * @brief Function to process video
    * @param[in] rwoperation to indicate if the operation to be performed is read/write
    * @param[in] frame input frame
    * @param[in] video file to write the frame to
    * @return Opens a video file or a capturing device to receive input
    */
-  VideoCapture videoProcessor(const string &rwoperation, Mat frame,
-                              VideoWriter video)
+  cv::VideoCapture videoProcessor(const std::string &rwoperation, cv::Mat frame,
+                                  VideoWriter video);
+  /**
+   * @fn  ~SensorIO()
+   * @brief Destructor for SensorIO class
+   */
+  ~SensorIO();
 };
