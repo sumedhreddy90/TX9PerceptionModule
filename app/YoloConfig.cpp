@@ -66,14 +66,14 @@ std::string YoloConfig::getYoloConfigurationFile() {
  * @param weights Weights File Path
  * @return None
  */
-void YoloConfig::setYoloWeights(const std::string& weights) {
+void YoloConfig::setYoloWeightsFile(const std::string& weights) {
 }
 /**
  * @brief It gets the yolo weights path
  * @param None
  * @return YoloWeights File Path
  */
-std::string YoloConfig::getWeights() {
+std::string YoloConfig::getYoloWeightsFile() {
     return yoloWeights;
 }
 /**
