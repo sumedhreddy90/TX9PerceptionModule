@@ -16,7 +16,7 @@ vector<double> testVector { 1, 2, 3 };
 /**
  * @brief test for getTransformationMatrix() and setTransformationMatrix() methods
  */
-TEST_F(testGetSet, testTransformationMatrix) {
+TEST(testGetSet, testTransformationMatrix) {
   frameTransformation.setTransformationMatrix(testMatrix);
   EXPECT_EQ(frameTransformation.getTransformationMatrix(), testMatrix);
 }
@@ -24,6 +24,6 @@ TEST_F(testGetSet, testTransformationMatrix) {
 /**
  * @brief test for transformFrame() method
  */
-TEST_F(testTransformation, testTransformFrame) {
+TEST(testTransformation, testTransformFrame) {
   EXPECT_EQ(frameTransformation.transformFrame(testVector), testMatrix);
 }
