@@ -83,14 +83,14 @@ class YoloConfig{
      * @param None
      * @return std::string.
      */
-    std::string getWeights();
+    std::string getYoloWeightsFile();
 
     /**
      * @brief It sets the yoloWeights value.
      * @param yoloWeights (File path to yolov3 weights.)
      * @return void.
      */
-    void setYoloWeights(const std::string& yoloWeights);
+    void setYoloWeightsFile(const std::string& yoloWeights);
 
     /**
      * @brief Destructor for YoloConfig Class
