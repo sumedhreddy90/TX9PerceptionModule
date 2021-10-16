@@ -15,6 +15,8 @@
 /**
  * @fn  SensorIO()
  * @brief constructor for SensorIO class with no parameters.
+ * @param None
+ * @return None
  */
 SensorIO::sensorSensorIO() = default;
 /**
