@@ -20,7 +20,7 @@ class FrameTransformation {
   /**
    * @brief private variable for transformation matrix
    */
-  vector<vector<double>> transformationMatrix;
+  std::vector<std::vector<double>> transformationMatrix;
 
  public:
   /**
@@ -31,27 +31,27 @@ class FrameTransformation {
    */
   FrameTransformation();
   /**
-   * @fn void setTransformationMatrix(vector<vector<double>>)
+   * @fn void setTransformationMatrix(std::vector<std::vector<double>>)
    * @brief Function to set the transformation matrix
    * @param[in] matrix the transformation matrix
    * @return None
    */
-  void setTransformationMatrix(vector<vector<double>> matrix);
+  void setTransformationMatrix(std::vector<std::vector<double>> matrix);
   /**
-   * @fn vector<vector<double>> getTransformationMatrix()
+   * @fn std::vector<std::vector<double>> getTransformationMatrix()
    * @brief Function to get the transformation matrix
    * @param None
    * @return Transformation Matrix in 2D vector form
    */
-  vector<vector<double>> getTransformationMatrix();
+  std::vector<std::vector<double>> getTransformationMatrix();
   /**
-   * @fn vector<double> transformFrame(vector<double>)
+   * @fn std::vector<double> transformFrame(std::vector<double>)
    * @brief function to get the input from YOLO and transform
    * the position of detected humans into robot's frame
    * @param[in] position vector containing positions of detected humans
    * @return
    */
-  vector<double> transformFrame(vector<double> position);
+  std::vector<double> transformFrame(std::vector<double> position);
   /**
    * @fn  ~FrameTransformation()
    * @brief Destructor for FrameTransformation class

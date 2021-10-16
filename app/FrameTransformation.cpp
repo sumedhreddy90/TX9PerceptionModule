@@ -18,31 +18,32 @@
  */
 FrameTransformation::FrameTransformation() = default;
 /**
- * @fn void setTransformationMatrix(vector<vector<double>>)
+ * @fn void setTransformationMatrix(std::vector<std::vector<double>>)
  * @brief Function to set the transformation matrix
  * @param[in] matrix the transformation matrix
  * @return None
  */
 void FrameTransformation::setTransformationMatrix(
-    vector<vector<double>> matrix) {
+    std::vector<std::vector<double>> matrix) {
 }
 /**
- * @fn vector<vector<double>> getTransformationMatrix()
+ * @fn std::vector<std::vector<double>> getTransformationMatrix()
  * @brief Function to get the transformation matrix
  * @param None
  * @return Transformation Matrix in 2D vector form
  */
-vector<vector<double>> FrameTransformation::getTransformationMatrix() {
+std::vector<std::vector<double>> FrameTransformation::getTransformationMatrix() {
   return transformationMatrix;
 }
 /**
- * @fn vector<double> transformFrame(vector<double>)
+ * @fn std::vector<double> transformFrame(std::vector<double>)
  * @brief function to get the input from YOLO and transform
  * the position of detected humans into robot's frame
  * @param[in] position vector containing positions of detected humans
  * @return
  */
-vector<double> FrameTransformation::transformFrame(vector<double> position) {
+std::vector<double> FrameTransformation::transformFrame(
+    std::vector<double> position) {
 }
 /**
  * @fn  ~FrameTransformation()
@@ -50,6 +51,7 @@ vector<double> FrameTransformation::transformFrame(vector<double> position) {
  * @param None
  * @return None
  */
-~FrameTransformation::FrameTransformation() {}
+FrameTransformation::~FrameTransformation() {
+}
 
 };
