@@ -3,11 +3,10 @@
  * @file  HumanDetection.hpp
  * @brief Declaration of HumanDetection class, In order to implement
  *  detection algorithm for input video stream/ Image Frames
-   It also helps in storing video and displays output with Bounding Boxes.
+ * It also helps in storing video and displays output with Bounding Boxes.
  * @author Sumedh Koppula and Pratik Acharya
  */
 #pragma once
-
 #include <iostream>
 #include <vector>
 #include <string>
