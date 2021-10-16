@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <opencv2/opencv.hpp>
 
 /**
@@ -126,7 +127,7 @@ class SensorIO {
   cv::VideoCapture imageProcessor(const std::string &rwoperation,
                                   cv::Mat frame);
   /**
-   * @fn cv::VideoCapture videoProcessor(const std::string&, cv::Mat, VideoWriter)
+   * @fn cv::VideoCapture videoProcessor(const std::string&, cv::Mat, cv::VideoWriter)
    * @brief Function to process video
    * @param[in] rwoperation to indicate if the operation to be performed is read/write
    * @param[in] frame input frame
@@ -134,7 +135,7 @@ class SensorIO {
    * @return Opens a video file or a capturing device to receive input
    */
   cv::VideoCapture videoProcessor(const std::string &rwoperation, cv::Mat frame,
-                                  VideoWriter video);
+                                  cv::VideoWriter video);
   /**
    * @fn  ~SensorIO()
    * @brief Destructor for SensorIO class

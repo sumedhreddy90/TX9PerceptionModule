@@ -18,7 +18,7 @@
  * @param None
  * @return None
  */
-SensorIO::sensorSensorIO() = default;
+SensorIO::SensorIO() = default;
 /**
  * @fn void setOutputWidth(int)
  * @brief It sets the value for outputWidth attribute
@@ -131,4 +131,5 @@ cv::VideoCapture SensorIO::videoProcessor(const std::string &rwoperation,
  * @fn  ~SensorIO()
  * @brief Destructor for SensorIO class
  */
-~SensorIO::SensorIO() {}
+SensorIO::~SensorIO() {
+}
