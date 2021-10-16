@@ -30,35 +30,35 @@ const char *testNoneKey = "{image i        |<none>| input image   }"
 /**
  * @brief test for getOutputWidth() and setOutputWidth() methods
  */
-TEST_F(testGetSet, testOutputWidth) {
+TEST(testGetSet, testOutputWidth) {
   sensor.setOutputWidth(testInt);
   EXPECT_EQ(sensor.getOutputWidth(), testInt);
 }
 /**
  * @brief test for getOutputHeight() and setOutputHeight() methods
  */
-TEST_F(testGetSet, testOutputHeight) {
+TEST(testGetSet, testOutputHeight) {
   sensor.setOutputHeight(testInt);
   EXPECT_EQ(sensor.getOutputHeight(), testInt);
 }
 /**
  * @brief test for getImagePath() and setImagePath() methods
  */
-TEST_F(testGetSet, testImagePath) {
+TEST(testGetSet, testImagePath) {
   sensor.setImagePath(testString);
   EXPECT_EQ(sensor.getImagePath(), testString);
 }
 /**
  * @brief test for getVideoPath() and setVideoPath() methods
  */
-TEST_F(testGetSet, testVideoPath) {
+TEST(testGetSet, testVideoPath) {
   sensor.setVideoPath(testString);
   EXPECT_EQ(sensor.getVideoPath(), testString);
 }
 /**
  * @brief test for getDataType() method using image as input
  */
-TEST_F(testGetSet, testDataTypeImage) {
+TEST(testGetSet, testDataTypeImage) {
   int argc = 0;
   const char *argv = "";
   cv::CommandLineParser parser(argc, &argv, testImageKey);
@@ -67,7 +67,7 @@ TEST_F(testGetSet, testDataTypeImage) {
 /**
  * @brief test for getDataType() method using video as input
  */
-TEST_F(testGetSet, testDataTypeVideo) {
+TEST(testGetSet, testDataTypeVideo) {
   int argc = 0;
   const char *argv = "";
   cv::CommandLineParser parser(argc, &argv, testVideoKey);
@@ -76,7 +76,7 @@ TEST_F(testGetSet, testDataTypeVideo) {
 /**
  * @brief test for getDataType() method with no input
  */
-TEST_F(testGetSet, testDataTypeNone) {
+TEST(testGetSet, testDataTypeNone) {
   int argc = 0;
   const char *argv = "";
   cv::CommandLineParser parser(argc, &argv, testNoneKey);
@@ -85,7 +85,7 @@ TEST_F(testGetSet, testDataTypeNone) {
 /**
  * @brief test for getDataPath() method using image as input
  */
-TEST_F(testGetSet, testDataPathImage) {
+TEST(testGetSet, testDataPathImage) {
   int argc = 0;
   const char *argv = "";
   cv::CommandLineParser parser(argc, &argv, testImageKey);
@@ -94,7 +94,7 @@ TEST_F(testGetSet, testDataPathImage) {
 /**
  * @brief test for getDataPath() method using video as input
  */
-TEST_F(testGetSet, testDataPathVideo) {
+TEST(testGetSet, testDataPathVideo) {
   int argc = 0;
   const char *argv = "";
   cv::CommandLineParser parser(argc, &argv, testVideoKey);
@@ -103,7 +103,7 @@ TEST_F(testGetSet, testDataPathVideo) {
 /**
  * @brief test for getDataPath() method with no input
  */
-TEST_F(testGetSet, testDataPathNone) {
+TEST(testGetSet, testDataPathNone) {
   int argc = 0;
   const char *argv = "";
   cv::CommandLineParser parser(argc, &argv, testNoneKey);
@@ -112,7 +112,7 @@ TEST_F(testGetSet, testDataPathNone) {
 /**
  * @brief test for imageProcessor() method for read operation
  */
-TEST_F(testProcessor, testImageProcessor) {
+TEST(testProcessor, testImageProcessor) {
   cv::Mat frame;
   cv::VideoCapture cap;
   cap.open("image.jpg");
@@ -124,7 +124,7 @@ TEST_F(testProcessor, testImageProcessor) {
 /**
  * @brief test for videoProcessor() method for read operation
  */
-TEST_F(testProcessor, testVideoProcessor) {
+TEST(testProcessor, testVideoProcessor) {
   cv::Mat frame;
   cv::VideoCapture cap;
   cv::VideoWriter video;
@@ -137,14 +137,14 @@ TEST_F(testProcessor, testVideoProcessor) {
 /**
  * @brief test for imageProcessor() method for write operation
  */
-TEST_F(testProcessor, testImageProcessorWrite) {
+TEST(testProcessor, testImageProcessorWrite) {
   cv::Mat frame = cv::imread("image.jpg");
   EXPECT_NO_FATAL_FAILURE(sensor.imageProcessor("write", frame));
 }
 /**
  * @brief test for videoProcessor() method for write operation
  */
-TEST_F(testProcessor, testVideoProcessorWrite) {
+TEST(testProcessor, testVideoProcessorWrite) {
   cv::Mat frame;
   cv::VideoCapture cap
   cv::VideoWriter video;
