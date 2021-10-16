@@ -7,6 +7,7 @@
 
 #pragma once
 
+#include <FrameTransformation.hpp>
 #include <vector>
 
 /**
@@ -24,6 +25,15 @@ FrameTransformation::FrameTransformation() = default;
  */
 void FrameTransformation::setTransformationMatrix(
     vector<vector<double>> matrix) {
+}
+/**
+ * @fn vector<vector<double>> getTransformationMatrix()
+ * @brief Function to get the transformation matrix
+ * @param None
+ * @return Transformation Matrix in 2D vector form
+ */
+vector<vector<double>> FrameTransformation::getTransformationMatrix() {
+  return transformationMatrix;
 }
 /**
  * @fn vector<double> transformFrame(vector<double>)
