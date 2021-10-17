@@ -138,6 +138,8 @@ class SensorIO {
   /**
    * @fn  ~SensorIO()
    * @brief Destructor for SensorIO class
+   * @param None
+   * @return None
    */
   ~SensorIO();
 };
