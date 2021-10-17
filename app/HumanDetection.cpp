@@ -10,8 +10,8 @@
 #include <vector>
 #include <iostream>
 #include <HumanDetection.hpp>
-#include <YoloConfig.hpp>
 #include <SensorIO.hpp>
+#include <YoloConfig.hpp>
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
