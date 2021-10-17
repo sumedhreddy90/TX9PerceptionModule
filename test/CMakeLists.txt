@@ -7,11 +7,7 @@ add_executable(
     testYoloConfig.cpp
     testFrameTransformation.cpp
     testHumanDetection.cpp
-    ../include/SensorIO.hpp
-    ../include/YoloConfig.hpp
-    ../include/FrameTransformation.hpp
-    ../include/HumanDetection.hpp
-)
+    ../include/SensorIO.hpp ../include/YoloConfig.hpp ../include/FrameTransformation.hpp ../include/HumanDetection.hpp)
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 
                                            ${CMAKE_SOURCE_DIR}/include ${OpenCV_INCLUDE_DIRS})

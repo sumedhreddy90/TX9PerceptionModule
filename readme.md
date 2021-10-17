@@ -1,9 +1,9 @@
 # ACME TX9 Mobile Robot: Perception Module
-[![Build Status](https://app.travis-ci.com/pratik-a99/TX9PerceptionModule.svg?branch=main)](https://app.travis-ci.com/pratik-a99/TX9PerceptionModule)
+[![Build Status](https://app.travis-ci.com/sumedhreddy90/TX9PerceptionModule.svg?branch=sumedh-dev)](https://app.travis-ci.com/sumedhreddy90/TX9PerceptionModule)
 
-[![Coverage Status](https://coveralls.io/repos/github/pratik-a99/TX9PerceptionModule/badge.svg?branch=main)](https://coveralls.io/github/pratik-a99/TX9PerceptionModule?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/sumedhreddy90/TX9PerceptionModule/badge.svg?branch=sumedh-dev)](https://coveralls.io/github/sumedhreddy90/TX9PerceptionModule?branch=sumedh-dev)
 
-[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)]()
+[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](LICENSE.md)
 ---
 
 ---
