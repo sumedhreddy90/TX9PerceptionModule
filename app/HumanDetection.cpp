@@ -153,6 +153,5 @@ const cv::dnn::Net& net) {
    * @param humanId 
    * @param distance 
 */
-  void humanPosition(std::string humanId, double distance){
+  void humanPosition(std::string humanId, double distance) {
   }
-};
