@@ -26,6 +26,7 @@ SensorIO::SensorIO() = default;
  * @return None
  */
 void SensorIO::setOutputWidth(int width) {
+  outputWidth = width;
 }
 /**
  * @fn void setOutputHeight(int)
@@ -34,6 +35,7 @@ void SensorIO::setOutputWidth(int width) {
  * @return None
  */
 void SensorIO::setOutputHeight(int height) {
+  outputHeight = height;
 }
 /**
  * @fn int getOutputWidth()
@@ -60,6 +62,7 @@ int SensorIO::getOutputHeight() {
  * @return None
  */
 void SensorIO::setImagePath(std::string path) {
+  imagePath = std::move(path);
 }
 /**
  * @fn void setVideoPath(std::string)
@@ -68,6 +71,7 @@ void SensorIO::setImagePath(std::string path) {
  * @return None
  */
 void SensorIO::setVideoPath(std::string path) {
+  videoPath = std::move(path);
 }
 /**
  * @fn std::string getImagePath()
