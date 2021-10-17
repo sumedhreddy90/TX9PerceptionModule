@@ -1,7 +1,7 @@
 /**
  * @copyright  MIT License (c) 2021 Sumedh Koppula and Pratik Acharya
  * @file  YoloConfig.cpp
- * @brief YoloConfig Class implementation to consume Yolo cgf, Yolo weights 
+ * @brief YoloConfig Class implementation to consume Yolo cgf, Yolo weights
  * and coco dataset
  * @author Sumedh Koppula and Pratik Acharya
  */
@@ -15,28 +15,34 @@
 /**
  * @brief Constructor for the YoloConfig class.
  */
-YoloConfig::YoloConfig()= default;
+YoloConfig::YoloConfig() = default;
 /**
  * @brief It adds Coco classes in std::vector<std::string>.
  * @param None
  * @return void
  */
 void YoloConfig::setYoloClasses() {
+  std::ifstream ifs(yoloClassesLocation.c_str());
+  std::string yoloClass;
+  while (std::getline(ifs, line)) {
+    yoloClasses.push_back(yoloClass);
+  }
 }
 /**
-     * @brief It returns classes of type std::vector<std::string>.
-     * @param None
-     * @return std::vector<std::string>.
-     */
+ * @brief It returns classes of type std::vector<std::string>.
+ * @param None
+ * @return std::vector<std::string>.
+ */
 std::vector<std::string> YoloConfig::getYoloClasses() {
-    return yoloClasses;
+  return yoloClasses;
 }
 /**
  * @brief It sets the Yolo Classes value.
  * @param Path
  * @return None
  */
-void YoloConfig::setYoloClassesLocation(const std::string& Path) {
+void YoloConfig::setYoloClassesLocation(const std::string &Path) {
+  yoloClassesLocation = Path;
 }
 /**
  * @brief It gets the Yolo Classes file
@@ -44,14 +50,15 @@ void YoloConfig::setYoloClassesLocation(const std::string& Path) {
  * @return Yolo Classes file Location
  */
 std::string YoloConfig::getYoloClassesLocation() {
-    return yoloClassesLocation;
+  return yoloClassesLocation;
 }
 /**
  * @brief It sets the the yolo.cgf file path.
  * @param yoloConfigurationFile
  * @return None
  */
-void YoloConfig::setYoloConfigurationFile(const std::string& config) {
+void YoloConfig::setYoloConfigurationFile(const std::string &config) {
+  yoloConfigurationFile = config;
 }
 /**
  * @brief It gets Yolo configuration file
@@ -59,14 +66,15 @@ void YoloConfig::setYoloConfigurationFile(const std::string& config) {
  * @return yoloConfigurationFile i.e YoloV3.cgf file
  */
 std::string YoloConfig::getYoloConfigurationFile() {
-    return yoloConfigurationFile;
+  return yoloConfigurationFile;
 }
 /**
  * @brief It sets the yolo weights path
  * @param weights Weights File Path
  * @return None
  */
-void YoloConfig::setYoloWeightsFile(const std::string& weights) {
+void YoloConfig::setYoloWeightsFile(const std::string &weights) {
+  yoloWeights = weights;
 }
 /**
  * @brief It gets the yolo weights path
@@ -74,7 +82,7 @@ void YoloConfig::setYoloWeightsFile(const std::string& weights) {
  * @return YoloWeights File Path
  */
 std::string YoloConfig::getYoloWeightsFile() {
-    return yoloWeights;
+  return yoloWeights;
 }
 /**
  * @brief Destructor for YoloConfig Class.
