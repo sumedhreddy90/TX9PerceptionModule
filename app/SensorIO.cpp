@@ -5,8 +5,6 @@
  * @author Pratik Acharya and Sumedh Koppula
  */
 
-#pragma once
-
 #include <iostream>
 #include <string>
 #include <opencv2/opencv.hpp>
@@ -26,6 +24,7 @@ SensorIO::SensorIO() = default;
  * @return None
  */
 void SensorIO::setOutputWidth(int width) {
+  outputWidth = width;
 }
 /**
  * @fn void setOutputHeight(int)
@@ -34,6 +33,7 @@ void SensorIO::setOutputWidth(int width) {
  * @return None
  */
 void SensorIO::setOutputHeight(int height) {
+  outputHeight = height;
 }
 /**
  * @fn int getOutputWidth()
@@ -60,6 +60,7 @@ int SensorIO::getOutputHeight() {
  * @return None
  */
 void SensorIO::setImagePath(std::string path) {
+  imagePath = std::move(path);
 }
 /**
  * @fn void setVideoPath(std::string)
@@ -68,6 +69,7 @@ void SensorIO::setImagePath(std::string path) {
  * @return None
  */
 void SensorIO::setVideoPath(std::string path) {
+  videoPath = std::move(path);
 }
 /**
  * @fn std::string getImagePath()
@@ -95,6 +97,7 @@ std::string SensorIO::getVideoPath() {
  * @return "image", "video" or "error"
  */
 std::string SensorIO::getDataType(const cv::CommandLineParser parser) {
+  return "test";
 }
 /**
  * @fn std::string getDataPath(const cv::CommandLineParser&, const std::string&)
@@ -105,6 +108,7 @@ std::string SensorIO::getDataType(const cv::CommandLineParser parser) {
  */
 std::string SensorIO::getDataPath(const cv::CommandLineParser &parser,
                                   const std::string &dataType) {
+  return "test";
 }
 /**
  * @fn cv::VideoCapture imageProcessor(const std::string&, cv::Mat)
@@ -115,6 +119,7 @@ std::string SensorIO::getDataPath(const cv::CommandLineParser &parser,
  */
 cv::VideoCapture SensorIO::imageProcessor(const std::string &rwoperation,
                                           cv::Mat frame) {
+  return cv::VideoCapture();
 }
 /**
  * @fn cv::VideoCapture videoProcessor(const std::string&, cv::Mat, cv::VideoWriter)
@@ -127,6 +132,7 @@ cv::VideoCapture SensorIO::imageProcessor(const std::string &rwoperation,
 cv::VideoCapture SensorIO::videoProcessor(const std::string &rwoperation,
                                           cv::Mat frame,
                                           cv::VideoWriter video) {
+  return cv::VideoCapture();
 }
 /**
  * @fn  ~SensorIO()

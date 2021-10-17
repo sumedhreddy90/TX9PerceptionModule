@@ -5,8 +5,6 @@
  * @author Pratik Acharya and Sumedh Koppula
  */
 
-#pragma once
-
 #include <FrameTransformation.hpp>
 #include <vector>
 
@@ -44,6 +42,8 @@ std::vector<std::vector<double>> FrameTransformation::getTransformationMatrix() 
  */
 std::vector<double> FrameTransformation::transformFrame(
     std::vector<double> position) {
+  std::vector<double> test { 1, 2, 3 };
+  return test;
 }
 /**
  * @fn  ~FrameTransformation()
