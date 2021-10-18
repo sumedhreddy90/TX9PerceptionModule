@@ -14,8 +14,14 @@ Acme Robotics is building a next generation mobile robot to be used on sports fi
 
 The mobile robot will have a monocular camera placed on it to receive live video feed of the field. A perception module on the robot will receive the video feed and will label each player and store their location with respect to the robot. The output of the module will be the labels and location of the players. This will be fed to a path planner, so that the mobile robot can track a player to ensure that the player is in its field of vision.
 
+### Video Links
+Phase 1: [Video link](https://www.youtube.com/watch?v=6h-72SBKB8E&t=72s)
+
 ### AIP Document 
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://docs.google.com/spreadsheets/d/1xySDFZ3LB8iaYRV7OXNlhccmeYK0k-ZA7r3EBrgCAMA/edit?usp=sharing)
+
+## Sprint Planning Review Document
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://docs.google.com/document/d/1LRK0pHuJsmCjaX9VIXsoMOvOonWKOmAHq0_yvjCOSTk/edit?usp=sharing)
 
 ## Assumptions
 1. For deep learning computation we assume that *Nvidia Jetson Nano 2GB* chipset
@@ -55,8 +61,6 @@ An open-source library for computer vision, machine learning, and image processi
 
 #include <opencv2/opencv.hpp>
 
-## Video Link
-Phase 1: [Video link](https://www.youtube.com/watch?v=6h-72SBKB8E&t=72s)
 
 ## Risk and Mitigations
 
