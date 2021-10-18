@@ -28,8 +28,7 @@ const char* keys =
     "{video vid       |<none>| input video   }"
     "{show_output       |true| show output   }";
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
     /*
    * @brief Instantiate objects for each class.
    */
