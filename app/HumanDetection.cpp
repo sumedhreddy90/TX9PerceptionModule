@@ -98,16 +98,16 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
                                   float confThreshold,
                                   const std::vector<std::string> &classes) {
   std::vector<int> classIds;
-  std::vector<double> confidences;
+  std::vector<float> confidences;
   std::vector < cv::Rect > boxes;
 
   for (const auto &out : outs) {
     auto *data = (double*) out.data;
-    cv::Mat scores = out.row(j).colRange(5, out.cols);
-    cv::Point classIdPoint;
-    double confidence;
-
     for (int j = 0; j < out.rows; ++j, data += out.cols) {
+      cv::Mat scores = out.row(j).colRange(5, out.cols);
+      cv::Point classIdPoint;
+      double confidence;
+
       minMaxLoc(scores, nullptr, &confidence, nullptr, &classIdPoint);
       if (confidence > confidenceThreshold) {
         int centerX = (int) (data[0] * frame.cols);
@@ -118,7 +118,7 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
         int top_y = centerY - height / 2;
 
         classIds.push_back(classIdPoint.x);
-        confidences.push_back((double) confidence);
+        confidences.push_back((float) confidence);
         boxes.push_back(cv::Rect(top_x, top_y, width, height));
       }
     }
