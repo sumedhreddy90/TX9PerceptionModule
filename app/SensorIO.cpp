@@ -140,7 +140,16 @@ std::string SensorIO::getDataPath(const cv::CommandLineParser &parser,
  */
 cv::VideoCapture SensorIO::imageProcessor(const std::string &rwoperation,
                                           cv::Mat frame) {
-  return cv::VideoCapture();
+  if (rwoperation == "read") {
+    cv::VideoCapture capture;
+    capture.open(imagePath);
+    return capture;
+  } else if (rwoperation == "write") {
+    std::string outputPath = "../Output.jpg";
+    cv::imwrite(outputPath, frame);
+    std::cout<< "images saved at "<< outputPath<< "\n";
+    return cv::VideoCapture();
+  }
 }
 /**
  * @fn cv::VideoCapture videoProcessor(const std::string&, cv::Mat, cv::VideoWriter)
