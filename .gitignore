@@ -32,5 +32,8 @@
 *.app
 
 .project
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> feature_branch_2.6
