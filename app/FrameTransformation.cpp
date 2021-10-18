@@ -53,5 +53,3 @@ std::vector<double> FrameTransformation::transformFrame(
  */
 FrameTransformation::~FrameTransformation() {
 }
-
-};
