@@ -107,7 +107,7 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
   std::vector < cv::Rect > boxes;
 
   for (const auto &out : outs) {
-    auto *data = (double*) out.data;
+    auto *data = reinterpret_cast<double*>(out.data);
     for (int j = 0; j < out.rows; ++j, data += out.cols) {
       cv::Mat scores = out.row(j).colRange(5, out.cols);
       cv::Point classIdPoint;
@@ -115,15 +115,15 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
 
       minMaxLoc(scores, nullptr, &confidence, nullptr, &classIdPoint);
       if (confidence > confidenceThreshold) {
-        int centerX = (int) (data[0] * frame.cols);
-        int centerY = (int) (data[1] * frame.rows);
-        int width = (int) (data[2] * frame.cols);
-        int height = (int) (data[3] * frame.rows);
+        int centerX = static_cast<int>(data[0] * frame.cols);
+        int centerY = static_cast<int>(data[1] * frame.rows);
+        int width = static_cast<int>(data[2] * frame.cols);
+        int height = static_cast<int>(data[3] * frame.rows);
         int top_x = centerX - width / 2;
         int top_y = centerY - height / 2;
 
         classIds.push_back(classIdPoint.x);
-        confidences.push_back((float) confidence);
+        confidences.push_back(static_cast<float>(confidence));
         boxes.push_back(cv::Rect(top_x, top_y, width, height));
       }
     }
@@ -157,7 +157,7 @@ void HumanDetection::drawBox(int classId, float conf, int left, int top,
             cv::Scalar(0, 168, 0), 3);
   std::string label = cv::format("%.2f", conf);
   if (!classes.empty()) {
-    CV_Assert(classId < (int) classes.size());
+    CV_Assert(classId < static_cast<int>(classes.size()));
     label = classes[classId] + ":" + label;
   }
   int baseLine;
