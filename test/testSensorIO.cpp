@@ -5,7 +5,6 @@
  * @author Pratik Acharya and Sumedh Koppula
  */
 
-#pragma once
 #include <gtest/gtest.h>
 #include <string>
 #include <opencv2/opencv.hpp>
@@ -145,8 +144,7 @@ TEST(testProcessor, testImageProcessorWrite) {
  * @brief test for videoProcessor() method for write operation
  */
 TEST(testProcessor, testVideoProcessorWrite) {
-  cv::Mat frame;
-  cv::VideoCapture cap
+  cv::VideoCapture cap;
   cv::VideoWriter video;
   cv::Mat frame = cv::imread("image.jpg");
   EXPECT_NO_FATAL_FAILURE(sensor.videoProcessor("write", frame, video));
