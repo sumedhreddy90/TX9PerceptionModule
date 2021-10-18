@@ -172,6 +172,16 @@ void HumanDetection::drawBox(int classId, float conf, int left, int top,
  */
 std::vector<std::string> HumanDetection::getOutputNames(
     const cv::dnn::Net &net) {
+  static std::vector<cv::String> names;
+  if (names.empty()) {
+    std::vector<int> outLayers = net.getUnconnectedOutLayers();
+    std::vector < cv::String > layersNames = net.getLayerNames();
+    names.resize(outLayers.size());
+    for (size_t i = 0; i < outLayers.size(); ++i) {
+      names[i] = layersNames[outLayers[i] - 1];
+    }
+  }
+  return names;
 }
 /*
  * @brief Our Human Detection algorithm is implemented in
