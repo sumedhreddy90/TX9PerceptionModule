@@ -11,7 +11,7 @@
 #include<YoloConfig.hpp>
 #include<HumanDetection.hpp>
 
-SensorIO sensor;
+SensorIO sensorIO;
 YoloConfig config;
 HumanDetection detection;
 double test = 10;

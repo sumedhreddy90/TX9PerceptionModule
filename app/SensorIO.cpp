@@ -97,7 +97,17 @@ std::string SensorIO::getVideoPath() {
  * @return "image", "video" or "error"
  */
 std::string SensorIO::getDataType(const cv::CommandLineParser parser) {
-  return "test";
+  if (parser.has("image") || parser.has("img")) {
+    std::string inputType = "image";
+    return inputType;
+  } else if (parser.has("video")|| parser.has("vid")) {
+    std::string inputType = "video";
+    return inputType;
+  } else {
+    std::string Error = "Error";
+    std::cout<< "invalid key\n";
+    return Error;
+  }
 }
 /**
  * @fn std::string getDataPath(const cv::CommandLineParser&, const std::string&)
@@ -108,7 +118,18 @@ std::string SensorIO::getDataType(const cv::CommandLineParser parser) {
  */
 std::string SensorIO::getDataPath(const cv::CommandLineParser &parser,
                                   const std::string &dataType) {
-  return "test";
+  if (parser.has("image") || parser.has("img")) {
+    imagePath = parser.get<std::string>("image");
+    return imagePath;
+  } else if (parser.has("video") || parser.has("vid")) {
+    videoPath = parser.get<std::string>("video");
+    return videoPath;
+  } else {
+    std::string Error = "Error";
+    std::cout<< "path to " << dataType <<
+    " does not exist. Please enter a valid path.\n";
+    return Error;
+  }
 }
 /**
  * @fn cv::VideoCapture imageProcessor(const std::string&, cv::Mat)
@@ -119,7 +140,16 @@ std::string SensorIO::getDataPath(const cv::CommandLineParser &parser,
  */
 cv::VideoCapture SensorIO::imageProcessor(const std::string &rwoperation,
                                           cv::Mat frame) {
-  return cv::VideoCapture();
+  if (rwoperation == "read") {
+    cv::VideoCapture capture;
+    capture.open(imagePath);
+    return capture;
+  } else if (rwoperation == "write") {
+    std::string outputPath = "../Output.jpg";
+    cv::imwrite(outputPath, frame);
+    std::cout<< "images saved at "<< outputPath<< "\n";
+    return cv::VideoCapture();
+  }
 }
 /**
  * @fn cv::VideoCapture videoProcessor(const std::string&, cv::Mat, cv::VideoWriter)
@@ -132,7 +162,16 @@ cv::VideoCapture SensorIO::imageProcessor(const std::string &rwoperation,
 cv::VideoCapture SensorIO::videoProcessor(const std::string &rwoperation,
                                           cv::Mat frame,
                                           cv::VideoWriter video) {
-  return cv::VideoCapture();
+  if (rwoperation == "read") {
+    cv::VideoCapture capture;
+    capture.open(videoPath);
+    return capture;
+  } else if (rwoperation == "write") {
+    cv::Mat newFrame;
+    cv::resize(frame, newFrame, cv::Size(getOutputWidth(), getOutputHeight()));
+    video.write(newFrame);
+    return cv::VideoCapture();
+  }
 }
 /**
  * @fn  ~SensorIO()
