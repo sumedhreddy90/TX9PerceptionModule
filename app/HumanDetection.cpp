@@ -196,8 +196,9 @@ std::vector<std::string> HumanDetection::getOutputNames(
  * @param HumanDetection
  * @param YoloConfig
  */
-void humanDetection(cv::CommandLineParser parser, SensorIO io,
-                    HumanDetection human_detection, YoloConfig config) {
+void HumanDetection::humanDetection(cv::CommandLineParser parser, SensorIO io,
+                                    HumanDetection human_detection,
+                                    YoloConfig config) {
   std::vector < std::string > classes;
 
   config.setYoloClasses();
@@ -236,21 +237,16 @@ void humanDetection(cv::CommandLineParser parser, SensorIO io,
       break;
     }
 
-    cv::dnn::blobFromImage(
-        frame,
-        blob,
-        1 / 255.0,
-        cv::Size(human_detection.getInputWidth(),
-                 human_detection.getInputHeight()),
-        cv::Scalar(0, 0, 0), true, false);
+    cv::dnn::blobFromImage(frame, blob, 1 / 255.0,
+                           cv::Size(getInputWidth(), getInputHeight()),
+                           cv::Scalar(0, 0, 0), true, false);
 
     net.setInput(blob);
 
     std::vector < cv::Mat > outs;
     net.forward(outs, human_detection.getOutputNames(net));
 
-    human_detection.eliminateBox(frame, outs,
-                                 human_detection.getConfidenceThreshold(),
+    human_detection.eliminateBox(frame, outs, getConfidenceThreshold(),
                                  classes);
 
     std::vector<double> layersTimes;
@@ -294,8 +290,9 @@ void humanDetection(cv::CommandLineParser parser, SensorIO io,
  * @param frameHeight
  * @return double
  */
-double humanDistance(int averageHeight, int boxHeight, double focalLength,
-                     double sensorHeight, int frameHeight) {
+double HumanDetection::humanDistance(int averageHeight, int boxHeight,
+                                     double focalLength, double sensorHeight,
+                                     int frameHeight) {
   return 0;
 }
 /**
@@ -305,5 +302,5 @@ double humanDistance(int averageHeight, int boxHeight, double focalLength,
  * @param humanId
  * @param distance
  */
-void humanPosition(std::string humanId, double distance) {
+void HumanDetection::humanPosition(std::string humanId, double distance) {
 }
