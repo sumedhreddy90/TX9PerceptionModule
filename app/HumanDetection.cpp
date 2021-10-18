@@ -34,7 +34,7 @@ void HumanDetection::setInputWidth(int width) {
  * @return type void.
  */
 void HumanDetection::setInputHeight(int height) {
-  inputHeight = height
+  inputHeight = height;
 }
 /**
  * @brief set the confidenceThreshold value.
@@ -107,21 +107,31 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
     cv::Point classIdPoint;
     double confidence;
 
-    minMaxLoc(scores, nullptr, &confidence, nullptr, &classIdPoint);
-    if (confidence > confidenceThreshold) {
-      int centerX = (int) (data[0] * frame.cols);
-      int centerY = (int) (data[1] * frame.rows);
-      int width = (int) (data[2] * frame.cols);
-      int height = (int) (data[3] * frame.rows);
-      int top_x = centerX - width / 2;
-      int top_y = centerY - height / 2;
+    for (int j = 0; j < out.rows; ++j, data += out.cols) {
+      minMaxLoc(scores, nullptr, &confidence, nullptr, &classIdPoint);
+      if (confidence > confidenceThreshold) {
+        int centerX = (int) (data[0] * frame.cols);
+        int centerY = (int) (data[1] * frame.rows);
+        int width = (int) (data[2] * frame.cols);
+        int height = (int) (data[3] * frame.rows);
+        int top_x = centerX - width / 2;
+        int top_y = centerY - height / 2;
 
-      classIds.push_back(classIdPoint.x);
-      confidences.push_back((double) confidence);
-      boxes.push_back(cv::Rect(top_x, top_y, width, height));
+        classIds.push_back(classIdPoint.x);
+        confidences.push_back((double) confidence);
+        boxes.push_back(cv::Rect(top_x, top_y, width, height));
+      }
     }
   }
 
+  std::vector<int> indices;
+  cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold,
+                    indices);
+  for (int index : indices) {
+    cv::Rect box = boxes[index];
+    drawBox(classIds[index], confidences[index], box.x, box.y,
+            box.x + box.width, box.y + box.height, frame, classes);
+  }
 }
 /*
  * @brief This Method helps in drawing the bounding box
