@@ -1,7 +1,7 @@
 # We need a decent ubuntu dist
 sudo: required
 dist: xenial
-
+# going with xenial
 # Modern cpp settings from
 #  http://genbattle.bitbucket.org/blog/2016/01/17/c++-travis-ci/
 language: cpp
@@ -33,7 +33,6 @@ before_install:
   - sudo make install
   - cd ..
 
-
 install:
   - sudo apt-get install -y -qq lcov
   - sudo apt-get install build-essential unzip pkg-config git 
@@ -62,7 +61,6 @@ install:
   - sudo ldconfig
   - cd ../..
 
-  
 script:
   - sudo bash requirements.sh
   - export CXX=$COMPILER;
