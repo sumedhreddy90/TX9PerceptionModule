@@ -19,6 +19,10 @@
  * @brief  constructor for HumanDetection class.
  */
 HumanDetection::HumanDetection() {
+  inputHeight = 416;
+  inputWidth = 416;
+  confidenceThreshold = 0.8;
+  nmsThreshold = 0.4;
 }
 /**
  * @brief set the inputWidth value.
@@ -172,6 +176,16 @@ void HumanDetection::drawBox(int classId, float conf, int left, int top,
  */
 std::vector<std::string> HumanDetection::getOutputNames(
     const cv::dnn::Net &net) {
+  static std::vector<cv::String> names;
+  if (names.empty()) {
+    std::vector<int> outLayers = net.getUnconnectedOutLayers();
+    std::vector < cv::String > layersNames = net.getLayerNames();
+    names.resize(outLayers.size());
+    for (size_t i = 0; i < outLayers.size(); ++i) {
+      names[i] = layersNames[outLayers[i] - 1];
+    }
+  }
+  return names;
 }
 /*
  * @brief Our Human Detection algorithm is implemented in
@@ -184,6 +198,89 @@ std::vector<std::string> HumanDetection::getOutputNames(
  */
 void humanDetection(cv::CommandLineParser parser, SensorIO io,
                     HumanDetection human_detection, YoloConfig config) {
+  std::vector < std::string > classes;
+
+  config.setYoloClasses();
+  classes = config.getYoloClasses();
+
+  cv::dnn::Net net = cv::dnn::readNetFromDarknet(
+      config.getYoloConfigurationFile(), config.getYoloWeightsFile());
+  net.setPreferableBackend(cv::dnn::DNN_BACKEND_OPENCV);
+  net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+
+  std::string str, outputFile;
+  cv::VideoCapture cap;
+  cv::VideoWriter video;
+  cv::Mat frame, blob;
+
+  try {
+    std::string dataType = io.getDataType(parser);
+    std::string dataPath = io.getDataPath(parser, dataType);
+    if (dataType == "image") {
+      io.setImagePath(dataPath);
+      cap = io.imageProcessor("read", frame);
+    }
+  } catch (...) {
+    std::cout << "Unable to open the input stream" << std::endl;
+  }
+
+  while (cv::waitKey(1) < 0) {
+    cap >> frame;
+    if (frame.empty()) {
+      std::cout << "Done processing" << std::endl;
+      std::cout << "Output file is stored in the output folder " << outputFile
+          << std::endl;
+      cap.release();
+      video.release();
+      cv::waitKey(5000);
+      break;
+    }
+
+    cv::dnn::blobFromImage(
+        frame,
+        blob,
+        1 / 255.0,
+        cv::Size(human_detection.getInputWidth(),
+                 human_detection.getInputHeight()),
+        cv::Scalar(0, 0, 0), true, false);
+
+    net.setInput(blob);
+
+    std::vector < cv::Mat > outs;
+    net.forward(outs, human_detection.getOutputNames(net));
+
+    human_detection.eliminateBox(frame, outs,
+                                 human_detection.getConfidenceThreshold(),
+                                 classes);
+
+    std::vector<double> layersTimes;
+    double freq = cv::getTickFrequency() / 1000;
+    double t = net.getPerfProfile(layersTimes) / freq;
+    std::string label = cv::format("Inference time for a frame : %.2f ms", t);
+    putText(frame, label, cv::Point(0, 15), cv::FONT_HERSHEY_SIMPLEX, 0.5,
+            cv::Scalar(0, 0, 255));
+
+    cv::Mat detectedFrame;
+    frame.convertTo(detectedFrame, CV_8U);
+
+    if (parser.has("video")) {
+      io.setOutputWidth(frame.size().width);
+      io.setOutputHeight(frame.size().height);
+      io.videoProcessor("write", frame, video);
+    }
+    if (parser.has("show_output")) {
+      static const std::string kWinName = " Human/object detection in OpenCV";
+      namedWindow(kWinName, cv::WINDOW_NORMAL);
+      imshow(kWinName, frame);
+      if (parser.has("image")) {
+        cv::waitKey(5000);
+      }
+    }
+  }
+  cap.release();
+  video.release();
+  if (!parser.has("image"))
+    video.release();
 }
 /**
  * @brief humanDistance method calculates the distance between the robot
