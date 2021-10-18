@@ -1,0 +1,75 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+main method implementation  
+
+
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$opencv2/dnn.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgproc.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/highgui.\+hpp$>$}\newline
+{\ttfamily \#include $<$Sensor\+I\+O.\+hpp$>$}\newline
+{\ttfamily \#include $<$Human\+Detection.\+hpp$>$}\newline
+{\ttfamily \#include $<$Yolo\+Config.\+hpp$>$}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{main_8cpp_ad369b0cdd85ef6d6db7446dba8b57a27}{keys}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+main method implementation 
+
+\begin{DoxyCopyright}{Copyright}
+M\+IT License (c) 2021 Pratik Acharya and Sumedh Koppula
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+Pratik Acharya and Sumedh Koppula 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_ad369b0cdd85ef6d6db7446dba8b57a27}\label{main_8cpp_ad369b0cdd85ef6d6db7446dba8b57a27}} 
+\index{main.cpp@{main.cpp}!keys@{keys}}
+\index{keys@{keys}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{keys}{keys}}
+{\footnotesize\ttfamily const char$\ast$ keys}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \textcolor{stringliteral}{"\{help h usage ? | | Usage examples: "}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t\(\backslash\)t./object\_detection\_yolo.out -\/-\/image=image.jpg "}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t\(\backslash\)t./object\_detection\_yolo.out -\/-\/video=sample.mp4"}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t\(\backslash\)t./object\_detection\_yolo.out -\/-\/show\_output\}"}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"\{image img        | ../image.jpg | input image   \}"}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"\{video vid       |<none>| input video   \}"}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"\{show\_output       |true| show output   \}"}}
+
+\end{DoxyCode}

@@ -1,0 +1,418 @@
+\hypertarget{class_human_detection}{}\doxysection{Human\+Detection Class Reference}
+\label{class_human_detection}\index{HumanDetection@{HumanDetection}}
+
+
+\mbox{\hyperlink{class_human_detection}{Human\+Detection}} class runs object detection on input image or video.  
+
+
+
+
+{\ttfamily \#include $<$Human\+Detection.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_human_detection_a9ed5bab20b05f82f38902b519f856c9d}{Human\+Detection}} ()
+\begin{DoxyCompactList}\small\item\em constructor for \mbox{\hyperlink{class_human_detection}{Human\+Detection}} class with no parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_human_detection_a03d4e01d92d12faea436342c0401b9d2}{set\+Input\+Width}} (int width)
+\begin{DoxyCompactList}\small\item\em set the input\+Width value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_human_detection_a5277bc4ce8b6b83296f47a3d2fea3013}{set\+Input\+Height}} (int height)
+\begin{DoxyCompactList}\small\item\em set the input\+Height value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_human_detection_a6d0abffa17419c717debb657d1f6c601}{set\+Confidence\+Threshold}} (float config\+Thres)
+\begin{DoxyCompactList}\small\item\em Set the Average Height object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_human_detection_a1e1069ea2d9b06cb85aa40ba7a23cbd5}{set\+Nms\+Threshold}} (float nms\+Thres)
+\begin{DoxyCompactList}\small\item\em set the nms\+Threshold value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_human_detection_a1feaaa38fcaeb3f58e8cdae522fdd760}{get\+Input\+Width}} ()
+\begin{DoxyCompactList}\small\item\em returns the input\+Width value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_human_detection_aa1edebb3bfa3207907c39d1cbfc3328e}{get\+Input\+Height}} ()
+\begin{DoxyCompactList}\small\item\em returns the input\+Height value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_human_detection_a5fcad9a01d011f5c140a5ba738892b7b}{get\+Confidence\+Threshold}} ()
+\begin{DoxyCompactList}\small\item\em returns the configuration\+Threshold value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_human_detection_a4a03a133b39b1f66466eede4c308b056}{get\+Nms\+Threshold}} ()
+\begin{DoxyCompactList}\small\item\em returns the nms\+Threshold value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb}{eliminate\+Box}} (cv\+::\+Mat \&frame, const std\+::vector$<$ cv\+::\+Mat $>$ \&outs, float conf\+Threshold, const std\+::vector$<$ std\+::string $>$ \&classes)
+\begin{DoxyCompactList}\small\item\em This method predicts the best bounding box for each detection and eliminates the redundant/ overlapping box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b}{human\+Detection}} (cv\+::\+Command\+Line\+Parser parser, \mbox{\hyperlink{class_sensor_i_o}{Sensor\+IO}} io, \mbox{\hyperlink{class_human_detection}{Human\+Detection}} human\+\_\+detection, \mbox{\hyperlink{class_yolo_config}{Yolo\+Config}} config)
+\begin{DoxyCompactList}\small\item\em Our Human Detection algorithm is implemented in this method. This performs detection of input stream. It also stores video and displays output with Bounding Boxes. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_human_detection_a6bfcbaf3ba28b3c44a994db457717c14}{human\+Distance}} (int average\+Height, int box\+Height, double focal\+Length, double sensor\+Height, int frame\+Height)
+\begin{DoxyCompactList}\small\item\em human\+Distance method calculates the distance between the robot and detected human by assuming the height of the human to as 178cm \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_human_detection_a318707648a63f8f242c0fb5f57b7e0ba}{human\+Position}} (const std\+::string \&human\+Id, double distance)
+\begin{DoxyCompactList}\small\item\em human\+Position combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_human_detection_a95e7c81f02832b5a9349528551d50910}{draw\+Box}} (int class\+Id, float conf, int left, int top, int right, int bottom, cv\+::\+Mat \&frame, std\+::vector$<$ std\+::string $>$ classes)
+\begin{DoxyCompactList}\small\item\em This Method helps in drawing the bounding box for detected object with its label/ class ID. \end{DoxyCompactList}\item 
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_human_detection_a683dfe9339b8201b1c403071cda73024}{get\+Output\+Names}} (const cv\+::dnn\+::\+Net \&net)
+\begin{DoxyCompactList}\small\item\em This method returns the label names of the detected objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_human_detection}{Human\+Detection}} class runs object detection on input image or video. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_human_detection_a9ed5bab20b05f82f38902b519f856c9d}\label{class_human_detection_a9ed5bab20b05f82f38902b519f856c9d}} 
+\index{HumanDetection@{HumanDetection}!HumanDetection@{HumanDetection}}
+\index{HumanDetection@{HumanDetection}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{HumanDetection()}{HumanDetection()}}
+{\footnotesize\ttfamily Human\+Detection\+::\+Human\+Detection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor for \mbox{\hyperlink{class_human_detection}{Human\+Detection}} class with no parameters. 
+
+constructor for \mbox{\hyperlink{class_human_detection}{Human\+Detection}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_human_detection_a95e7c81f02832b5a9349528551d50910}\label{class_human_detection_a95e7c81f02832b5a9349528551d50910}} 
+\index{HumanDetection@{HumanDetection}!drawBox@{drawBox}}
+\index{drawBox@{drawBox}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{drawBox()}{drawBox()}}
+{\footnotesize\ttfamily void Human\+Detection\+::draw\+Box (\begin{DoxyParamCaption}\item[{int}]{class\+Id,  }\item[{float}]{conf,  }\item[{int}]{left,  }\item[{int}]{top,  }\item[{int}]{right,  }\item[{int}]{bottom,  }\item[{cv\+::\+Mat \&}]{frame,  }\item[{std\+::vector$<$ std\+::string $>$}]{classes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This Method helps in drawing the bounding box for detected object with its label/ class ID. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em class\+Id} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em conf} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em left} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em right} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em bottom} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em \&frame} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em classes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb}\label{class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb}} 
+\index{HumanDetection@{HumanDetection}!eliminateBox@{eliminateBox}}
+\index{eliminateBox@{eliminateBox}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{eliminateBox()}{eliminateBox()}}
+{\footnotesize\ttfamily void Human\+Detection\+::eliminate\+Box (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{frame,  }\item[{const std\+::vector$<$ cv\+::\+Mat $>$ \&}]{outs,  }\item[{float}]{conf\+Threshold,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{classes }\end{DoxyParamCaption})}
+
+
+
+This method predicts the best bounding box for each detection and eliminates the redundant/ overlapping box. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em frame} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em outs} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em conf\+Threshold} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em classes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & \\
+\hline
+{\em outs} & \\
+\hline
+{\em conf\+Threshold} & \\
+\hline
+{\em classes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detection_a5fcad9a01d011f5c140a5ba738892b7b}\label{class_human_detection_a5fcad9a01d011f5c140a5ba738892b7b}} 
+\index{HumanDetection@{HumanDetection}!getConfidenceThreshold@{getConfidenceThreshold}}
+\index{getConfidenceThreshold@{getConfidenceThreshold}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{getConfidenceThreshold()}{getConfidenceThreshold()}}
+{\footnotesize\ttfamily float Human\+Detection\+::get\+Confidence\+Threshold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the configuration\+Threshold value. 
+
+returns the confidence\+Threshold value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type float. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detection_aa1edebb3bfa3207907c39d1cbfc3328e}\label{class_human_detection_aa1edebb3bfa3207907c39d1cbfc3328e}} 
+\index{HumanDetection@{HumanDetection}!getInputHeight@{getInputHeight}}
+\index{getInputHeight@{getInputHeight}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{getInputHeight()}{getInputHeight()}}
+{\footnotesize\ttfamily int Human\+Detection\+::get\+Input\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the input\+Height value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type int. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detection_a1feaaa38fcaeb3f58e8cdae522fdd760}\label{class_human_detection_a1feaaa38fcaeb3f58e8cdae522fdd760}} 
+\index{HumanDetection@{HumanDetection}!getInputWidth@{getInputWidth}}
+\index{getInputWidth@{getInputWidth}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{getInputWidth()}{getInputWidth()}}
+{\footnotesize\ttfamily int Human\+Detection\+::get\+Input\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the input\+Width value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type int. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detection_a4a03a133b39b1f66466eede4c308b056}\label{class_human_detection_a4a03a133b39b1f66466eede4c308b056}} 
+\index{HumanDetection@{HumanDetection}!getNmsThreshold@{getNmsThreshold}}
+\index{getNmsThreshold@{getNmsThreshold}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{getNmsThreshold()}{getNmsThreshold()}}
+{\footnotesize\ttfamily float Human\+Detection\+::get\+Nms\+Threshold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the nms\+Threshold value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type float. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detection_a683dfe9339b8201b1c403071cda73024}\label{class_human_detection_a683dfe9339b8201b1c403071cda73024}} 
+\index{HumanDetection@{HumanDetection}!getOutputNames@{getOutputNames}}
+\index{getOutputNames@{getOutputNames}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{getOutputNames()}{getOutputNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Human\+Detection\+::get\+Output\+Names (\begin{DoxyParamCaption}\item[{const cv\+::dnn\+::\+Net \&}]{net }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This method returns the label names of the detected objects. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em net} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b}\label{class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b}} 
+\index{HumanDetection@{HumanDetection}!humanDetection@{humanDetection}}
+\index{humanDetection@{humanDetection}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{humanDetection()}{humanDetection()}}
+{\footnotesize\ttfamily void Human\+Detection\+::human\+Detection (\begin{DoxyParamCaption}\item[{cv\+::\+Command\+Line\+Parser}]{parser,  }\item[{\mbox{\hyperlink{class_sensor_i_o}{Sensor\+IO}}}]{io,  }\item[{\mbox{\hyperlink{class_human_detection}{Human\+Detection}}}]{human\+\_\+detection,  }\item[{\mbox{\hyperlink{class_yolo_config}{Yolo\+Config}}}]{config }\end{DoxyParamCaption})}
+
+
+
+Our Human Detection algorithm is implemented in this method. This performs detection of input stream. It also stores video and displays output with Bounding Boxes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em parser} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{class_sensor_i_o}{Sensor\+IO}}} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{class_human_detection}{Human\+Detection}}} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{class_yolo_config}{Yolo\+Config}}} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_human_detection_a6bfcbaf3ba28b3c44a994db457717c14}\label{class_human_detection_a6bfcbaf3ba28b3c44a994db457717c14}} 
+\index{HumanDetection@{HumanDetection}!humanDistance@{humanDistance}}
+\index{humanDistance@{humanDistance}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{humanDistance()}{humanDistance()}}
+{\footnotesize\ttfamily double Human\+Detection\+::human\+Distance (\begin{DoxyParamCaption}\item[{int}]{average\+Height,  }\item[{int}]{box\+Height,  }\item[{double}]{focal\+Length,  }\item[{double}]{sensor\+Height,  }\item[{int}]{frame\+Height }\end{DoxyParamCaption})}
+
+
+
+human\+Distance method calculates the distance between the robot and detected human by assuming the height of the human to as 178cm 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em average\+Height} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em box\+Height} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em focal\+Length} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em sensor\+Height} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame\+Height} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em average\+Height} & \\
+\hline
+{\em box\+Height} & \\
+\hline
+{\em focal\+Length} & \\
+\hline
+{\em sensor\+Height} & \\
+\hline
+{\em frame\+Height} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detection_a318707648a63f8f242c0fb5f57b7e0ba}\label{class_human_detection_a318707648a63f8f242c0fb5f57b7e0ba}} 
+\index{HumanDetection@{HumanDetection}!humanPosition@{humanPosition}}
+\index{humanPosition@{humanPosition}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{humanPosition()}{humanPosition()}}
+{\footnotesize\ttfamily void Human\+Detection\+::human\+Position (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{human\+Id,  }\item[{double}]{distance }\end{DoxyParamCaption})}
+
+
+
+human\+Position combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. ~\newline
+ 
+
+human\+Position combines the distance parameter and bounding box paramters to get 3D positon which can be outputed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em human\+Id} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em distance} & \\
+\hline
+ & {\em human\+Id} & \\
+\hline
+ & {\em distance} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_human_detection_a6d0abffa17419c717debb657d1f6c601}\label{class_human_detection_a6d0abffa17419c717debb657d1f6c601}} 
+\index{HumanDetection@{HumanDetection}!setConfidenceThreshold@{setConfidenceThreshold}}
+\index{setConfidenceThreshold@{setConfidenceThreshold}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{setConfidenceThreshold()}{setConfidenceThreshold()}}
+{\footnotesize\ttfamily void Human\+Detection\+::set\+Confidence\+Threshold (\begin{DoxyParamCaption}\item[{float}]{config\+Thres }\end{DoxyParamCaption})}
+
+
+
+Set the Average Height object. 
+
+set the confidence\+Threshold value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em config\+Thres} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detection_a5277bc4ce8b6b83296f47a3d2fea3013}\label{class_human_detection_a5277bc4ce8b6b83296f47a3d2fea3013}} 
+\index{HumanDetection@{HumanDetection}!setInputHeight@{setInputHeight}}
+\index{setInputHeight@{setInputHeight}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{setInputHeight()}{setInputHeight()}}
+{\footnotesize\ttfamily void Human\+Detection\+::set\+Input\+Height (\begin{DoxyParamCaption}\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+set the input\+Height value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em height} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type void.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em height} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detection_a03d4e01d92d12faea436342c0401b9d2}\label{class_human_detection_a03d4e01d92d12faea436342c0401b9d2}} 
+\index{HumanDetection@{HumanDetection}!setInputWidth@{setInputWidth}}
+\index{setInputWidth@{setInputWidth}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{setInputWidth()}{setInputWidth()}}
+{\footnotesize\ttfamily void Human\+Detection\+::set\+Input\+Width (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+set the input\+Width value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type void.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em width} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_human_detection_a1e1069ea2d9b06cb85aa40ba7a23cbd5}\label{class_human_detection_a1e1069ea2d9b06cb85aa40ba7a23cbd5}} 
+\index{HumanDetection@{HumanDetection}!setNmsThreshold@{setNmsThreshold}}
+\index{setNmsThreshold@{setNmsThreshold}!HumanDetection@{HumanDetection}}
+\doxysubsubsection{\texorpdfstring{setNmsThreshold()}{setNmsThreshold()}}
+{\footnotesize\ttfamily void Human\+Detection\+::set\+Nms\+Threshold (\begin{DoxyParamCaption}\item[{float}]{nms\+Thres }\end{DoxyParamCaption})}
+
+
+
+set the nms\+Threshold value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nms\+Thres} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type void.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em nms\+Thres} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type void. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/sumedh/\+Desktop/perception\+Module/\+T\+X9\+Perception\+Module/include/\mbox{\hyperlink{_human_detection_8hpp}{Human\+Detection.\+hpp}}\item 
+\mbox{\hyperlink{_human_detection_8cpp}{Human\+Detection.\+cpp}}\end{DoxyCompactItemize}

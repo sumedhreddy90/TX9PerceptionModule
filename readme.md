@@ -56,7 +56,7 @@ An open-source library for computer vision, machine learning, and image processi
 #include <opencv2/opencv.hpp>
 
 ## Video Link
-Phase 0: [Video link](https://drive.google.com/file/d/1y3IG4E8LxjugA8rqg2jjViYQlF68eZcT/view?usp=sharing)
+Phase 1: [Video link](https://www.youtube.com/watch?v=6h-72SBKB8E&t=72s)
 
 ## Risk and Mitigations
 
@@ -75,12 +75,13 @@ For real time testing, a laptop and webcam will be used and the output will be m
 ```
 git clone --recursive https://github.com/pratik-a99/TX9PerceptionModule
 cd <path to repository>
+bash script.sh
 mkdir build
 cd build
 cmake ..
 make
 Run tests: ./test/cpp-test
-Run program: ./app/shell-app
+Run program: ./app/shell-app --image=../image.jpg
 ```
 
 ## Building for code coverage 

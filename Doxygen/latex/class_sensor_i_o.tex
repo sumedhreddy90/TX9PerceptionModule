@@ -1,0 +1,317 @@
+\hypertarget{class_sensor_i_o}{}\doxysection{Sensor\+IO Class Reference}
+\label{class_sensor_i_o}\index{SensorIO@{SensorIO}}
+
+
+A class to interact with sensor to receive data for processing by other classes.  
+
+
+
+
+{\ttfamily \#include $<$Sensor\+I\+O.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sensor_i_o_a952cf19d435c096efb6f09e819e3e707}{Sensor\+IO}} ()
+\begin{DoxyCompactList}\small\item\em constructor for \mbox{\hyperlink{class_sensor_i_o}{Sensor\+IO}} class with no parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_i_o_a1e15a2883485d94798de900145f40d96}{set\+Output\+Width}} (int width)
+\begin{DoxyCompactList}\small\item\em It sets the value for output\+Width attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_i_o_aed3f040278a48f46a79721ecdf16b6c1}{set\+Output\+Height}} (int height)
+\begin{DoxyCompactList}\small\item\em It sets the value for output\+Height attribute. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sensor_i_o_a527dee61db88cf141ac78b7bf3b60558}{get\+Output\+Width}} ()
+\begin{DoxyCompactList}\small\item\em It gets the value of output\+Width attribute. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sensor_i_o_abecca160e68d0b0eb46a6014cdeface8}{get\+Output\+Height}} ()
+\begin{DoxyCompactList}\small\item\em It gets the value of output\+Height attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_i_o_a392038666c8b655a94a45771c463e72d}{set\+Image\+Path}} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em It sets the value of image\+Path attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_i_o_af45d35626c65b327bc3505e06eb8ef76}{set\+Video\+Path}} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em It sets the value of video\+Path attribute. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_sensor_i_o_a0bc3d3e7a7f9ee8688c19856b5e42e64}{get\+Image\+Path}} ()
+\begin{DoxyCompactList}\small\item\em It gets the value of image\+Path attribute. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_sensor_i_o_a7dfa1a7de05512ff48b846b457648f97}{get\+Video\+Path}} ()
+\begin{DoxyCompactList}\small\item\em It gets the value of video\+Path attribute. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_sensor_i_o_ac61ddd9a876638f8dd62f77976a28679}{get\+Data\+Type}} (const cv\+::\+Command\+Line\+Parser parser)
+\begin{DoxyCompactList}\small\item\em Function to tell if the input is an image or video. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_sensor_i_o_a232861c091d998abee30e81acc950b0e}{get\+Data\+Path}} (const cv\+::\+Command\+Line\+Parser \&parser, const std\+::string \&data\+Type)
+\begin{DoxyCompactList}\small\item\em Fucntion to get input data path. \end{DoxyCompactList}\item 
+cv\+::\+Video\+Capture \mbox{\hyperlink{class_sensor_i_o_a71a202cada6b6c8fded8d8630c47aff0}{image\+Processor}} (const std\+::string \&rwoperation, cv\+::\+Mat frame)
+\begin{DoxyCompactList}\small\item\em Function to process image. \end{DoxyCompactList}\item 
+cv\+::\+Video\+Capture \mbox{\hyperlink{class_sensor_i_o_a88c471a17b2bbe72bee3a0b8bdbc98b8}{video\+Processor}} (const std\+::string \&rwoperation, cv\+::\+Mat frame, cv\+::\+Video\+Writer video)
+\begin{DoxyCompactList}\small\item\em Function to process video. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sensor_i_o_a112bbea38bc116e7526e8b3597372167}{$\sim$\+Sensor\+IO}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{class_sensor_i_o}{Sensor\+IO}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to interact with sensor to receive data for processing by other classes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sensor_i_o_a952cf19d435c096efb6f09e819e3e707}\label{class_sensor_i_o_a952cf19d435c096efb6f09e819e3e707}} 
+\index{SensorIO@{SensorIO}!SensorIO@{SensorIO}}
+\index{SensorIO@{SensorIO}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{SensorIO()}{SensorIO()}}
+{\footnotesize\ttfamily Sensor\+I\+O\+::\+Sensor\+IO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+constructor for \mbox{\hyperlink{class_sensor_i_o}{Sensor\+IO}} class with no parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_a112bbea38bc116e7526e8b3597372167}\label{class_sensor_i_o_a112bbea38bc116e7526e8b3597372167}} 
+\index{SensorIO@{SensorIO}!````~SensorIO@{$\sim$SensorIO}}
+\index{````~SensorIO@{$\sim$SensorIO}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{$\sim$SensorIO()}{~SensorIO()}}
+{\footnotesize\ttfamily Sensor\+I\+O\+::$\sim$\+Sensor\+IO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{class_sensor_i_o}{Sensor\+IO}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sensor_i_o_a232861c091d998abee30e81acc950b0e}\label{class_sensor_i_o_a232861c091d998abee30e81acc950b0e}} 
+\index{SensorIO@{SensorIO}!getDataPath@{getDataPath}}
+\index{getDataPath@{getDataPath}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{getDataPath()}{getDataPath()}}
+{\footnotesize\ttfamily std\+::string Sensor\+I\+O\+::get\+Data\+Path (\begin{DoxyParamCaption}\item[{const cv\+::\+Command\+Line\+Parser \&}]{parser,  }\item[{const std\+::string \&}]{data\+Type }\end{DoxyParamCaption})}
+
+
+
+Fucntion to get input data path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em parser} & to get parser from opencv \\
+\hline
+\mbox{\texttt{ in}}  & {\em data\+Type} & param to indicate if the input is image or video \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+input Path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_ac61ddd9a876638f8dd62f77976a28679}\label{class_sensor_i_o_ac61ddd9a876638f8dd62f77976a28679}} 
+\index{SensorIO@{SensorIO}!getDataType@{getDataType}}
+\index{getDataType@{getDataType}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{getDataType()}{getDataType()}}
+{\footnotesize\ttfamily std\+::string Sensor\+I\+O\+::get\+Data\+Type (\begin{DoxyParamCaption}\item[{const cv\+::\+Command\+Line\+Parser}]{parser }\end{DoxyParamCaption})}
+
+
+
+Function to tell if the input is an image or video. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em parser} & to get the parser from opencv \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\char`\"{}image\char`\"{}, \char`\"{}video\char`\"{} or \char`\"{}error\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_a0bc3d3e7a7f9ee8688c19856b5e42e64}\label{class_sensor_i_o_a0bc3d3e7a7f9ee8688c19856b5e42e64}} 
+\index{SensorIO@{SensorIO}!getImagePath@{getImagePath}}
+\index{getImagePath@{getImagePath}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{getImagePath()}{getImagePath()}}
+{\footnotesize\ttfamily std\+::string Sensor\+I\+O\+::get\+Image\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It gets the value of image\+Path attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of image\+Path attribute 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_abecca160e68d0b0eb46a6014cdeface8}\label{class_sensor_i_o_abecca160e68d0b0eb46a6014cdeface8}} 
+\index{SensorIO@{SensorIO}!getOutputHeight@{getOutputHeight}}
+\index{getOutputHeight@{getOutputHeight}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{getOutputHeight()}{getOutputHeight()}}
+{\footnotesize\ttfamily int Sensor\+I\+O\+::get\+Output\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It gets the value of output\+Height attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of output\+Height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_a527dee61db88cf141ac78b7bf3b60558}\label{class_sensor_i_o_a527dee61db88cf141ac78b7bf3b60558}} 
+\index{SensorIO@{SensorIO}!getOutputWidth@{getOutputWidth}}
+\index{getOutputWidth@{getOutputWidth}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{getOutputWidth()}{getOutputWidth()}}
+{\footnotesize\ttfamily int Sensor\+I\+O\+::get\+Output\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It gets the value of output\+Width attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of output\+Width 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_a7dfa1a7de05512ff48b846b457648f97}\label{class_sensor_i_o_a7dfa1a7de05512ff48b846b457648f97}} 
+\index{SensorIO@{SensorIO}!getVideoPath@{getVideoPath}}
+\index{getVideoPath@{getVideoPath}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{getVideoPath()}{getVideoPath()}}
+{\footnotesize\ttfamily std\+::string Sensor\+I\+O\+::get\+Video\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It gets the value of video\+Path attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of video\+Path attribute 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_a71a202cada6b6c8fded8d8630c47aff0}\label{class_sensor_i_o_a71a202cada6b6c8fded8d8630c47aff0}} 
+\index{SensorIO@{SensorIO}!imageProcessor@{imageProcessor}}
+\index{imageProcessor@{imageProcessor}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{imageProcessor()}{imageProcessor()}}
+{\footnotesize\ttfamily cv\+::\+Video\+Capture Sensor\+I\+O\+::image\+Processor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rwoperation,  }\item[{cv\+::\+Mat}]{frame }\end{DoxyParamCaption})}
+
+
+
+Function to process image. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rwoperation} & to indicate if the operation to be performed is read/write \\
+\hline
+ & {\em \mbox{[}frame\mbox{]}} & input frame \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Opens a video file or a capturing device to receive input 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_a392038666c8b655a94a45771c463e72d}\label{class_sensor_i_o_a392038666c8b655a94a45771c463e72d}} 
+\index{SensorIO@{SensorIO}!setImagePath@{setImagePath}}
+\index{setImagePath@{setImagePath}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{setImagePath()}{setImagePath()}}
+{\footnotesize\ttfamily void Sensor\+I\+O\+::set\+Image\+Path (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})}
+
+
+
+It sets the value of image\+Path attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & value to set for image\+Path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_aed3f040278a48f46a79721ecdf16b6c1}\label{class_sensor_i_o_aed3f040278a48f46a79721ecdf16b6c1}} 
+\index{SensorIO@{SensorIO}!setOutputHeight@{setOutputHeight}}
+\index{setOutputHeight@{setOutputHeight}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{setOutputHeight()}{setOutputHeight()}}
+{\footnotesize\ttfamily void Sensor\+I\+O\+::set\+Output\+Height (\begin{DoxyParamCaption}\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+It sets the value for output\+Height attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em height} & value to set output\+Width \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_a1e15a2883485d94798de900145f40d96}\label{class_sensor_i_o_a1e15a2883485d94798de900145f40d96}} 
+\index{SensorIO@{SensorIO}!setOutputWidth@{setOutputWidth}}
+\index{setOutputWidth@{setOutputWidth}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{setOutputWidth()}{setOutputWidth()}}
+{\footnotesize\ttfamily void Sensor\+I\+O\+::set\+Output\+Width (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+It sets the value for output\+Width attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & value to set output\+Width \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_af45d35626c65b327bc3505e06eb8ef76}\label{class_sensor_i_o_af45d35626c65b327bc3505e06eb8ef76}} 
+\index{SensorIO@{SensorIO}!setVideoPath@{setVideoPath}}
+\index{setVideoPath@{setVideoPath}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{setVideoPath()}{setVideoPath()}}
+{\footnotesize\ttfamily void Sensor\+I\+O\+::set\+Video\+Path (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})}
+
+
+
+It sets the value of video\+Path attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & value to set for video\+Path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sensor_i_o_a88c471a17b2bbe72bee3a0b8bdbc98b8}\label{class_sensor_i_o_a88c471a17b2bbe72bee3a0b8bdbc98b8}} 
+\index{SensorIO@{SensorIO}!videoProcessor@{videoProcessor}}
+\index{videoProcessor@{videoProcessor}!SensorIO@{SensorIO}}
+\doxysubsubsection{\texorpdfstring{videoProcessor()}{videoProcessor()}}
+{\footnotesize\ttfamily cv\+::\+Video\+Capture Sensor\+I\+O\+::video\+Processor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rwoperation,  }\item[{cv\+::\+Mat}]{frame,  }\item[{cv\+::\+Video\+Writer}]{video }\end{DoxyParamCaption})}
+
+
+
+Function to process video. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rwoperation} & to indicate if the operation to be performed is read/write \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame} & input frame \\
+\hline
+\mbox{\texttt{ in}}  & {\em video} & file to write the frame to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Opens a video file or a capturing device to receive input 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/sumedh/\+Desktop/perception\+Module/\+T\+X9\+Perception\+Module/include/\mbox{\hyperlink{_sensor_i_o_8hpp}{Sensor\+I\+O.\+hpp}}\item 
+\mbox{\hyperlink{_sensor_i_o_8cpp}{Sensor\+I\+O.\+cpp}}\end{DoxyCompactItemize}
