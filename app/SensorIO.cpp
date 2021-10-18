@@ -97,7 +97,17 @@ std::string SensorIO::getVideoPath() {
  * @return "image", "video" or "error"
  */
 std::string SensorIO::getDataType(const cv::CommandLineParser parser) {
-  return "test";
+  if (parser.has("image") || parser.has("img")) {
+    std::string inputType = "image";
+    return inputType;
+  } else if (parser.has("video")|| parser.has("vid")) {
+    std::string inputType = "video";
+    return inputType;
+  } else {
+    std::string Error = "Error";
+    std::cout<< "invalid key\n";
+    return Error;
+  }
 }
 /**
  * @fn std::string getDataPath(const cv::CommandLineParser&, const std::string&)
