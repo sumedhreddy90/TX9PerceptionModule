@@ -14,6 +14,7 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 #include "YoloConfig.hpp"
+#include <SensorIO.hpp>
 
 /**
  * @brief HumanDetection class runs object detection on input image or video.
