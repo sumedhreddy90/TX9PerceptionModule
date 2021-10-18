@@ -26,6 +26,7 @@ HumanDetection::HumanDetection() {
  * @return type void.
  */
 void HumanDetection::setInputWidth(int width) {
+  inputWidth = width;
 }
 /**
  * @brief set the inputHeight value.
@@ -33,6 +34,7 @@ void HumanDetection::setInputWidth(int width) {
  * @return type void.
  */
 void HumanDetection::setInputHeight(int height) {
+  inputHeight = height
 }
 /**
  * @brief set the confidenceThreshold value.
@@ -40,6 +42,7 @@ void HumanDetection::setInputHeight(int height) {
  * @return type void.
  */
 void HumanDetection::setConfidenceThreshold(float configThres) {
+  confidenceThreshold = configThres;
 }
 /**
  * @brief set the nmsThreshold value.
@@ -83,75 +86,101 @@ float HumanDetection::getNmsThreshold() {
 }
 /**
  * @brief This method predicts the best bounding box
-*         for each detection and eliminates the redundant/ overlapping box.
+ *         for each detection and eliminates the redundant/ overlapping box.
  * @param frame
  * @param outs
  * @param confThreshold
  * @param classes
  * @return None.
  */
-void HumanDetection::eliminateBox(cv::Mat& frame,
-const std::vector<cv::Mat>& outs, float confThreshold,
-const std::vector<std::string>& classes) {
-}
- /*
-   * @brief This Method helps in drawing the bounding box
-    for detected object with its label/ class ID
-   * @param classId
-   * @param conf
-   * @param left
-   * @param right
-   * @param bottom
-   * @param &frame
-   * @param classes
-   * @return None
- */
-void HumanDetection::drawBox(int classId, float conf, int left, int top,
-int right, int bottom, cv::Mat &frame,
-std::vector<std::string> classes) {
-}
-/* @brief This method returns the label
-   * names of the detected objects
-   * @param net
-   * @return type std::vector<std::string>
-*/
-std::vector<std::string> HumanDetection::getOutputNames(
-const cv::dnn::Net& net) {
+void HumanDetection::eliminateBox(cv::Mat &frame,
+                                  const std::vector<cv::Mat> &outs,
+                                  float confThreshold,
+                                  const std::vector<std::string> &classes) {
+  std::vector<int> classIds;
+  std::vector<double> confidences;
+  std::vector < cv::Rect > boxes;
+
+  for (const auto &out : outs) {
+    auto *data = (double*) out.data;
+    cv::Mat scores = out.row(j).colRange(5, out.cols);
+    cv::Point classIdPoint;
+    double confidence;
+
+    minMaxLoc(scores, nullptr, &confidence, nullptr, &classIdPoint);
+    if (confidence > confidenceThreshold) {
+      int centerX = (int) (data[0] * frame.cols);
+      int centerY = (int) (data[1] * frame.rows);
+      int width = (int) (data[2] * frame.cols);
+      int height = (int) (data[3] * frame.rows);
+      int top_x = centerX - width / 2;
+      int top_y = centerY - height / 2;
+
+      classIds.push_back(classIdPoint.x);
+      confidences.push_back((double) confidence);
+      boxes.push_back(cv::Rect(top_x, top_y, width, height));
+    }
+  }
+
 }
 /*
-   * @brief Our Human Detection algorithm is implemented in 
-   this method. This performs detection of input stream.
-   It also stores video and displays output with Bounding Boxes.
-   * @param parser
-   * @param SensorIO
-   * @param HumanDetection
-   * @param YoloConfig
-*/
-  void humanDetection(cv::CommandLineParser parser, SensorIO io,
-  HumanDetection human_detection, YoloConfig config) {
-  }
+ * @brief This Method helps in drawing the bounding box
+ for detected object with its label/ class ID
+ * @param classId
+ * @param conf
+ * @param left
+ * @param right
+ * @param bottom
+ * @param &frame
+ * @param classes
+ * @return None
+ */
+void HumanDetection::drawBox(int classId, float conf, int left, int top,
+                             int right, int bottom, cv::Mat &frame,
+                             std::vector<std::string> classes) {
+}
+/* @brief This method returns the label
+ * names of the detected objects
+ * @param net
+ * @return type std::vector<std::string>
+ */
+std::vector<std::string> HumanDetection::getOutputNames(
+    const cv::dnn::Net &net) {
+}
+/*
+ * @brief Our Human Detection algorithm is implemented in
+ this method. This performs detection of input stream.
+ It also stores video and displays output with Bounding Boxes.
+ * @param parser
+ * @param SensorIO
+ * @param HumanDetection
+ * @param YoloConfig
+ */
+void humanDetection(cv::CommandLineParser parser, SensorIO io,
+                    HumanDetection human_detection, YoloConfig config) {
+}
 /**
-   * @brief humanDistance method calculates the distance between the robot
-   * and detected human by assuming the height of the human to as 
-   * 178cm
-   * 
-   * @param averageHeight 
-   * @param boxHeight 
-   * @param focalLength 
-   * @param sensorHeight 
-   * @param frameHeight 
-   * @return double 
-*/
-  double humanDistance(int averageHeight, int boxHeight, double focalLength,
-  double sensorHeight, int frameHeight) {
-      return 0;
-  }
+ * @brief humanDistance method calculates the distance between the robot
+ * and detected human by assuming the height of the human to as
+ * 178cm
+ *
+ * @param averageHeight
+ * @param boxHeight
+ * @param focalLength
+ * @param sensorHeight
+ * @param frameHeight
+ * @return double
+ */
+double humanDistance(int averageHeight, int boxHeight, double focalLength,
+                     double sensorHeight, int frameHeight) {
+  return 0;
+}
 /**
-   * @brief humanPosition combines the distance parameter and bounding box paramters
-   * to get 3D positon which can be outputed.  
-   * 
-   * @param humanId 
-   * @param distance 
-*/
-  void humanPosition(std::string humanId, double distance) {
-  }
+ * @brief humanPosition combines the distance parameter and bounding box paramters
+ * to get 3D positon which can be outputed.
+ *
+ * @param humanId
+ * @param distance
+ */
+void humanPosition(std::string humanId, double distance) {
+}
