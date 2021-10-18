@@ -148,6 +148,22 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
 void HumanDetection::drawBox(int classId, float conf, int left, int top,
                              int right, int bottom, cv::Mat &frame,
                              std::vector<std::string> classes) {
+  rectangle(frame, cv::Point(left, top), cv::Point(right, bottom),
+            cv::Scalar(0, 168, 0), 3);
+  std::string label = cv::format("%.2f", conf);
+  if (!classes.empty()) {
+    CV_Assert(classId < (int) classes.size());
+    label = classes[classId] + ":" + label;
+  }
+  int baseLine;
+  cv::Size labelSize = getTextSize(label, cv::FONT_HERSHEY_SIMPLEX, 0.5, 1,
+                                   &baseLine);
+  top = std::max(top, labelSize.height);
+  rectangle(frame, cv::Point(left, top - round(1.5 * labelSize.height)),
+            cv::Point(left + round(1.5 * labelSize.width), top + baseLine),
+            cv::Scalar(255, 255, 255), cv::FILLED);
+  putText(frame, label, cv::Point(left, top), cv::FONT_HERSHEY_SIMPLEX, 0.75,
+          cv::Scalar(0, 0, 0), 1);
 }
 /* @brief This method returns the label
  * names of the detected objects
