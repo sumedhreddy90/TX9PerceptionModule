@@ -1,0 +1,68 @@
+\href{https://app.travis-ci.com/pratik-a99/TX9PerceptionModule}{\texttt{ }}
+
+\href{https://coveralls.io/github/pratik-a99/TX9PerceptionModule?branch=main}{\texttt{ }}\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md2}{}\doxysection{@ref L\+I\+C\+E\+N\+S\+E.\+md \char`\"{}!\mbox{[}\+Git\+Hub license\mbox{]}(https\+://badgen.\+net/github/license/\+Naereen/\+Strapdown.\+js)\char`\"{}}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md2}
+\DoxyHorRuler{0}
+\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md4}{}\doxysection{Overview}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md4}
+Acme Robotics is building a next generation mobile robot to be used on sports fields to detect and track players and provide analytics data about them to be utilized for broadcasting. A swarm of robots will be deployed on the field.
+
+The mobile robot will have a monocular camera placed on it to receive live video feed of the field. A perception module on the robot will receive the video feed and will label each player and store their location with respect to the robot. The output of the module will be the labels and location of the players. This will be fed to a path planner, so that the mobile robot can track a player to ensure that the player is in its field of vision.\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md5}{}\doxysubsection{A\+I\+P Document}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md5}
+\href{https://docs.google.com/spreadsheets/d/1xySDFZ3LB8iaYRV7OXNlhccmeYK0k-ZA7r3EBrgCAMA/edit?usp=sharing}{\texttt{ }}\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md6}{}\doxysection{Assumptions}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md6}
+
+\begin{DoxyEnumerate}
+\item For deep learning computation we assume that {\itshape Nvidia Jetson Nano 2GB} chipset
+\item The targets are assumed to be 180cm in height, which will be used to calculate distance from the robot in the forward direction.
+\end{DoxyEnumerate}\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md7}{}\doxysection{Technologies}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md7}
+{\itshape Programing language}\+: C++
+
+{\itshape Build system}\+: cmake
+
+{\itshape Testing Library}\+: Google Test, Google Mock
+
+{\itshape Continuous Integration}\+: Travis CI, Coverall\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md8}{}\doxysection{Algorithms}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md8}
+
+\begin{DoxyEnumerate}
+\item Y\+O\+LO v3 under Y\+O\+LO L\+I\+C\+E\+N\+SE
+\item Open\+CV version 4.\+2, under Apache 2 License
+\end{DoxyEnumerate}\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md9}{}\doxysubsection{Y\+O\+L\+O Functionality}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md9}
+The Y\+O\+LO algorithm uses convolutional neural networks (C\+NN) to detect multi objects in real-\/time. This algorithm uses a single forward propagation through a neural network to detect objects in a single run. Here the role of C\+NN is to simultaneously predict various class probabilities and bounding boxes. Object detection in Y\+O\+LO is done as a regression problem and provides the class probabilities of the detected images.
+
+
+
+Figure\+: input video being processed by Y\+O\+LO vision algorithms outputting boxed video as image detection.\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md10}{}\doxysubsection{Open\+CV}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md10}
+An open-\/source library for computer vision, machine learning, and image processing. Some of the header files which we would like to access in our project are below\+:
+
+\#include $<$opencv2/dnn.\+hpp$>$
+
+\#include $<$opencv2/imgproc.\+hpp$>$
+
+\#include $<$opencv2/highgui.\+hpp$>$
+
+\#include $<$opencv2/opencv.\+hpp$>$\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md11}{}\doxysection{Video Link}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md11}
+Phase 1\+: \href{https://www.youtube.com/watch?v=6h-72SBKB8E&t=72s}{\texttt{ Video link}}\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md12}{}\doxysection{Risk and Mitigations}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md12}
+Risk 1\+: The created software fails to detect humans. Solution\+: Open\+Cv will be used to detect humans based on the jersey color and the dimensions of the bounding box. Utilizing the dimensions of the bounding box will ensure that false positives are minimalized. The average height assumed will be modified to include only the size of an average human torso.
+
+Risk 2\+: The software fails to track the detected humans Solution\+: The final product will be delivered only for human detection and the tracking update will be provided in a future release.\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md13}{}\doxysection{Testing\+:}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md13}
+Google’s Open Images Dataset V6+ will be used for testing and quality assurance. The dataset contains labelled images of humans with the information about bounding boxes provided in it. For real time testing, a laptop and webcam will be used and the output will be monitored to ensure proper functioning.\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md14}{}\doxysection{Standard install via command-\/line}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md14}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone -\/-\/recursive https://github.com/pratik-\/a99/TX9PerceptionModule}
+\DoxyCodeLine{cd <path to repository>}
+\DoxyCodeLine{bash script.sh}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{Run tests: ./test/cpp-\/test}
+\DoxyCodeLine{Run program: ./app/shell-\/app -\/-\/image=../image.jpg}
+\end{DoxyCode}
+\hypertarget{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md15}{}\doxysection{Building for code coverage}\label{md__home_sumedh__desktop_perception_module__t_x9_perception_module_readme_autotoc_md15}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt-\/get install lcov}
+\DoxyCodeLine{cmake -\/D COVERAGE=ON -\/D CMAKE\_BUILD\_TYPE=Debug ../}
+\DoxyCodeLine{make}
+\DoxyCodeLine{make code\_coverage}
+\end{DoxyCode}
+
+
+This generates a index.\+html page in the build/coverage sub-\/directory that can be viewed locally in a web browser. 

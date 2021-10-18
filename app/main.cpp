@@ -8,7 +8,6 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include <lib.hpp>
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
@@ -29,8 +28,7 @@ const char* keys =
     "{video vid       |<none>| input video   }"
     "{show_output       |true| show output   }";
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
     /*
    * @brief Instantiate objects for each class.
    */
