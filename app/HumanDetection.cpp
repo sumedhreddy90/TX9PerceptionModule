@@ -23,6 +23,7 @@ HumanDetection::HumanDetection() {
   inputWidth = 416;
   confidenceThreshold = 0.8;
   nmsThreshold = 0.4;
+  averageHeight = 175;
 }
 /**
  * @brief set the inputWidth value.

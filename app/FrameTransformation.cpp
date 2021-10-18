@@ -22,7 +22,7 @@ FrameTransformation::FrameTransformation() = default;
  * @return None
  */
 void FrameTransformation::setTransformationMatrix(
-    std::vector<std::vector<double>> matrix) {
+    const std::vector<std::vector<double>> &matrix) {
 }
 /**
  * @fn std::vector<std::vector<double>> getTransformationMatrix()
@@ -41,7 +41,7 @@ std::vector<std::vector<double>> FrameTransformation::getTransformationMatrix() 
  * @return
  */
 std::vector<double> FrameTransformation::transformFrame(
-    std::vector<double> position) {
+    const std::vector<double> &position) {
   std::vector<double> test { 1, 2, 3 };
   return test;
 }
