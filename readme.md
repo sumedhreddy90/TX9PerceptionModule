@@ -3,7 +3,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/pratik-a99/TX9PerceptionModule/badge.svg?branch=main)](https://coveralls.io/github/pratik-a99/TX9PerceptionModule?branch=main)
 
-[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)]()
+[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](LICENSE.md)
 ---
 
 ---

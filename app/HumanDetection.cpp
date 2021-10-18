@@ -10,8 +10,8 @@
 #include <vector>
 #include <iostream>
 #include <HumanDetection.hpp>
-#include <YoloConfig.hpp>
 #include <SensorIO.hpp>
+#include <YoloConfig.hpp>
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
@@ -153,6 +153,5 @@ const cv::dnn::Net& net) {
    * @param humanId 
    * @param distance 
 */
-  void humanPosition(std::string humanId, double distance){
+  void humanPosition(std::string humanId, double distance) {
   }
-};
