@@ -30,7 +30,8 @@ void FrameTransformation::setTransformationMatrix(
  * @param None
  * @return Transformation Matrix in 2D vector form
  */
-std::vector<std::vector<double>> FrameTransformation::getTransformationMatrix() {
+std::vector<std::vector<double>>
+FrameTransformation::getTransformationMatrix() {
   return transformationMatrix;
 }
 /**

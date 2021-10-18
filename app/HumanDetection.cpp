@@ -303,5 +303,6 @@ double HumanDetection::humanDistance(int averageHeight, int boxHeight,
  * @param humanId
  * @param distance
  */
-void HumanDetection::humanPosition(std::string humanId, double distance) {
+void HumanDetection::humanPosition(const std::string &humanId,
+double distance) {
 }
