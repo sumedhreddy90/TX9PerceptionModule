@@ -1,7 +1,7 @@
 # We need a decent ubuntu dist
 sudo: required
 dist: xenial
-
+# going with xenial
 # Modern cpp settings from
 #  http://genbattle.bitbucket.org/blog/2016/01/17/c++-travis-ci/
 language: cpp
@@ -32,7 +32,6 @@ before_install:
   - make
   - sudo make install
   - cd ..
-
 
 install:
   - sudo apt-get install -y -qq lcov
