@@ -24,7 +24,7 @@ YoloConfig::YoloConfig() = default;
 void YoloConfig::setYoloClasses() {
   std::ifstream ifs(yoloClassesLocation.c_str());
   std::string yoloClass;
-  while (std::getline(ifs, line)) {
+  while (std::getline(ifs, yoloClass)) {
     yoloClasses.push_back(yoloClass);
   }
 }
