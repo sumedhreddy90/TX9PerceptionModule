@@ -118,7 +118,18 @@ std::string SensorIO::getDataType(const cv::CommandLineParser parser) {
  */
 std::string SensorIO::getDataPath(const cv::CommandLineParser &parser,
                                   const std::string &dataType) {
-  return "test";
+  if (parser.has("image") || parser.has("img")) {
+    imagePath = parser.get<std::string>("image");
+    return imagePath;
+  } else if (parser.has("video") || parser.has("vid")) {
+    videoPath = parser.get<std::string>("video");
+    return videoPath;
+  } else {
+    std::string Error = "Error";
+    std::cout<< "path to " << dataType <<
+    " does not exist. Please enter a valid path.\n";
+    return Error;
+  }
 }
 /**
  * @fn cv::VideoCapture imageProcessor(const std::string&, cv::Mat)
