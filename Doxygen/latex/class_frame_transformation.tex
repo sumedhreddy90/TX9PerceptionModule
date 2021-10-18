@@ -1,0 +1,117 @@
+\hypertarget{class_frame_transformation}{}\doxysection{Frame\+Transformation Class Reference}
+\label{class_frame_transformation}\index{FrameTransformation@{FrameTransformation}}
+
+
+A class to transform the position of detected humans from \textbackslash{} camera\textquotesingle{}s frame of reference to robot\textquotesingle{}s frame of reference.  
+
+
+
+
+{\ttfamily \#include $<$Frame\+Transformation.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_frame_transformation_aa4495bbd8e06ac1d793063c7a0aa0c03}{Frame\+Transformation}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_frame_transformation}{Frame\+Transformation}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_frame_transformation_a52d013f47f05d5d3bd3aa4597321d939}{set\+Transformation\+Matrix}} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ matrix)
+\begin{DoxyCompactList}\small\item\em Function to set the transformation matrix. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{class_frame_transformation_addb1a2a6e5c7379f5522a3abb16e7837}{get\+Transformation\+Matrix}} ()
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_frame_transformation_aa3e649e454002b62c6cdf6e2559c3daa}{transform\+Frame}} (std\+::vector$<$ double $>$ position)
+\begin{DoxyCompactList}\small\item\em function to get the input from Y\+O\+LO and transform the position of detected humans into robot\textquotesingle{}s frame \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_frame_transformation_a6db4d1bb1d72c02855aa2732205cd313}{$\sim$\+Frame\+Transformation}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{class_frame_transformation}{Frame\+Transformation}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to transform the position of detected humans from \textbackslash{} camera\textquotesingle{}s frame of reference to robot\textquotesingle{}s frame of reference. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_frame_transformation_aa4495bbd8e06ac1d793063c7a0aa0c03}\label{class_frame_transformation_aa4495bbd8e06ac1d793063c7a0aa0c03}} 
+\index{FrameTransformation@{FrameTransformation}!FrameTransformation@{FrameTransformation}}
+\index{FrameTransformation@{FrameTransformation}!FrameTransformation@{FrameTransformation}}
+\doxysubsubsection{\texorpdfstring{FrameTransformation()}{FrameTransformation()}}
+{\footnotesize\ttfamily Frame\+Transformation\+::\+Frame\+Transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Constructor for \mbox{\hyperlink{class_frame_transformation}{Frame\+Transformation}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_frame_transformation_a6db4d1bb1d72c02855aa2732205cd313}\label{class_frame_transformation_a6db4d1bb1d72c02855aa2732205cd313}} 
+\index{FrameTransformation@{FrameTransformation}!````~FrameTransformation@{$\sim$FrameTransformation}}
+\index{````~FrameTransformation@{$\sim$FrameTransformation}!FrameTransformation@{FrameTransformation}}
+\doxysubsubsection{\texorpdfstring{$\sim$FrameTransformation()}{~FrameTransformation()}}
+{\footnotesize\ttfamily Frame\+Transformation\+::$\sim$\+Frame\+Transformation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{class_frame_transformation}{Frame\+Transformation}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_frame_transformation_addb1a2a6e5c7379f5522a3abb16e7837}\label{class_frame_transformation_addb1a2a6e5c7379f5522a3abb16e7837}} 
+\index{FrameTransformation@{FrameTransformation}!getTransformationMatrix@{getTransformationMatrix}}
+\index{getTransformationMatrix@{getTransformationMatrix}!FrameTransformation@{FrameTransformation}}
+\doxysubsubsection{\texorpdfstring{getTransformationMatrix()}{getTransformationMatrix()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ Frame\+Transformation\+::get\+Transformation\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_frame_transformation_a52d013f47f05d5d3bd3aa4597321d939}\label{class_frame_transformation_a52d013f47f05d5d3bd3aa4597321d939}} 
+\index{FrameTransformation@{FrameTransformation}!setTransformationMatrix@{setTransformationMatrix}}
+\index{setTransformationMatrix@{setTransformationMatrix}!FrameTransformation@{FrameTransformation}}
+\doxysubsubsection{\texorpdfstring{setTransformationMatrix()}{setTransformationMatrix()}}
+{\footnotesize\ttfamily void Frame\+Transformation\+::set\+Transformation\+Matrix (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Function to set the transformation matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix} & the transformation matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_frame_transformation_aa3e649e454002b62c6cdf6e2559c3daa}\label{class_frame_transformation_aa3e649e454002b62c6cdf6e2559c3daa}} 
+\index{FrameTransformation@{FrameTransformation}!transformFrame@{transformFrame}}
+\index{transformFrame@{transformFrame}!FrameTransformation@{FrameTransformation}}
+\doxysubsubsection{\texorpdfstring{transformFrame()}{transformFrame()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Frame\+Transformation\+::transform\+Frame (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{position }\end{DoxyParamCaption})}
+
+
+
+function to get the input from Y\+O\+LO and transform the position of detected humans into robot\textquotesingle{}s frame 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em position} & vector containing positions of detected humans \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/sumedh/\+Desktop/perception\+Module/\+T\+X9\+Perception\+Module/include/\mbox{\hyperlink{_frame_transformation_8hpp}{Frame\+Transformation.\+hpp}}\item 
+\mbox{\hyperlink{_frame_transformation_8cpp}{Frame\+Transformation.\+cpp}}\end{DoxyCompactItemize}
