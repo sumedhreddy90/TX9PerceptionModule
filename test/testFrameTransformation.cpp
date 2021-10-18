@@ -5,7 +5,6 @@
  * @author Pratik Acharya and Sumedh Koppula
  */
 
-#pragma once
 #include <gtest/gtest.h>
 #include <FrameTransformation.hpp>
 
@@ -26,5 +25,5 @@ TEST(testGetSet, testTransformationMatrix) {
  * @brief test for transformFrame() method
  */
 TEST(testTransformation, testTransformFrame) {
-  EXPECT_EQ(frameTransformation.transformFrame(testVector), testMatrix);
+  EXPECT_EQ(frameTransformation.transformFrame(testVector), testVector);
 }
