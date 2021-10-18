@@ -162,7 +162,16 @@ cv::VideoCapture SensorIO::imageProcessor(const std::string &rwoperation,
 cv::VideoCapture SensorIO::videoProcessor(const std::string &rwoperation,
                                           cv::Mat frame,
                                           cv::VideoWriter video) {
-  return cv::VideoCapture();
+  if (rwoperation == "read") {
+    cv::VideoCapture capture;
+    capture.open(videoPath);
+    return capture;
+  } else if (rwoperation == "write") {
+    cv::Mat newFrame;
+    cv::resize(frame, newFrame, cv::Size(getOutputWidth(), getOutputHeight()));
+    video.write(newFrame);
+    return cv::VideoCapture();
+  }
 }
 /**
  * @fn  ~SensorIO()
