@@ -36,7 +36,7 @@ class FrameTransformation {
    * @param[in] matrix the transformation matrix
    * @return None
    */
-  void setTransformationMatrix(std::vector<std::vector<double>> matrix);
+  void setTransformationMatrix(const std::vector<std::vector<double>> &matrix);
   /**
    * @fn std::vector<std::vector<double>> getTransformationMatrix()
    * @brief Function to get the transformation matrix
@@ -51,7 +51,7 @@ class FrameTransformation {
    * @param[in] position vector containing positions of detected humans
    * @return
    */
-  std::vector<double> transformFrame(std::vector<double> position);
+  std::vector<double> transformFrame(const std::vector<double> &position);
   /**
    * @fn  ~FrameTransformation()
    * @brief Destructor for FrameTransformation class
