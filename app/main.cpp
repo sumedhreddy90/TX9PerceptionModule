@@ -22,11 +22,11 @@
 const char* keys =
     "{help h usage ? | | Usage examples: "
     "\n\t\t./object_detection_yolo.out --image=image.jpg "
-    "\n\t\t./object_detection_yolo.out --video=sample.mp4"
+    "\n\t\t./object_detection_yolo.out --video=video.mp4"
     "\n\t\t./object_detection_yolo.out --show_output}"
-    "{image img        | ../image.jpg | input image   }"
-    "{video vid       |<none>| input video   }"
-    "{show_output       |true| show output   }";
+    "{image img||input image}"
+    "{video vid||input video}"
+    "{show_output|true| show output}";
 
 int main(int argc, char** argv) {
     /*
