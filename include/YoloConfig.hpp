@@ -22,18 +22,18 @@ class YoloConfig{
     /**
      * @brief private variable for yoloClassesLocation.
      */
-    std::string yoloClassesLocation;
+    std::string yoloClassesLocation = "../coco.names";
 
     /**
      * @brief private variable for yoloConfiguration.
      */
-    std::string yoloConfigurationFile;
+    std::string yoloConfigurationFile = "../yolov3.cfg";
 
 
     /**
      * @brief private variable for yoloWeights.
      */
-    std::string yoloWeights;
+    std::string yoloWeights = "../yolov3.weights";
 
  public:
      /**
@@ -63,7 +63,7 @@ class YoloConfig{
      * @param[in] cocoPath (It is the path for the Coco.names file.)
      * @return None.
      */
-    void setYoloClassesLocation(const std::string& cocoPath);
+    void setYoloClassesLocation(const std::string &cocoPath);
     /**
      * @brief It returns the getYoloConfigurationFile value.
      * @param None
@@ -76,7 +76,7 @@ class YoloConfig{
      * @param[in] YoloConfigurationFile (It is the file containing Yolov3 model cgf file.)
      * @return None.
      */
-    void setYoloConfigurationFile(const std::string& yoloConfigurationFile);
+    void setYoloConfigurationFile(const std::string &yoloConfigurationFile);
 
     /**
      * @brief It returns the yoloWeights value.
@@ -90,7 +90,7 @@ class YoloConfig{
      * @param[in] yoloWeights (File path to yolov3 weights.)
      * @return None.
      */
-    void setYoloWeightsFile(const std::string& yoloWeights);
+    void setYoloWeightsFile(const std::string &yoloWeights);
 
     /**
      * @brief Destructor for YoloConfig Class

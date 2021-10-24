@@ -13,17 +13,18 @@
 SensorIO sensor;
 int testInt = 416;
 
-const char *testImageKey = "{image i        |path/to/image.jpg| input image   }"
-    "{video v       |<none>| input video   }"
-    "{showOutput       |<none>| show output   }";
+const char *testImageKey =
+    "{image img        |path/to/image.jpg| input image   }"
+        "{video vid       |<none>| input video   }"
+        "{show_output       |<none>| show output   }";
 
-const char *testVideoKey = "{image i        |<none>| input image   }"
-    "{video v       |path/to/video.mp4| input video   }"
-    "{showOutput       |<none>| show output   }";
+const char *testVideoKey = "{image img        |<none>| input image   }"
+    "{video vid       |path/to/video.mp4| input video   }"
+    "{show_output       |<none>| show output   }";
 
-const char *testNoneKey = "{image i        |<none>| input image   }"
-    "{video v       |<none>| input video   }"
-    "{showOutput       |<none>| show output   }";
+const char *testNoneKey = "{image img        |<none>| input image   }"
+    "{video vid       |<none>| input video   }"
+    "{show_output       |<none>| show output   }";
 
 /**
  * @brief test for getOutputWidth() and setOutputWidth() methods
@@ -96,7 +97,7 @@ TEST(testGetSet, testDataPathVideo) {
   int argc = 0;
   const char *argv = "";
   cv::CommandLineParser parser(argc, &argv, testVideoKey);
-  EXPECT_EQ(sensor.getDataPath(parser, "val"), "path/to/video.jpg");
+  EXPECT_EQ(sensor.getDataPath(parser, "val"), "path/to/video.mp4");
 }
 /**
  * @brief test for getDataPath() method with no input
@@ -136,7 +137,7 @@ TEST(testProcessor, testVideoProcessor) {
  * @brief test for imageProcessor() method for write operation
  */
 TEST(testProcessor, testImageProcessorWrite) {
-  cv::Mat frame = cv::imread("image.jpg");
+  cv::Mat frame = cv::imread("../image.jpg");
   EXPECT_NO_FATAL_FAILURE(sensor.imageProcessor("write", frame));
 }
 /**
@@ -145,6 +146,6 @@ TEST(testProcessor, testImageProcessorWrite) {
 TEST(testProcessor, testVideoProcessorWrite) {
   cv::VideoCapture cap;
   cv::VideoWriter video;
-  cv::Mat frame = cv::imread("image.jpg");
+  cv::Mat frame = cv::imread("../image.jpg");
   EXPECT_NO_FATAL_FAILURE(sensor.videoProcessor("write", frame, video));
 }
