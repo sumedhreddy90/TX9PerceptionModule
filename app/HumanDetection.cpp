@@ -19,8 +19,8 @@
  * @brief  constructor for HumanDetection class.
  */
 HumanDetection::HumanDetection() {
-  inputHeight = 416;
-  inputWidth = 416;
+  inputHeight = 320;
+  inputWidth = 320;
   confidenceThreshold = 0.8;
   nmsThreshold = 0.4;
   averageHeight = 175;
@@ -107,7 +107,7 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
   std::vector < cv::Rect > boxes;
 
   for (const auto &out : outs) {
-    auto *data = reinterpret_cast<double*>(out.data);
+    auto *data = reinterpret_cast<float*>(out.data);
     for (int j = 0; j < out.rows; ++j, data += out.cols) {
       cv::Mat scores = out.row(j).colRange(5, out.cols);
       cv::Point classIdPoint;
@@ -222,8 +222,19 @@ void HumanDetection::humanDetection(cv::CommandLineParser parser, SensorIO io,
       io.setImagePath(dataPath);
       cap = io.imageProcessor("read", frame);
     }
+    if (dataType == "video") {
+      io.setVideoPath(dataPath);
+      cap = io.videoProcessor("read", frame, video);
+      io.setOutputWidth(cap.get(cv::CAP_PROP_FRAME_WIDTH));
+      io.setOutputHeight(cap.get(cv::CAP_PROP_FRAME_HEIGHT));
+    }
   } catch (...) {
     std::cout << "Unable to open the input stream" << std::endl;
+  }
+
+  if (parser.has("video")) {
+    video.open("../op_test.avi", cv::VideoWriter::fourcc('M', 'J', 'P', 'G'),
+               24, cv::Size(io.getOutputWidth(), io.getOutputHeight()), true);
   }
 
   while (cv::waitKey(1) < 0) {
@@ -259,6 +270,9 @@ void HumanDetection::humanDetection(cv::CommandLineParser parser, SensorIO io,
 
     cv::Mat detectedFrame;
     frame.convertTo(detectedFrame, CV_8U);
+
+    if (parser.has("image"))
+      io.imageProcessor("write", frame);
 
     if (parser.has("video")) {
       io.setOutputWidth(frame.size().width);
@@ -304,5 +318,5 @@ double HumanDetection::humanDistance(int averageHeight, int boxHeight,
  * @param distance
  */
 void HumanDetection::humanPosition(const std::string &humanId,
-double distance) {
+                                   double distance) {
 }
