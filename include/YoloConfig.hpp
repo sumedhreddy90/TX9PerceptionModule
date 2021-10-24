@@ -33,7 +33,7 @@ class YoloConfig{
     /**
      * @brief private variable for yoloWeights.
      */
-    std::string yoloWeights = "../yolov3.cfg";
+    std::string yoloWeights = "../yolov3.weights";
 
  public:
      /**
