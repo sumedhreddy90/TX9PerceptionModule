@@ -92,6 +92,7 @@ TEST(checkYolo, checkEliminateBox) {
   // Load the neural network
   cv::dnn::Net net = cv::dnn::readNetFromDarknet(
   config.getYoloConfigurationFile(), config.getYoloWeightsFile());
+  // cv::Mat frame = cv::imread("../image.jpg");
   cv::Mat frame = cv::imread("../image.jpg");
   cv::dnn::blobFromImage(frame,  blob, 1/255.0,
   cv::Size(320, 320), cv::Scalar(0, 0, 0), true, false);
