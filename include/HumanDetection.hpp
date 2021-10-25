@@ -14,6 +14,7 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 #include "YoloConfig.hpp"
+#include <SensorIO.hpp>
 
 /**
  * @brief HumanDetection class runs object detection on input image or video.
@@ -41,6 +42,11 @@ class HumanDetection {
   * @brief private variable for nmsThreshold.
   */
   float nmsThreshold;
+  /**
+   * @brief private variable.
+   * 
+   */
+  std::vector < cv::Rect > humanBoxes;
 
  public:
   /**
@@ -118,8 +124,8 @@ class HumanDetection {
    * @return None
    */
   static void drawBox(int classId, float conf, int left,
-  int top, int right, int bottom, cv::Mat &frame,
-  std::vector<std::string> classes);
+  int top, int right, int bottom, const cv::Mat &frame,
+  std::vector<std::string> classes, double distance);
   /**
    * @brief This method returns the label
    * names of the detected objects
@@ -159,6 +165,6 @@ class HumanDetection {
    * @param[in] humanId 
    * @param[in] distance 
    */
-  void humanPosition(std::string humanId, double distance);
+  void humanPosition(cv::Rect box, 
+  double distance);
 };
-
