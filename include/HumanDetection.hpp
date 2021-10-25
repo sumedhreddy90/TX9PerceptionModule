@@ -162,4 +162,3 @@ class HumanDetection {
    */
   void humanPosition(const std::string &humanId, double distance);
 };
-
