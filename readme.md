@@ -16,6 +16,7 @@ The mobile robot will have a monocular camera placed on it to receive live video
 
 ### Video Links
 Phase 1: [Video link](https://www.youtube.com/watch?v=6h-72SBKB8E&t=72s)
+Phase 2: [Video link](https://www.youtube.com/watch?v=6h-72SBKB8E&t=72s)
 
 ### AIP Document 
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://docs.google.com/spreadsheets/d/1xySDFZ3LB8iaYRV7OXNlhccmeYK0k-ZA7r3EBrgCAMA/edit?usp=sharing)
