@@ -16,7 +16,7 @@ The mobile robot will have a monocular camera placed on it to receive live video
 
 ### Video Links
 Phase 1: [Video link](https://www.youtube.com/watch?v=6h-72SBKB8E&t=72s)
-Phase 2: [Video link](https://www.youtube.com/watch?v=6h-72SBKB8E&t=72s)
+Phase 2: [Video link](https://www.youtube.com/watch?v=ZEUswc7-HfY)
 
 ### AIP Document 
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://docs.google.com/spreadsheets/d/1xySDFZ3LB8iaYRV7OXNlhccmeYK0k-ZA7r3EBrgCAMA/edit?usp=sharing)
@@ -86,7 +86,12 @@ cd build
 cmake ..
 make
 Run tests: ./test/cpp-test
-Run program: ./app/shell-app --image=../image.jpg
+Run program:
+1. Passing Image as Input to Human Detection Algorithm
+./app/shell-app --image=../input/image.jpg --show_output
+2.Passing video as Input to Human Detection Algorithm
+./app/shell-app --video=../input/video.mp4 --show_output
+
 ```
 
 ## Building for code coverage 
