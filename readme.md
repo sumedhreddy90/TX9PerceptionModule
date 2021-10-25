@@ -72,8 +72,7 @@ Risk 2: The software fails to track the detected humans
 Solution: The final product will be delivered only for human detection and the tracking update will be provided in a future release.
 
 ## Testing:
-Google’s Open Images Dataset V6+ will be used for testing and quality assurance. The dataset contains labelled images of humans with the information about bounding boxes provided in it. 
-For real time testing, a laptop and webcam will be used and the output will be monitored to ensure proper functioning.
+Unit testing will be done for all the method and a video containing annotated human detections will be used as a reference and the software will be tested against it.
 
 
 ## Standard install via command-line
@@ -93,6 +92,7 @@ Run program:
 ./app/shell-app --video=../input/video.mp4 --show_output
 
 ```
+Output is stored in the root directory as `Output.jpg` if the input is image or `op_test.avi` if the input is a video file.
 
 ## Building for code coverage 
 ```
