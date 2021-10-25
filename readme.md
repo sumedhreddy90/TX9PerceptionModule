@@ -1,7 +1,7 @@
 # ACME TX9 Mobile Robot: Perception Module
 [![Build Status](https://app.travis-ci.com/SumedhKoppula/TX9PerceptionModule.svg?branch=devBranchPhaseII)](https://app.travis-ci.com/SumedhKoppula/TX9PerceptionModule)
 
-[![Coverage Status](https://coveralls.io/repos/github/SumedhKoppula/TX9PerceptionModule/badge.svg?branch=main)](https://coveralls.io/github/SumedhKoppula/TX9PerceptionModule?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/SumedhKoppula/TX9PerceptionModule/badge.svg?branch=devBranchPhaseII)](https://coveralls.io/github/SumedhKoppula/TX9PerceptionModule?branch=main)
 
 [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](LICENSE.md)
 ---
