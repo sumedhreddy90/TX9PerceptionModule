@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Achme TX9 Perception module: Member List</title>
+<title>TX9 Mobile Robot: Perception Module: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Achme TX9 Perception module
-   &#160;<span id="projectnumber">1.0.1</span>
+   <div id="projectname">TX9 Mobile Robot: Perception Module
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">Acme Robotics is building a next generation mobile robot to be used on sports fields to detect and track players and provide analytics data about them to be utilized for broadcasting. A swarm of robots will be deployed on the field.</div>
   </td>
@@ -70,7 +70,7 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="class_human_detection.html">HumanDetection</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_human_detection.html#a95e7c81f02832b5a9349528551d50910">drawBox</a>(int classId, float conf, int left, int top, int right, int bottom, cv::Mat &amp;frame, std::vector&lt; std::string &gt; classes)</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_human_detection.html#a322f52742594461f3b73c28dc9bc18ad">drawBox</a>(int classId, float conf, int left, int top, int right, int bottom, const cv::Mat &amp;frame, std::vector&lt; std::string &gt; classes, double distance)</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_human_detection.html#ad7e076f14a2e4b3e5dddf150f0f75efb">eliminateBox</a>(cv::Mat &amp;frame, const std::vector&lt; cv::Mat &gt; &amp;outs, float confThreshold, const std::vector&lt; std::string &gt; &amp;classes)</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_human_detection.html#a5fcad9a01d011f5c140a5ba738892b7b">getConfidenceThreshold</a>()</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_human_detection.html#aa1edebb3bfa3207907c39d1cbfc3328e">getInputHeight</a>()</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"></td></tr>
@@ -80,7 +80,7 @@ $(function() {
   <tr><td class="entry"><a class="el" href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b">humanDetection</a>(cv::CommandLineParser parser, SensorIO io, HumanDetection human_detection, YoloConfig config)</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_human_detection.html#a9ed5bab20b05f82f38902b519f856c9d">HumanDetection</a>()</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_human_detection.html#a6bfcbaf3ba28b3c44a994db457717c14">humanDistance</a>(int averageHeight, int boxHeight, double focalLength, double sensorHeight, int frameHeight)</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_human_detection.html#a318707648a63f8f242c0fb5f57b7e0ba">humanPosition</a>(const std::string &amp;humanId, double distance)</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_human_detection.html#a7a04011e473c63f2730646aae5bd6f24">humanPosition</a>(cv::Rect box, double distance)</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_human_detection.html#a6d0abffa17419c717debb657d1f6c601">setConfidenceThreshold</a>(float configThres)</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_human_detection.html#a5277bc4ce8b6b83296f47a3d2fea3013">setInputHeight</a>(int height)</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_human_detection.html#a03d4e01d92d12faea436342c0401b9d2">setInputWidth</a>(int width)</td><td class="entry"><a class="el" href="class_human_detection.html">HumanDetection</a></td><td class="entry"></td></tr>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Achme TX9 Perception module: HumanDetection Class Reference</title>
+<title>TX9 Mobile Robot: Perception Module: HumanDetection Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Achme TX9 Perception module
-   &#160;<span id="projectnumber">1.0.1</span>
+   <div id="projectname">TX9 Mobile Robot: Perception Module
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">Acme Robotics is building a next generation mobile robot to be used on sports fields to detect and track players and provide analytics data about them to be utilized for broadcasting. A swarm of robots will be deployed on the field.</div>
   </td>
@@ -110,21 +110,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad7e076f14a2e4b3e5dddf150f0f75efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method predicts the best bounding box for each detection and eliminates the redundant/ overlapping box.  <a href="class_human_detection.html#ad7e076f14a2e4b3e5dddf150f0f75efb">More...</a><br /></td></tr>
 <tr class="separator:ad7e076f14a2e4b3e5dddf150f0f75efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e3d8293c185e88f90c4bc19e230f48b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b">humanDetection</a> (cv::CommandLineParser parser, <a class="el" href="class_sensor_i_o.html">SensorIO</a> io, <a class="el" href="class_human_detection.html">HumanDetection</a> human_detection, <a class="el" href="class_yolo_config.html">YoloConfig</a> config)</td></tr>
-<tr class="memdesc:a6e3d8293c185e88f90c4bc19e230f48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Our Human Detection algorithm is implemented in this method. This performs detection of input stream. It also stores video and displays output with Bounding Boxes.  <a href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b">More...</a><br /></td></tr>
+<tr class="memdesc:a6e3d8293c185e88f90c4bc19e230f48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Our Human Detection algorithm is implemented in this method.  <a href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b">More...</a><br /></td></tr>
 <tr class="separator:a6e3d8293c185e88f90c4bc19e230f48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bfcbaf3ba28b3c44a994db457717c14"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_human_detection.html#a6bfcbaf3ba28b3c44a994db457717c14">humanDistance</a> (int averageHeight, int boxHeight, double focalLength, double sensorHeight, int frameHeight)</td></tr>
 <tr class="memdesc:a6bfcbaf3ba28b3c44a994db457717c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">humanDistance method calculates the distance between the robot and detected human by assuming the height of the human to as 178cm  <a href="class_human_detection.html#a6bfcbaf3ba28b3c44a994db457717c14">More...</a><br /></td></tr>
 <tr class="separator:a6bfcbaf3ba28b3c44a994db457717c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a318707648a63f8f242c0fb5f57b7e0ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_human_detection.html#a318707648a63f8f242c0fb5f57b7e0ba">humanPosition</a> (const std::string &amp;humanId, double distance)</td></tr>
-<tr class="memdesc:a318707648a63f8f242c0fb5f57b7e0ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. <br  />
-  <a href="class_human_detection.html#a318707648a63f8f242c0fb5f57b7e0ba">More...</a><br /></td></tr>
-<tr class="separator:a318707648a63f8f242c0fb5f57b7e0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a04011e473c63f2730646aae5bd6f24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_human_detection.html#a7a04011e473c63f2730646aae5bd6f24">humanPosition</a> (cv::Rect box, double distance)</td></tr>
+<tr class="memdesc:a7a04011e473c63f2730646aae5bd6f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can be outputed.  <a href="class_human_detection.html#a7a04011e473c63f2730646aae5bd6f24">More...</a><br /></td></tr>
+<tr class="separator:a7a04011e473c63f2730646aae5bd6f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a95e7c81f02832b5a9349528551d50910"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_human_detection.html#a95e7c81f02832b5a9349528551d50910">drawBox</a> (int classId, float conf, int left, int top, int right, int bottom, cv::Mat &amp;frame, std::vector&lt; std::string &gt; classes)</td></tr>
-<tr class="memdesc:a95e7c81f02832b5a9349528551d50910"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Method helps in drawing the bounding box for detected object with its label/ class ID.  <a href="class_human_detection.html#a95e7c81f02832b5a9349528551d50910">More...</a><br /></td></tr>
-<tr class="separator:a95e7c81f02832b5a9349528551d50910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a322f52742594461f3b73c28dc9bc18ad"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_human_detection.html#a322f52742594461f3b73c28dc9bc18ad">drawBox</a> (int classId, float conf, int left, int top, int right, int bottom, const cv::Mat &amp;frame, std::vector&lt; std::string &gt; classes, double distance)</td></tr>
+<tr class="memdesc:a322f52742594461f3b73c28dc9bc18ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Method helps in drawing the bounding box for detected object with its label/ class ID.  <a href="class_human_detection.html#a322f52742594461f3b73c28dc9bc18ad">More...</a><br /></td></tr>
+<tr class="separator:a322f52742594461f3b73c28dc9bc18ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a683dfe9339b8201b1c403071cda73024"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_human_detection.html#a683dfe9339b8201b1c403071cda73024">getOutputNames</a> (const cv::dnn::Net &amp;net)</td></tr>
 <tr class="memdesc:a683dfe9339b8201b1c403071cda73024"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the label names of the detected objects.  <a href="class_human_detection.html#a683dfe9339b8201b1c403071cda73024">More...</a><br /></td></tr>
 <tr class="separator:a683dfe9339b8201b1c403071cda73024"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,8 +152,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a95e7c81f02832b5a9349528551d50910"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95e7c81f02832b5a9349528551d50910">&#9670;&nbsp;</a></span>drawBox()</h2>
+<a id="a322f52742594461f3b73c28dc9bc18ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a322f52742594461f3b73c28dc9bc18ad">&#9670;&nbsp;</a></span>drawBox()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,14 +200,20 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
           <td class="paramname"><em>frame</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
-          <td class="paramname"><em>classes</em>&#160;</td>
+          <td class="paramname"><em>classes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>distance</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -237,6 +242,17 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_a322f52742594461f3b73c28dc9bc18ad_icgraph.png" border="0" usemap="#class_human_detection_a322f52742594461f3b73c28dc9bc18ad_icgraph" alt=""/></div>
+<map name="class_human_detection_a322f52742594461f3b73c28dc9bc18ad_icgraph" id="class_human_detection_a322f52742594461f3b73c28dc9bc18ad_icgraph">
+<area shape="rect" title="This Method helps in drawing the bounding box for detected object with its label/ class ID." alt="" coords="679,5,876,32"/>
+<area shape="rect" href="class_human_detection.html#ad7e076f14a2e4b3e5dddf150f0f75efb" title="This method predicts the best bounding box for each detection and eliminates the redundant/ overlappi..." alt="" coords="404,5,631,32"/>
+<area shape="rect" href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,5,356,32"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -299,6 +315,28 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb_cgraph.png" border="0" usemap="#class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb_cgraph" alt=""/></div>
+<map name="class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb_cgraph" id="class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb_cgraph">
+<area shape="rect" title="This method predicts the best bounding box for each detection and eliminates the redundant/ overlappi..." alt="" coords="5,56,232,83"/>
+<area shape="rect" href="class_human_detection.html#a322f52742594461f3b73c28dc9bc18ad" title="This Method helps in drawing the bounding box for detected object with its label/ class ID." alt="" coords="303,5,500,32"/>
+<area shape="rect" href="class_human_detection.html#a6bfcbaf3ba28b3c44a994db457717c14" title="humanDistance method calculates the distance between the robot and detected human by assuming the hei..." alt="" coords="280,56,523,83"/>
+<area shape="rect" href="class_human_detection.html#a7a04011e473c63f2730646aae5bd6f24" title="humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can ..." alt="" coords="283,107,520,133"/>
+<area shape="rect" href="class_frame_transformation.html#a802d7d97968530c0d903ef6dd14186f4" title="function to get the input from YOLO and transform the position of detected humans into robot&#39;s frame" alt="" coords="571,99,733,141"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb_icgraph.png" border="0" usemap="#class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb_icgraph" alt=""/></div>
+<map name="class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb_icgraph" id="class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb_icgraph">
+<area shape="rect" title="This method predicts the best bounding box for each detection and eliminates the redundant/ overlappi..." alt="" coords="404,5,631,32"/>
+<area shape="rect" href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,5,356,32"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -326,6 +364,16 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>type float. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_a5fcad9a01d011f5c140a5ba738892b7b_icgraph.png" border="0" usemap="#class_human_detection_a5fcad9a01d011f5c140a5ba738892b7b_icgraph" alt=""/></div>
+<map name="class_human_detection_a5fcad9a01d011f5c140a5ba738892b7b_icgraph" id="class_human_detection_a5fcad9a01d011f5c140a5ba738892b7b_icgraph">
+<area shape="rect" title="returns the configurationThreshold value." alt="" coords="404,5,639,47"/>
+<area shape="rect" href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,13,356,39"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -352,6 +400,16 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>type int. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_aa1edebb3bfa3207907c39d1cbfc3328e_icgraph.png" border="0" usemap="#class_human_detection_aa1edebb3bfa3207907c39d1cbfc3328e_icgraph" alt=""/></div>
+<map name="class_human_detection_aa1edebb3bfa3207907c39d1cbfc3328e_icgraph" id="class_human_detection_aa1edebb3bfa3207907c39d1cbfc3328e_icgraph">
+<area shape="rect" title="returns the inputHeight value." alt="" coords="404,5,599,47"/>
+<area shape="rect" href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,13,356,39"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -378,6 +436,16 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>type int. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_a1feaaa38fcaeb3f58e8cdae522fdd760_icgraph.png" border="0" usemap="#class_human_detection_a1feaaa38fcaeb3f58e8cdae522fdd760_icgraph" alt=""/></div>
+<map name="class_human_detection_a1feaaa38fcaeb3f58e8cdae522fdd760_icgraph" id="class_human_detection_a1feaaa38fcaeb3f58e8cdae522fdd760_icgraph">
+<area shape="rect" title="returns the inputWidth value." alt="" coords="404,5,599,47"/>
+<area shape="rect" href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,13,356,39"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -439,6 +507,16 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>type std::vector&lt;std::string&gt; </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_a683dfe9339b8201b1c403071cda73024_icgraph.png" border="0" usemap="#class_human_detection_a683dfe9339b8201b1c403071cda73024_icgraph" alt=""/></div>
+<map name="class_human_detection_a683dfe9339b8201b1c403071cda73024_icgraph" id="class_human_detection_a683dfe9339b8201b1c403071cda73024_icgraph">
+<area shape="rect" title="This method returns the label names of the detected objects." alt="" coords="404,5,609,47"/>
+<area shape="rect" href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,13,356,39"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -480,16 +558,56 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Our Human Detection algorithm is implemented in this method. This performs detection of input stream. It also stores video and displays output with Bounding Boxes. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Our Human Detection algorithm is implemented in this method. </p>
+<p>This performs detection of input stream. It also stores video and displays output with Bounding Boxes. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">parser</td><td></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_sensor_i_o.html" title="A class to interact with sensor to receive data for processing by other classes.">SensorIO</a></td><td></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_human_detection.html" title="HumanDetection class runs object detection on input image or video.">HumanDetection</a></td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_yolo_config.html">YoloConfig</a></td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="class_yolo_config.html" title="A class to redirect the file path to YOLO weights and YOLO.cgf and coco dataset.">YoloConfig</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b_cgraph.png" border="0" usemap="#class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b_cgraph" alt=""/></div>
+<map name="class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b_cgraph" id="class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b_cgraph">
+<area shape="rect" title="Our Human Detection algorithm is implemented in this method." alt="" coords="5,575,253,601"/>
+<area shape="rect" href="class_human_detection.html#ad7e076f14a2e4b3e5dddf150f0f75efb" title="This method predicts the best bounding box for each detection and eliminates the redundant/ overlappi..." alt="" coords="315,56,542,83"/>
+<area shape="rect" href="class_human_detection.html#a5fcad9a01d011f5c140a5ba738892b7b" title="returns the configurationThreshold value." alt="" coords="311,107,546,149"/>
+<area shape="rect" href="class_sensor_i_o.html#a232861c091d998abee30e81acc950b0e" title="Fucntion to get input data path." alt="" coords="344,173,513,200"/>
+<area shape="rect" href="class_sensor_i_o.html#ac61ddd9a876638f8dd62f77976a28679" title="Function to tell if the input is an image or video." alt="" coords="343,224,514,251"/>
+<area shape="rect" href="class_human_detection.html#aa1edebb3bfa3207907c39d1cbfc3328e" title="returns the inputHeight value." alt="" coords="331,275,526,317"/>
+<area shape="rect" href="class_human_detection.html#a1feaaa38fcaeb3f58e8cdae522fdd760" title="returns the inputWidth value." alt="" coords="331,341,526,382"/>
+<area shape="rect" href="class_sensor_i_o.html#abecca160e68d0b0eb46a6014cdeface8" title="It gets the value of outputHeight attribute." alt="" coords="627,465,823,492"/>
+<area shape="rect" href="class_human_detection.html#a683dfe9339b8201b1c403071cda73024" title="This method returns the label names of the detected objects." alt="" coords="326,458,531,499"/>
+<area shape="rect" href="class_sensor_i_o.html#a527dee61db88cf141ac78b7bf3b60558" title="It gets the value of outputWidth attribute." alt="" coords="630,744,821,771"/>
+<area shape="rect" href="class_yolo_config.html#a2be1214d4175fe299777017dd0b0b97c" title="It returns yoloclasses of type std::vector&lt;std::string&gt;." alt="" coords="331,575,526,601"/>
+<area shape="rect" href="class_yolo_config.html#a0b84f1a1b24cbcce5d0060412106b716" title="It returns the getYoloConfigurationFile value." alt="" coords="301,625,556,652"/>
+<area shape="rect" href="class_yolo_config.html#a0b44d979670a5cca7880ee808b6cb1a0" title="It returns the yoloWeights value." alt="" coords="319,676,539,703"/>
+<area shape="rect" href="class_sensor_i_o.html#a71a202cada6b6c8fded8d8630c47aff0" title="Function to process image." alt="" coords="333,727,525,753"/>
+<area shape="rect" href="class_sensor_i_o.html#a392038666c8b655a94a45771c463e72d" title="It sets the value of imagePath attribute." alt="" coords="339,777,518,804"/>
+<area shape="rect" href="class_sensor_i_o.html#aed3f040278a48f46a79721ecdf16b6c1" title="It sets the value for outputHeight attribute." alt="" coords="331,828,526,855"/>
+<area shape="rect" href="class_sensor_i_o.html#a1e15a2883485d94798de900145f40d96" title="It sets the value for outputWidth attribute." alt="" coords="333,879,524,905"/>
+<area shape="rect" href="class_sensor_i_o.html#af45d35626c65b327bc3505e06eb8ef76" title="It sets the value of videoPath attribute." alt="" coords="341,929,516,956"/>
+<area shape="rect" href="class_yolo_config.html#a7468c26683e5aecc43dd5dedb916c328" title="It adds classes in std::vector&lt;std::string&gt;." alt="" coords="331,980,526,1007"/>
+<area shape="rect" href="class_sensor_i_o.html#a88c471a17b2bbe72bee3a0b8bdbc98b8" title="Function to process video." alt="" coords="335,524,522,551"/>
+<area shape="rect" href="class_human_detection.html#a322f52742594461f3b73c28dc9bc18ad" title="This Method helps in drawing the bounding box for detected object with its label/ class ID." alt="" coords="627,107,824,133"/>
+<area shape="rect" href="class_human_detection.html#a6bfcbaf3ba28b3c44a994db457717c14" title="humanDistance method calculates the distance between the robot and detected human by assuming the hei..." alt="" coords="604,5,847,32"/>
+<area shape="rect" href="class_human_detection.html#a7a04011e473c63f2730646aae5bd6f24" title="humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can ..." alt="" coords="607,56,844,83"/>
+<area shape="rect" href="class_frame_transformation.html#a802d7d97968530c0d903ef6dd14186f4" title="function to get the input from YOLO and transform the position of detected humans into robot&#39;s frame" alt="" coords="895,49,1057,90"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b_icgraph.png" border="0" usemap="#class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b_icgraph" alt=""/></div>
+<map name="class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b_icgraph" id="class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b_icgraph">
+<area shape="rect" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,5,356,32"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -560,11 +678,22 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_a6bfcbaf3ba28b3c44a994db457717c14_icgraph.png" border="0" usemap="#class_human_detection_a6bfcbaf3ba28b3c44a994db457717c14_icgraph" alt=""/></div>
+<map name="class_human_detection_a6bfcbaf3ba28b3c44a994db457717c14_icgraph" id="class_human_detection_a6bfcbaf3ba28b3c44a994db457717c14_icgraph">
+<area shape="rect" title="humanDistance method calculates the distance between the robot and detected human by assuming the hei..." alt="" coords="679,5,921,32"/>
+<area shape="rect" href="class_human_detection.html#ad7e076f14a2e4b3e5dddf150f0f75efb" title="This method predicts the best bounding box for each detection and eliminates the redundant/ overlappi..." alt="" coords="404,5,631,32"/>
+<area shape="rect" href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,5,356,32"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a318707648a63f8f242c0fb5f57b7e0ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a318707648a63f8f242c0fb5f57b7e0ba">&#9670;&nbsp;</a></span>humanPosition()</h2>
+<a id="a7a04011e473c63f2730646aae5bd6f24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a04011e473c63f2730646aae5bd6f24">&#9670;&nbsp;</a></span>humanPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -572,8 +701,8 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void HumanDetection::humanPosition </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>humanId</em>, </td>
+          <td class="paramtype">cv::Rect&#160;</td>
+          <td class="paramname"><em>box</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -589,18 +718,36 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. <br  />
- </p>
-<p>humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can be outputed.</p>
+<p>humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. </p>
+<p><br  />
+</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">humanId</td><td></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">distance</td><td></td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">humanId</td><td></td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">distance</td><td></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_a7a04011e473c63f2730646aae5bd6f24_cgraph.png" border="0" usemap="#class_human_detection_a7a04011e473c63f2730646aae5bd6f24_cgraph" alt=""/></div>
+<map name="class_human_detection_a7a04011e473c63f2730646aae5bd6f24_cgraph" id="class_human_detection_a7a04011e473c63f2730646aae5bd6f24_cgraph">
+<area shape="rect" title="humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can ..." alt="" coords="5,13,243,39"/>
+<area shape="rect" href="class_frame_transformation.html#a802d7d97968530c0d903ef6dd14186f4" title="function to get the input from YOLO and transform the position of detected humans into robot&#39;s frame" alt="" coords="291,5,453,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_human_detection_a7a04011e473c63f2730646aae5bd6f24_icgraph.png" border="0" usemap="#class_human_detection_a7a04011e473c63f2730646aae5bd6f24_icgraph" alt=""/></div>
+<map name="class_human_detection_a7a04011e473c63f2730646aae5bd6f24_icgraph" id="class_human_detection_a7a04011e473c63f2730646aae5bd6f24_icgraph">
+<area shape="rect" title="humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can ..." alt="" coords="679,5,916,32"/>
+<area shape="rect" href="class_human_detection.html#ad7e076f14a2e4b3e5dddf150f0f75efb" title="This method predicts the best bounding box for each detection and eliminates the redundant/ overlappi..." alt="" coords="404,5,631,32"/>
+<area shape="rect" href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,5,356,32"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -735,8 +882,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/sumedh/Desktop/perceptionModule/TX9PerceptionModule/include/<a class="el" href="_human_detection_8hpp_source.html">HumanDetection.hpp</a></li>
-<li><a class="el" href="_human_detection_8cpp.html">HumanDetection.cpp</a></li>
+<li>include/<a class="el" href="_human_detection_8hpp_source.html">HumanDetection.hpp</a></li>
+<li>app/<a class="el" href="_human_detection_8cpp.html">HumanDetection.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

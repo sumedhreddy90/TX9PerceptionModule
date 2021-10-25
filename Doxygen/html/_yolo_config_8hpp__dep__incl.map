@@ -1,7 +1,7 @@
-<map id="/home/sumedh/Desktop/perceptionModule/TX9PerceptionModule/include/YoloConfig.hpp" name="/home/sumedh/Desktop/perceptionModule/TX9PerceptionModule/include/YoloConfig.hpp">
-<area shape="rect" id="node1" title="YoloConfig Class helps us to consume Yolo cgf, Yolo weights and coco dataset." alt="" coords="149,5,391,61"/>
-<area shape="rect" id="node2" href="$_human_detection_8cpp.html" title="Implementaion of HumanDetection class, In order to implement detection algorithm for input video stre..." alt="" coords="5,213,164,240"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="main method implementation" alt="" coords="201,213,283,240"/>
-<area shape="rect" id="node4" href="$_yolo_config_8cpp.html" title="YoloConfig Class implementation to consume Yolo cgf, Yolo weights and coco dataset." alt="" coords="319,124,437,151"/>
-<area shape="rect" id="node5" href="$_human_detection_8hpp.html" title="Declaration of HumanDetection class, In order to implement detection algorithm for input video stream..." alt="" coords="32,109,295,165"/>
+<map id="include/YoloConfig.hpp" name="include/YoloConfig.hpp">
+<area shape="rect" id="node1" title="YoloConfig Class helps us to consume Yolo cgf, Yolo weights and coco dataset." alt="" coords="187,5,357,32"/>
+<area shape="rect" id="node2" href="$_human_detection_8cpp.html" title="Implementaion of HumanDetection class, In order to implement detection algorithm for input video stre..." alt="" coords="5,155,192,181"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="main method implementation" alt="" coords="322,155,433,181"/>
+<area shape="rect" id="node4" href="$_yolo_config_8cpp.html" title="YoloConfig Class implementation to consume Yolo cgf, Yolo weights and coco dataset." alt="" coords="301,80,446,107"/>
+<area shape="rect" id="node5" href="$_human_detection_8hpp.html" title="Declaration of HumanDetection class, In order to implement detection algorithm for input video stream..." alt="" coords="65,80,276,107"/>
 </map>

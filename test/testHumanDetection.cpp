@@ -15,8 +15,7 @@ SensorIO sensorIO;
 YoloConfig config;
 HumanDetection detection;
 double test = 10;
-const char* keys =
-    "{image img || input image   }"
+const char *keys = "{image img || input image   }"
     "{video vid || input video   }"
     "{show_output|| show output   }";
 /**
@@ -25,26 +24,26 @@ const char* keys =
  * by the getNmsThreshold method.
  */
 TEST(DetectionGetterSetter, verifynmsThreshold) {
-    detection.setNmsThreshold(test);
-    EXPECT_EQ(detection.getNmsThreshold(), test);
+  detection.setNmsThreshold(test);
+  EXPECT_EQ(detection.getNmsThreshold(), test);
 }
 /**
- * @brief Test case for setConfidenceThreshold method of HumanDetection class. 
+ * @brief Test case for setConfidenceThreshold method of HumanDetection class.
  * This test verifies whether value set for confidence is same as the value input
  * by the getConfidenceThreshold method.
  */
 TEST(DetectionGetterSetter, verifyConfThreshold) {
-    detection.setConfidenceThreshold(test);
-    EXPECT_EQ(detection.getConfidenceThreshold(), test);
+  detection.setConfidenceThreshold(test);
+  EXPECT_EQ(detection.getConfidenceThreshold(), test);
 }
 /**
- * @brief Test case for setInputHeight method of HumanDetection class. 
+ * @brief Test case for setInputHeight method of HumanDetection class.
  * This test checks whether value set for InputHeight is same as the value input
  * by the getInputHeight method.
  */
 TEST(DetectionGetterSetter, verifyInputHeight) {
-    detection.setInputHeight(test);
-    EXPECT_EQ(detection.getInputHeight(), test);
+  detection.setInputHeight(test);
+  EXPECT_EQ(detection.getInputHeight(), test);
 }
 /**
  * @brief Test case for setInputWidth method of HumanDetection class. The
@@ -52,21 +51,21 @@ TEST(DetectionGetterSetter, verifyInputHeight) {
  * by the getInputWidth method.
  */
 TEST(DetectionGetterSetter, verifyInputWidth) {
-    detection.setInputWidth(test);
-    EXPECT_EQ(detection.getInputWidth(), test);
+  detection.setInputWidth(test);
+  EXPECT_EQ(detection.getInputWidth(), test);
 }
 /**
  * @brief Test case for drawBox method of HumanDetection class.
  */
 TEST(verifyDetection, verifyDrawBox) {
-    config.setYoloClassesLocation("../coco.names");
-    std::vector<std::string> cocoClasses = config.getYoloClasses();
-    cv::Mat frame = cv::imread("", 0);
-    int rows = frame.rows;
-    int cols = frame.cols;
-    detection.drawBox(0, 95.0, 5, 5, 10, 10, frame, cocoClasses, 10);
-    EXPECT_EQ(frame.rows, rows);
-    EXPECT_EQ(frame.cols, cols);
+  config.setYoloClassesLocation("../coco.names");
+  std::vector < std::string > cocoClasses = config.getYoloClasses();
+  cv::Mat frame = cv::imread("", 0);
+  int rows = frame.rows;
+  int cols = frame.cols;
+  detection.drawBox(0, 95.0, 5, 5, 10, 10, frame, cocoClasses, 10);
+  EXPECT_EQ(frame.rows, rows);
+  EXPECT_EQ(frame.cols, cols);
 }
 /**
  * @brief Test case for humanDetection method of HumanDetection class.
@@ -79,8 +78,8 @@ TEST(verifyDetection, DetectionAlgo) {
   detection.setInputHeight(320);
   detection.setInputWidth(320);
   detection.setNmsThreshold(0.5);
-  EXPECT_NO_FATAL_FAILURE(detection.humanDetection(parser,
-  sensorIO, detection, config));
+  EXPECT_NO_FATAL_FAILURE(
+      detection.humanDetection(parser, sensorIO, detection, config));
 }
 /**
  * @brief Test case for humanDetection Algorithm of HumanDetection class.
@@ -88,17 +87,17 @@ TEST(verifyDetection, DetectionAlgo) {
 TEST(checkYolo, checkEliminateBox) {
   cv::Mat blob;
   config.setYoloClasses();
-  std::vector<std::string> cocoClasses = config.getYoloClasses();
+  std::vector < std::string > cocoClasses = config.getYoloClasses();
   // Load the neural network
   cv::dnn::Net net = cv::dnn::readNetFromDarknet(
-  config.getYoloConfigurationFile(), config.getYoloWeightsFile());
+      config.getYoloConfigurationFile(), config.getYoloWeightsFile());
   // cv::Mat frame = cv::imread("../image.jpg");
   cv::Mat frame = cv::imread("../image.jpg");
-  cv::dnn::blobFromImage(frame,  blob, 1/255.0,
-  cv::Size(320, 320), cv::Scalar(0, 0, 0), true, false);
+  cv::dnn::blobFromImage(frame, blob, 1 / 255.0, cv::Size(320, 320),
+                         cv::Scalar(0, 0, 0), true, false);
   net.setInput(blob);
-  std::vector<cv::Mat> outs;
+  std::vector < cv::Mat > outs;
   net.forward(outs, detection.getOutputNames(net));
-  EXPECT_NO_FATAL_FAILURE(detection.eliminateBox(frame,
-  outs, 0.5, cocoClasses));
+  EXPECT_NO_FATAL_FAILURE(
+      detection.eliminateBox(frame, outs, 0.5, cocoClasses));
 }
