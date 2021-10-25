@@ -1,7 +1,7 @@
 # ACME TX9 Mobile Robot: Perception Module
-[![Build Status](https://app.travis-ci.com/pratik-a99/TX9PerceptionModule.svg?branch=main)](https://app.travis-ci.com/pratik-a99/TX9PerceptionModule)
+[![Build Status](https://app.travis-ci.com/SumedhKoppula/TX9PerceptionModule.svg?branch=devBranchPhaseII)](https://app.travis-ci.com/SumedhKoppula/TX9PerceptionModule)
 
-[![Coverage Status](https://coveralls.io/repos/github/pratik-a99/TX9PerceptionModule/badge.svg?branch=main)](https://coveralls.io/github/pratik-a99/TX9PerceptionModule?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/SumedhKoppula/TX9PerceptionModule/badge.svg?branch=devBranchPhaseII)](https://coveralls.io/github/SumedhKoppula/TX9PerceptionModule?branch=main)
 
 [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](LICENSE.md)
 ---
@@ -16,6 +16,7 @@ The mobile robot will have a monocular camera placed on it to receive live video
 
 ### Video Links
 Phase 1: [Video link](https://www.youtube.com/watch?v=6h-72SBKB8E&t=72s)
+Phase 2: [Video link](https://www.youtube.com/watch?v=6h-72SBKB8E&t=72s)
 
 ### AIP Document 
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://docs.google.com/spreadsheets/d/1xySDFZ3LB8iaYRV7OXNlhccmeYK0k-ZA7r3EBrgCAMA/edit?usp=sharing)
