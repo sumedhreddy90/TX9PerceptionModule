@@ -15,6 +15,7 @@
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
+#include <FrameTransformation.hpp>
 /**
  * @brief  constructor for HumanDetection class.
  */
@@ -24,6 +25,7 @@ HumanDetection::HumanDetection() {
   confidenceThreshold = 0.8;
   nmsThreshold = 0.4;
   averageHeight = 175;
+  std::vector < cv::Rect > humanBoxes;
 }
 /**
  * @brief set the inputWidth value.
@@ -114,7 +116,7 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
       double confidence;
 
       minMaxLoc(scores, nullptr, &confidence, nullptr, &classIdPoint);
-      if (confidence > confidenceThreshold && classIdPoint.x == 00) {
+      if (confidence > confidenceThreshold) {
         int centerX = static_cast<int>(data[0] * frame.cols);
         int centerY = static_cast<int>(data[1] * frame.rows);
         int width = static_cast<int>(data[2] * frame.cols);
@@ -133,9 +135,15 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
   cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold,
                     indices);
   for (int index : indices) {
+    int focalLen = 24;
+    int sensorHei = 40;
     cv::Rect box = boxes[index];
+    double distance = HumanDetection::humanDistance(175, box.height, focalLen,
+                                                    sensorHei, 320);
+    humanPosition(box, distance);
     drawBox(classIds[index], confidences[index], box.x, box.y,
-            box.x + box.width, box.y + box.height, frame, classes);
+            box.x + box.width, box.y + box.height, frame, classes, distance);
+    humanBoxes.push_back(cv::Rect(box.x, box.y, box.width, box.height));
   }
 }
 /*
@@ -151,14 +159,16 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
  * @return None
  */
 void HumanDetection::drawBox(int classId, float conf, int left, int top,
-                             int right, int bottom, cv::Mat &frame,
-                             std::vector<std::string> classes) {
+                             int right, int bottom, const cv::Mat &frame,
+                             std::vector<std::string> classes,
+                             double distance) {
   rectangle(frame, cv::Point(left, top), cv::Point(right, bottom),
             cv::Scalar(0, 168, 0), 3);
   std::string label = cv::format("%.2f", conf);
   if (!classes.empty()) {
     CV_Assert(classId < static_cast<int>(classes.size()));
-    label = classes[classId] + ":" + label;
+    label = classes[classId] + ":" + label + ", Distance :"
+        + std::to_string(distance);
   }
   int baseLine;
   cv::Size labelSize = getTextSize(label, cv::FONT_HERSHEY_SIMPLEX, 0.5, 1,
@@ -214,7 +224,6 @@ void HumanDetection::humanDetection(cv::CommandLineParser parser, SensorIO io,
   cv::VideoCapture cap;
   cv::VideoWriter video;
   cv::Mat frame, blob;
-
   try {
     std::string dataType = io.getDataType(parser);
     std::string dataPath = io.getDataPath(parser, dataType);
@@ -308,7 +317,9 @@ void HumanDetection::humanDetection(cv::CommandLineParser parser, SensorIO io,
 double HumanDetection::humanDistance(int averageHeight, int boxHeight,
                                      double focalLength, double sensorHeight,
                                      int frameHeight) {
-  return 0;
+  double heightPxMm = (sensorHeight * boxHeight) / frameHeight;
+  double humanDist = (averageHeight * focalLength) / heightPxMm;
+  return humanDist;
 }
 /**
  * @brief humanPosition combines the distance parameter and bounding box paramters
@@ -317,6 +328,22 @@ double HumanDetection::humanDistance(int averageHeight, int boxHeight,
  * @param humanId
  * @param distance
  */
-void HumanDetection::humanPosition(const std::string &humanId,
-                                   double distance) {
+FrameTransformation transform;
+void HumanDetection::humanPosition(cv::Rect box, double distance) {
+  std::vector<double> position;
+  double midpoint_x = (box.x + (box.width / 2)) - 1080 / 2;
+  double midpoint_y = (box.y + (box.height / 3)) - 640 / 2;
+  position.push_back(midpoint_x);
+  position.push_back(midpoint_y);
+  position.push_back(distance);
+  position.push_back(1.0);
+  std::vector<double> finalposition = transform.transformFrame(position);
+  finalposition.pop_back();
+  std::cout << "Human position : ";
+  for (auto &x : finalposition) {
+    std::cout << x << "\t";
+  }
+  std::cout << std::endl;
+
+  position.clear();
 }
