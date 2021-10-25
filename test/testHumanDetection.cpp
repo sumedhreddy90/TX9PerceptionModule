@@ -16,9 +16,9 @@ YoloConfig config;
 HumanDetection detection;
 double test = 10;
 const char* keys =
-    "{image img        |<none>| input image   }"
-    "{video vid       |../dog.jpg| input video   }"
-    "{show_output       |<none>| show output   }";
+    "{image img || input image   }"
+    "{video vid || input video   }"
+    "{show_output|| show output   }";
 /**
  * @brief Test case for setNmsThreshold method of HumanDetection class.
  * This verifies whether value set for nmsThreshold is same as the value input
@@ -64,7 +64,7 @@ TEST(verifyDetection, verifyDrawBox) {
     cv::Mat frame = cv::imread("", 0);
     int rows = frame.rows;
     int cols = frame.cols;
-    detection.drawBox(0, 95.0, 5, 5, 10, 10, frame, cocoClasses);
+    detection.drawBox(0, 95.0, 5, 5, 10, 10, frame, cocoClasses, 10);
     EXPECT_EQ(frame.rows, rows);
     EXPECT_EQ(frame.cols, cols);
 }
@@ -79,8 +79,8 @@ TEST(verifyDetection, DetectionAlgo) {
   detection.setInputHeight(320);
   detection.setInputWidth(320);
   detection.setNmsThreshold(0.5);
-//   EXPECT_NO_FATAL_FAILURE(detection.humanDetection(parser,
-//   sensor, detection, config));
+  EXPECT_NO_FATAL_FAILURE(detection.humanDetection(parser,
+  sensorIO, detection, config));
 }
 /**
  * @brief Test case for humanDetection Algorithm of HumanDetection class.
