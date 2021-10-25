@@ -114,7 +114,7 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
       double confidence;
 
       minMaxLoc(scores, nullptr, &confidence, nullptr, &classIdPoint);
-      if (confidence > confidenceThreshold) {
+      if (confidence > confidenceThreshold && classIdPoint.x == 00) {
         int centerX = static_cast<int>(data[0] * frame.cols);
         int centerY = static_cast<int>(data[1] * frame.rows);
         int width = static_cast<int>(data[2] * frame.cols);
