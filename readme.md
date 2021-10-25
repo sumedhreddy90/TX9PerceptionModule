@@ -93,6 +93,7 @@ Run program:
 
 ```
 Output is stored in the root directory as `Output.jpg` if the input is image or `op_test.avi` if the input is a video file.
+#test
 
 ## Building for code coverage 
 ```
