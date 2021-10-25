@@ -20,7 +20,8 @@ class FrameTransformation {
   /**
    * @brief private variable for transformation matrix
    */
-  std::vector<std::vector<double>> transformationMatrix;
+  std::vector<std::vector<double>> transformationMatrix = { { 1, 0, 0, 0 }, { 0,
+      1, 0, 0 }, { 0, 0, 1, 0 }, { 0, 0, 0, 1 } };
 
  public:
   /**
