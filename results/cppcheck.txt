@@ -1,40 +1,28 @@
-cppcheck --enable=all --std=c++11 -I include/ --suppress=missingIncludeSystem $( find . -name *.cpp -or -name *.hpp | grep -vE -e "^./build/" -e "^./vendor/" )
 Checking app/FrameTransformation.cpp ...
 1/14 files checked 3% done
 Checking app/HumanDetection.cpp ...
-app/HumanDetection.cpp:213:15: style: Unused variable: str [unusedVariable]
-  std::string str, outputFile;
-              ^
-2/14 files checked 24% done
+2/14 files checked 30% done
 Checking app/SensorIO.cpp ...
-3/14 files checked 37% done
+3/14 files checked 41% done
 Checking app/YoloConfig.cpp ...
-4/14 files checked 42% done
+4/14 files checked 45% done
 Checking app/main.cpp ...
-5/14 files checked 45% done
+5/14 files checked 48% done
 Checking include/FrameTransformation.hpp ...
-6/14 files checked 49% done
+6/14 files checked 52% done
 Checking include/HumanDetection.hpp ...
-7/14 files checked 59% done
+7/14 files checked 62% done
 Checking include/SensorIO.hpp ...
-8/14 files checked 69% done
+8/14 files checked 71% done
 Checking include/YoloConfig.hpp ...
-9/14 files checked 74% done
+9/14 files checked 76% done
 Checking test/main.cpp ...
-10/14 files checked 75% done
+10/14 files checked 77% done
 Checking test/testFrameTransformation.cpp ...
-11/14 files checked 77% done
+11/14 files checked 79% done
 Checking test/testHumanDetection.cpp ...
-12/14 files checked 85% done
+12/14 files checked 86% done
 Checking test/testSensorIO.cpp ...
-13/14 files checked 95% done
+13/14 files checked 96% done
 Checking test/testYoloConfig.cpp ...
 14/14 files checked 100% done
-app/HumanDetection.cpp:294:0: style: The function 'humanDistance' is never used. [unusedFunction]
-
-^
-app/HumanDetection.cpp:306:0: style: The function 'humanPosition' is never used. [unusedFunction]
-
-^
-
-# The above warnings will be eliminated in phase 2, as a bit of implementation is left out.
