@@ -25,7 +25,6 @@ HumanDetection::HumanDetection() {
   confidenceThreshold = 0.8;
   nmsThreshold = 0.4;
   averageHeight = 175;
-  std::vector < cv::Rect > humanBoxes;
 }
 /**
  * @brief set the inputWidth value.
@@ -142,17 +141,19 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
   std::vector<int> indices;
   cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold,
                     indices);
+  int humanid = 1;
   for (int index : indices) {
     int focalLen = 24;
     int sensorHei = 40;
     cv::Rect box = boxes[index];
     double distance = HumanDetection::humanDistance(averageHeight, box.height,
                                                     focalLen, sensorHei, 720);
+    std::cout << "Human " << humanid;
     humanPosition(box, distance);
+    humanid++;
     // Drawing the boxes on the frame for output
     drawBox(classIds[index], confidences[index], box.x, box.y,
             box.x + box.width, box.y + box.height, frame, classes, distance);
-    humanBoxes.push_back(cv::Rect(box.x, box.y, box.width, box.height));
   }
 }
 /*
@@ -366,12 +367,12 @@ void HumanDetection::humanPosition(cv::Rect box, double distance) {
       / 1080;
   position.push_back(midpoint_x);
   position.push_back(midpoint_y);
-  position.push_back(distance);
+  position.push_back(distance / 100);
   position.push_back(1.0);
   // Using transformation matrix to get the position relative to robot
   std::vector<double> finalposition = transform.transformFrame(position);
   finalposition.pop_back();
-  std::cout << "Human position : ";
+  std::cout << " position(meters) : ";
   for (auto &x : finalposition) {
     std::cout << x << "\t";
   }
