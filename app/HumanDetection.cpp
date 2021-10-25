@@ -137,7 +137,8 @@ void HumanDetection::eliminateBox(cv::Mat &frame,
     }
   }
 
-  // Using non-maximum suppression to remove redundant overlapping bounding boxes
+  // Using non-maximum suppression to remove redundant
+  // overlapping bounding boxes
   std::vector<int> indices;
   cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold,
                     indices);
@@ -172,7 +173,7 @@ void HumanDetection::drawBox(int classId, float conf, int left, int top,
                              int right, int bottom, const cv::Mat &frame,
                              std::vector<std::string> classes,
                              double distance) {
-  //define the rectangle that needs to be drawn
+  // define the rectangle that needs to be drawn
   rectangle(frame, cv::Point(left, top), cv::Point(right, bottom),
             cv::Scalar(0, 168, 0), 3);
   std::string label = cv::format("%.2f", conf);
