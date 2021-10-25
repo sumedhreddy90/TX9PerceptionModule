@@ -1,0 +1,7 @@
+<map id="FrameTransformation::transformFrame" name="FrameTransformation::transformFrame">
+<area shape="rect" id="node1" title="function to get the input from YOLO and transform the position of detected humans into robot&#39;s frame" alt="" coords="964,5,1127,47"/>
+<area shape="rect" id="node2" href="$class_human_detection.html#a7a04011e473c63f2730646aae5bd6f24" title="humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can ..." alt="" coords="679,13,916,39"/>
+<area shape="rect" id="node3" href="$class_human_detection.html#ad7e076f14a2e4b3e5dddf150f0f75efb" title="This method predicts the best bounding box for each detection and eliminates the redundant/ overlappi..." alt="" coords="404,13,631,39"/>
+<area shape="rect" id="node4" href="$class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,13,356,39"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>

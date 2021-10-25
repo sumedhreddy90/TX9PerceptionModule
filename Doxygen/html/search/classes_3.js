@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yoloconfig_64',['YoloConfig',['../class_yolo_config.html',1,'']]]
+  ['yoloconfig_65',['YoloConfig',['../class_yolo_config.html',1,'']]]
 ];

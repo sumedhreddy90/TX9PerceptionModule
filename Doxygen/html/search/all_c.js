@@ -10,7 +10,7 @@ var searchData=
   ['setnmsthreshold_44',['setNmsThreshold',['../class_human_detection.html#a1e1069ea2d9b06cb85aa40ba7a23cbd5',1,'HumanDetection']]],
   ['setoutputheight_45',['setOutputHeight',['../class_sensor_i_o.html#aed3f040278a48f46a79721ecdf16b6c1',1,'SensorIO']]],
   ['setoutputwidth_46',['setOutputWidth',['../class_sensor_i_o.html#a1e15a2883485d94798de900145f40d96',1,'SensorIO']]],
-  ['settransformationmatrix_47',['setTransformationMatrix',['../class_frame_transformation.html#a52d013f47f05d5d3bd3aa4597321d939',1,'FrameTransformation']]],
+  ['settransformationmatrix_47',['setTransformationMatrix',['../class_frame_transformation.html#a5ece7987d60053d1a6682aacbd5c555c',1,'FrameTransformation']]],
   ['setvideopath_48',['setVideoPath',['../class_sensor_i_o.html#af45d35626c65b327bc3505e06eb8ef76',1,'SensorIO']]],
   ['setyoloclasses_49',['setYoloClasses',['../class_yolo_config.html#a7468c26683e5aecc43dd5dedb916c328',1,'YoloConfig']]],
   ['setyoloclasseslocation_50',['setYoloClassesLocation',['../class_yolo_config.html#aee91b22ebe95914b04dbd4cfb1a8b850',1,'YoloConfig']]],
