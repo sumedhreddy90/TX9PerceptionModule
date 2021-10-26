@@ -1,5 +1,5 @@
-<map id="/home/sumedh/Desktop/perceptionModule/TX9PerceptionModule/include/HumanDetection.hpp" name="/home/sumedh/Desktop/perceptionModule/TX9PerceptionModule/include/HumanDetection.hpp">
-<area shape="rect" id="node1" title="Declaration of HumanDetection class, In order to implement detection algorithm for input video stream..." alt="" coords="25,5,288,61"/>
-<area shape="rect" id="node2" href="$_human_detection_8cpp.html" title="Implementaion of HumanDetection class, In order to implement detection algorithm for input video stre..." alt="" coords="5,109,164,136"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="main method implementation" alt="" coords="189,109,271,136"/>
+<map id="include/HumanDetection.hpp" name="include/HumanDetection.hpp">
+<area shape="rect" id="node1" title="Declaration of HumanDetection class, In order to implement detection algorithm for input video stream..." alt="" coords="80,5,291,32"/>
+<area shape="rect" id="node2" href="$_human_detection_8cpp.html" title="Implementaion of HumanDetection class, In order to implement detection algorithm for input video stre..." alt="" coords="5,80,192,107"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="main method implementation" alt="" coords="217,80,327,107"/>
 </map>

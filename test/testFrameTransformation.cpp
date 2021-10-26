@@ -9,9 +9,10 @@
 #include <FrameTransformation.hpp>
 
 FrameTransformation frameTransformation;
-std::vector<std::vector<double>> testMatrix { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0,
-    1 } };
-std::vector<double> testVector { 1, 2, 3 };
+std::vector<std::vector<double>> testMatrix { { 1, 0, 0, 1 }, { 0, 1, 0, 1 }, {
+    0, 0, 1, -2 }, { 0, 0, 0, 1 } };
+std::vector<double> testVector { 1, 2, 3, 4 };
+std::vector<double> eqVector { 5, 6, -5, 4};
 
 /**
  * @brief test for getTransformationMatrix() and setTransformationMatrix() methods
@@ -25,5 +26,5 @@ TEST(testGetSet, testTransformationMatrix) {
  * @brief test for transformFrame() method
  */
 TEST(testTransformation, testTransformFrame) {
-  EXPECT_EQ(frameTransformation.transformFrame(testVector), testVector);
+  EXPECT_EQ(frameTransformation.transformFrame(testVector), eqVector);
 }

@@ -1,7 +1,7 @@
-<map id="/home/sumedh/Desktop/perceptionModule/TX9PerceptionModule/include/SensorIO.hpp" name="/home/sumedh/Desktop/perceptionModule/TX9PerceptionModule/include/SensorIO.hpp">
-<area shape="rect" id="node1" title="SensorIO Class implementation." alt="" coords="147,5,388,61"/>
-<area shape="rect" id="node2" href="$_human_detection_8cpp.html" title="Implementaion of HumanDetection class, In order to implement detection algorithm for input video stre..." alt="" coords="5,213,164,240"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="main method implementation" alt="" coords="201,213,283,240"/>
-<area shape="rect" id="node4" href="$_sensor_i_o_8cpp.html" title="SensorIO Class implementation." alt="" coords="319,124,426,151"/>
-<area shape="rect" id="node5" href="$_human_detection_8hpp.html" title="Declaration of HumanDetection class, In order to implement detection algorithm for input video stream..." alt="" coords="32,109,295,165"/>
+<map id="include/SensorIO.hpp" name="include/SensorIO.hpp">
+<area shape="rect" id="node1" title="SensorIO Class implementation." alt="" coords="190,5,349,32"/>
+<area shape="rect" id="node2" href="$_human_detection_8cpp.html" title="Implementaion of HumanDetection class, In order to implement detection algorithm for input video stre..." alt="" coords="5,155,192,181"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="main method implementation" alt="" coords="317,155,427,181"/>
+<area shape="rect" id="node4" href="$_sensor_i_o_8cpp.html" title="SensorIO Class implementation." alt="" coords="301,80,435,107"/>
+<area shape="rect" id="node5" href="$_human_detection_8hpp.html" title="Declaration of HumanDetection class, In order to implement detection algorithm for input video stream..." alt="" coords="65,80,276,107"/>
 </map>

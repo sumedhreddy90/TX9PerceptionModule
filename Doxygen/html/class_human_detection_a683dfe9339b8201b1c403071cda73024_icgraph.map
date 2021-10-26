@@ -1,0 +1,5 @@
+<map id="HumanDetection::getOutputNames" name="HumanDetection::getOutputNames">
+<area shape="rect" id="node1" title="This method returns the label names of the detected objects." alt="" coords="404,5,609,47"/>
+<area shape="rect" id="node2" href="$class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,13,356,39"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>

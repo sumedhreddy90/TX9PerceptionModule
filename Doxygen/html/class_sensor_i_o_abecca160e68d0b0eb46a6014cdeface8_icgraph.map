@@ -1,0 +1,6 @@
+<map id="SensorIO::getOutputHeight" name="SensorIO::getOutputHeight">
+<area shape="rect" id="node1" title="It gets the value of outputHeight attribute." alt="" coords="639,5,835,32"/>
+<area shape="rect" id="node2" href="$class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,5,356,32"/>
+<area shape="rect" id="node4" href="$class_sensor_i_o.html#a88c471a17b2bbe72bee3a0b8bdbc98b8" title="Function to process video." alt="" coords="404,31,591,57"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+</map>

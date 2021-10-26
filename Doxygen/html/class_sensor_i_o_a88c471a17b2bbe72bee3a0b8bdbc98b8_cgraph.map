@@ -1,0 +1,5 @@
+<map id="SensorIO::videoProcessor" name="SensorIO::videoProcessor">
+<area shape="rect" id="node1" title="Function to process video." alt="" coords="5,31,192,57"/>
+<area shape="rect" id="node2" href="$class_sensor_i_o.html#abecca160e68d0b0eb46a6014cdeface8" title="It gets the value of outputHeight attribute." alt="" coords="240,5,436,32"/>
+<area shape="rect" id="node3" href="$class_sensor_i_o.html#a527dee61db88cf141ac78b7bf3b60558" title="It gets the value of outputWidth attribute." alt="" coords="243,56,433,83"/>
+</map>

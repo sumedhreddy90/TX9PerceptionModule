@@ -1,4 +1,5 @@
-<map id="/home/sumedh/Desktop/perceptionModule/TX9PerceptionModule/include/FrameTransformation.hpp" name="/home/sumedh/Desktop/perceptionModule/TX9PerceptionModule/include/FrameTransformation.hpp">
-<area shape="rect" id="node1" title="FrameTransformation Class implementation." alt="" coords="5,5,299,61"/>
-<area shape="rect" id="node2" href="$_frame_transformation_8cpp.html" title="FrameTransformation Class implementation." alt="" coords="57,109,247,136"/>
+<map id="include/FrameTransformation.hpp" name="include/FrameTransformation.hpp">
+<area shape="rect" id="node1" title="FrameTransformation Class implementation." alt="" coords="107,5,348,32"/>
+<area shape="rect" id="node2" href="$_frame_transformation_8cpp.html" title="FrameTransformation Class implementation." alt="" coords="5,80,223,107"/>
+<area shape="rect" id="node3" href="$_human_detection_8cpp.html" title="Implementaion of HumanDetection class, In order to implement detection algorithm for input video stre..." alt="" coords="247,80,434,107"/>
 </map>

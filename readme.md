@@ -1,7 +1,7 @@
 # ACME TX9 Mobile Robot: Perception Module
-[![Build Status](https://app.travis-ci.com/pratik-a99/TX9PerceptionModule.svg?branch=main)](https://app.travis-ci.com/pratik-a99/TX9PerceptionModule)
+[![Build Status](https://app.travis-ci.com/SumedhKoppula/TX9PerceptionModule.svg?branch=devBranchPhaseII)](https://app.travis-ci.com/SumedhKoppula/TX9PerceptionModule)
 
-[![Coverage Status](https://coveralls.io/repos/github/pratik-a99/TX9PerceptionModule/badge.svg?branch=main)](https://coveralls.io/github/pratik-a99/TX9PerceptionModule?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/SumedhKoppula/TX9PerceptionModule/badge.svg?branch=devBranchPhaseII)](https://coveralls.io/github/SumedhKoppula/TX9PerceptionModule?branch=main)
 
 [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](LICENSE.md)
 ---
@@ -16,6 +16,7 @@ The mobile robot will have a monocular camera placed on it to receive live video
 
 ### Video Links
 Phase 1: [Video link](https://www.youtube.com/watch?v=6h-72SBKB8E&t=72s)
+Phase 2: [Video link](https://www.youtube.com/watch?v=ZEUswc7-HfY)
 
 ### AIP Document 
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://docs.google.com/spreadsheets/d/1xySDFZ3LB8iaYRV7OXNlhccmeYK0k-ZA7r3EBrgCAMA/edit?usp=sharing)
@@ -71,8 +72,7 @@ Risk 2: The software fails to track the detected humans
 Solution: The final product will be delivered only for human detection and the tracking update will be provided in a future release.
 
 ## Testing:
-Google’s Open Images Dataset V6+ will be used for testing and quality assurance. The dataset contains labelled images of humans with the information about bounding boxes provided in it. 
-For real time testing, a laptop and webcam will be used and the output will be monitored to ensure proper functioning.
+Unit testing will be done for all the method and a video containing annotated human detections will be used as a reference and the software will be tested against it.
 
 
 ## Standard install via command-line
@@ -85,8 +85,14 @@ cd build
 cmake ..
 make
 Run tests: ./test/cpp-test
-Run program: ./app/shell-app --image=../image.jpg
+Run program:
+1. Passing Image as Input to Human Detection Algorithm
+./app/shell-app --image=../input/image.jpg --show_output
+2.Passing video as Input to Human Detection Algorithm
+./app/shell-app --video=../input/video.mp4 --show_output
+
 ```
+Output is stored in the root directory as `Output.jpg` if the input is image or `op_test.avi` if the input is a video file.
 
 ## Building for code coverage 
 ```

@@ -33,16 +33,15 @@ float \mbox{\hyperlink{class_human_detection_a4a03a133b39b1f66466eede4c308b056}{
 void \mbox{\hyperlink{class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb}{eliminate\+Box}} (cv\+::\+Mat \&frame, const std\+::vector$<$ cv\+::\+Mat $>$ \&outs, float conf\+Threshold, const std\+::vector$<$ std\+::string $>$ \&classes)
 \begin{DoxyCompactList}\small\item\em This method predicts the best bounding box for each detection and eliminates the redundant/ overlapping box. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b}{human\+Detection}} (cv\+::\+Command\+Line\+Parser parser, \mbox{\hyperlink{class_sensor_i_o}{Sensor\+IO}} io, \mbox{\hyperlink{class_human_detection}{Human\+Detection}} human\+\_\+detection, \mbox{\hyperlink{class_yolo_config}{Yolo\+Config}} config)
-\begin{DoxyCompactList}\small\item\em Our Human Detection algorithm is implemented in this method. This performs detection of input stream. It also stores video and displays output with Bounding Boxes. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Our Human Detection algorithm is implemented in this method. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_human_detection_a6bfcbaf3ba28b3c44a994db457717c14}{human\+Distance}} (int average\+Height, int box\+Height, double focal\+Length, double sensor\+Height, int frame\+Height)
 \begin{DoxyCompactList}\small\item\em human\+Distance method calculates the distance between the robot and detected human by assuming the height of the human to as 178cm \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_human_detection_a318707648a63f8f242c0fb5f57b7e0ba}{human\+Position}} (const std\+::string \&human\+Id, double distance)
-\begin{DoxyCompactList}\small\item\em human\+Position combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. ~\newline
- \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_human_detection_a7a04011e473c63f2730646aae5bd6f24}{human\+Position}} (cv\+::\+Rect box, double distance)
+\begin{DoxyCompactList}\small\item\em human\+Position combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{class_human_detection_a95e7c81f02832b5a9349528551d50910}{draw\+Box}} (int class\+Id, float conf, int left, int top, int right, int bottom, cv\+::\+Mat \&frame, std\+::vector$<$ std\+::string $>$ classes)
+static void \mbox{\hyperlink{class_human_detection_a322f52742594461f3b73c28dc9bc18ad}{draw\+Box}} (int class\+Id, float conf, int left, int top, int right, int bottom, const cv\+::\+Mat \&frame, std\+::vector$<$ std\+::string $>$ classes, double distance)
 \begin{DoxyCompactList}\small\item\em This Method helps in drawing the bounding box for detected object with its label/ class ID. \end{DoxyCompactList}\item 
 static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_human_detection_a683dfe9339b8201b1c403071cda73024}{get\+Output\+Names}} (const cv\+::dnn\+::\+Net \&net)
 \begin{DoxyCompactList}\small\item\em This method returns the label names of the detected objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -65,11 +64,11 @@ constructor for \mbox{\hyperlink{class_human_detection}{Human\+Detection}} class
 constructor for \mbox{\hyperlink{class_human_detection}{Human\+Detection}} class. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_human_detection_a95e7c81f02832b5a9349528551d50910}\label{class_human_detection_a95e7c81f02832b5a9349528551d50910}} 
+\mbox{\Hypertarget{class_human_detection_a322f52742594461f3b73c28dc9bc18ad}\label{class_human_detection_a322f52742594461f3b73c28dc9bc18ad}} 
 \index{HumanDetection@{HumanDetection}!drawBox@{drawBox}}
 \index{drawBox@{drawBox}!HumanDetection@{HumanDetection}}
 \doxysubsubsection{\texorpdfstring{drawBox()}{drawBox()}}
-{\footnotesize\ttfamily void Human\+Detection\+::draw\+Box (\begin{DoxyParamCaption}\item[{int}]{class\+Id,  }\item[{float}]{conf,  }\item[{int}]{left,  }\item[{int}]{top,  }\item[{int}]{right,  }\item[{int}]{bottom,  }\item[{cv\+::\+Mat \&}]{frame,  }\item[{std\+::vector$<$ std\+::string $>$}]{classes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily void Human\+Detection\+::draw\+Box (\begin{DoxyParamCaption}\item[{int}]{class\+Id,  }\item[{float}]{conf,  }\item[{int}]{left,  }\item[{int}]{top,  }\item[{int}]{right,  }\item[{int}]{bottom,  }\item[{const cv\+::\+Mat \&}]{frame,  }\item[{std\+::vector$<$ std\+::string $>$}]{classes,  }\item[{double}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -95,6 +94,13 @@ This Method helps in drawing the bounding box for detected object with its label
 \begin{DoxyReturn}{Returns}
 None 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_human_detection_a322f52742594461f3b73c28dc9bc18ad_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb}\label{class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb}} 
 \index{HumanDetection@{HumanDetection}!eliminateBox@{eliminateBox}}
 \index{eliminateBox@{eliminateBox}!HumanDetection@{HumanDetection}}
@@ -133,6 +139,20 @@ None.
 \begin{DoxyReturn}{Returns}
 None. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_human_detection_ad7e076f14a2e4b3e5dddf150f0f75efb_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_human_detection_a5fcad9a01d011f5c140a5ba738892b7b}\label{class_human_detection_a5fcad9a01d011f5c140a5ba738892b7b}} 
 \index{HumanDetection@{HumanDetection}!getConfidenceThreshold@{getConfidenceThreshold}}
 \index{getConfidenceThreshold@{getConfidenceThreshold}!HumanDetection@{HumanDetection}}
@@ -153,6 +173,13 @@ returns the confidence\+Threshold value.
 \begin{DoxyReturn}{Returns}
 type float. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_human_detection_a5fcad9a01d011f5c140a5ba738892b7b_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_human_detection_aa1edebb3bfa3207907c39d1cbfc3328e}\label{class_human_detection_aa1edebb3bfa3207907c39d1cbfc3328e}} 
 \index{HumanDetection@{HumanDetection}!getInputHeight@{getInputHeight}}
 \index{getInputHeight@{getInputHeight}!HumanDetection@{HumanDetection}}
@@ -171,6 +198,13 @@ returns the input\+Height value.
 \begin{DoxyReturn}{Returns}
 type int. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_human_detection_aa1edebb3bfa3207907c39d1cbfc3328e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_human_detection_a1feaaa38fcaeb3f58e8cdae522fdd760}\label{class_human_detection_a1feaaa38fcaeb3f58e8cdae522fdd760}} 
 \index{HumanDetection@{HumanDetection}!getInputWidth@{getInputWidth}}
 \index{getInputWidth@{getInputWidth}!HumanDetection@{HumanDetection}}
@@ -189,6 +223,13 @@ returns the input\+Width value.
 \begin{DoxyReturn}{Returns}
 type int. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_human_detection_a1feaaa38fcaeb3f58e8cdae522fdd760_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_human_detection_a4a03a133b39b1f66466eede4c308b056}\label{class_human_detection_a4a03a133b39b1f66466eede4c308b056}} 
 \index{HumanDetection@{HumanDetection}!getNmsThreshold@{getNmsThreshold}}
 \index{getNmsThreshold@{getNmsThreshold}!HumanDetection@{HumanDetection}}
@@ -225,6 +266,13 @@ This method returns the label names of the detected objects.
 \begin{DoxyReturn}{Returns}
 type std\+::vector$<$std\+::string$>$ 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_human_detection_a683dfe9339b8201b1c403071cda73024_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b}\label{class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b}} 
 \index{HumanDetection@{HumanDetection}!humanDetection@{humanDetection}}
 \index{humanDetection@{humanDetection}!HumanDetection@{HumanDetection}}
@@ -233,9 +281,9 @@ type std\+::vector$<$std\+::string$>$
 
 
 
-Our Human Detection algorithm is implemented in this method. This performs detection of input stream. It also stores video and displays output with Bounding Boxes. 
+Our Human Detection algorithm is implemented in this method. 
 
-
+This performs detection of input stream. It also stores video and displays output with Bounding Boxes. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em parser} & \\
 \hline
@@ -246,6 +294,20 @@ Our Human Detection algorithm is implemented in this method. This performs detec
 \mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{class_yolo_config}{Yolo\+Config}}} & \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_human_detection_a6e3d8293c185e88f90c4bc19e230f48b_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_human_detection_a6bfcbaf3ba28b3c44a994db457717c14}\label{class_human_detection_a6bfcbaf3ba28b3c44a994db457717c14}} 
 \index{HumanDetection@{HumanDetection}!humanDistance@{humanDistance}}
 \index{humanDistance@{humanDistance}!HumanDetection@{HumanDetection}}
@@ -288,18 +350,25 @@ double
 \begin{DoxyReturn}{Returns}
 double 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_human_detection_a318707648a63f8f242c0fb5f57b7e0ba}\label{class_human_detection_a318707648a63f8f242c0fb5f57b7e0ba}} 
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_human_detection_a6bfcbaf3ba28b3c44a994db457717c14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_human_detection_a7a04011e473c63f2730646aae5bd6f24}\label{class_human_detection_a7a04011e473c63f2730646aae5bd6f24}} 
 \index{HumanDetection@{HumanDetection}!humanPosition@{humanPosition}}
 \index{humanPosition@{humanPosition}!HumanDetection@{HumanDetection}}
 \doxysubsubsection{\texorpdfstring{humanPosition()}{humanPosition()}}
-{\footnotesize\ttfamily void Human\+Detection\+::human\+Position (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{human\+Id,  }\item[{double}]{distance }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Human\+Detection\+::human\+Position (\begin{DoxyParamCaption}\item[{cv\+::\+Rect}]{box,  }\item[{double}]{distance }\end{DoxyParamCaption})}
 
 
 
-human\+Position combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. ~\newline
- 
+human\+Position combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. 
 
-human\+Position combines the distance parameter and bounding box paramters to get 3D positon which can be outputed.
+~\newline
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -307,11 +376,21 @@ human\+Position combines the distance parameter and bounding box paramters to ge
 \hline
 \mbox{\texttt{ in}}  & {\em distance} & \\
 \hline
- & {\em human\+Id} & \\
-\hline
- & {\em distance} & \\
-\hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_human_detection_a7a04011e473c63f2730646aae5bd6f24_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_human_detection_a7a04011e473c63f2730646aae5bd6f24_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_human_detection_a6d0abffa17419c717debb657d1f6c601}\label{class_human_detection_a6d0abffa17419c717debb657d1f6c601}} 
 \index{HumanDetection@{HumanDetection}!setConfidenceThreshold@{setConfidenceThreshold}}
 \index{setConfidenceThreshold@{setConfidenceThreshold}!HumanDetection@{HumanDetection}}
@@ -414,5 +493,5 @@ type void.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/sumedh/\+Desktop/perception\+Module/\+T\+X9\+Perception\+Module/include/\mbox{\hyperlink{_human_detection_8hpp}{Human\+Detection.\+hpp}}\item 
-\mbox{\hyperlink{_human_detection_8cpp}{Human\+Detection.\+cpp}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{_human_detection_8hpp}{Human\+Detection.\+hpp}}\item 
+app/\mbox{\hyperlink{_human_detection_8cpp}{Human\+Detection.\+cpp}}\end{DoxyCompactItemize}

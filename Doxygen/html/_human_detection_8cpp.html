@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Achme TX9 Perception module: HumanDetection.cpp File Reference</title>
+<title>TX9 Mobile Robot: Perception Module: app/HumanDetection.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Achme TX9 Perception module
-   &#160;<span id="projectnumber">1.0.1</span>
+   <div id="projectname">TX9 Mobile Robot: Perception Module
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">Acme Robotics is building a next generation mobile robot to be used on sports fields to detect and track players and provide analytics data about them to be utilized for broadcasting. A swarm of robots will be deployed on the field.</div>
   </td>
@@ -61,8 +61,14 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">HumanDetection.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -78,29 +84,62 @@ $(function() {
 <code>#include &lt;opencv2/dnn.hpp&gt;</code><br />
 <code>#include &lt;opencv2/imgproc.hpp&gt;</code><br />
 <code>#include &lt;opencv2/highgui.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="_frame_transformation_8hpp_source.html">FrameTransformation.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for HumanDetection.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="_human_detection_8cpp__incl.png" border="0" usemap="#_human_detection_8cpp" alt=""/></div>
-<map name="_human_detection_8cpp" id="_human_detection_8cpp">
-<area shape="rect" title="Implementaion of HumanDetection class, In order to implement detection algorithm for input video stre..." alt="" coords="264,5,423,32"/>
-<area shape="rect" title=" " alt="" coords="5,229,68,256"/>
-<area shape="rect" title=" " alt="" coords="94,229,174,256"/>
-<area shape="rect" href="_human_detection_8hpp.html" title="Declaration of HumanDetection class, In order to implement detection algorithm for input video stream..." alt="" coords="322,80,482,107"/>
-<area shape="rect" title=" " alt="" coords="453,155,586,181"/>
-<area shape="rect" title=" " alt="" coords="610,155,773,181"/>
-<area shape="rect" title=" " alt="" coords="797,155,954,181"/>
-<area shape="rect" href="_yolo_config_8hpp.html" title="YoloConfig Class helps us to consume Yolo cgf, Yolo weights and coco dataset." alt="" coords="75,155,193,181"/>
-<area shape="rect" href="_sensor_i_o_8hpp.html" title="SensorIO Class implementation." alt="" coords="269,155,377,181"/>
-<area shape="rect" title=" " alt="" coords="377,229,435,256"/>
-<area shape="rect" title=" " alt="" coords="198,229,353,256"/>
+<div class="center"><img src="_human_detection_8cpp__incl.png" border="0" usemap="#app_2_human_detection_8cpp" alt=""/></div>
+<map name="app_2_human_detection_8cpp" id="app_2_human_detection_8cpp">
+<area shape="rect" title="Implementaion of HumanDetection class, In order to implement detection algorithm for input video stre..." alt="" coords="467,5,654,32"/>
+<area shape="rect" title=" " alt="" coords="403,229,465,256"/>
+<area shape="rect" title=" " alt="" coords="690,229,770,256"/>
+<area shape="rect" href="_human_detection_8hpp.html" title="Declaration of HumanDetection class, In order to implement detection algorithm for input video stream..." alt="" coords="630,80,790,107"/>
+<area shape="rect" title=" " alt="" coords="322,155,455,181"/>
+<area shape="rect" title=" " alt="" coords="479,155,642,181"/>
+<area shape="rect" title=" " alt="" coords="1094,155,1251,181"/>
+<area shape="rect" href="_yolo_config_8hpp.html" title="YoloConfig Class helps us to consume Yolo cgf, Yolo weights and coco dataset." alt="" coords="768,155,887,181"/>
+<area shape="rect" href="_sensor_i_o_8hpp.html" title="SensorIO Class implementation." alt="" coords="911,155,1019,181"/>
+<area shape="rect" href="_frame_transformation_8hpp.html" title="FrameTransformation Class implementation." alt="" coords="5,80,196,107"/>
+<area shape="rect" title=" " alt="" coords="973,229,1031,256"/>
+<area shape="rect" title=" " alt="" coords="794,229,949,256"/>
 </map>
 </div>
-</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:af30ba6a98e87750b67f87cf070b90add"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_frame_transformation.html">FrameTransformation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_human_detection_8cpp.html#af30ba6a98e87750b67f87cf070b90add">transform</a></td></tr>
+<tr class="memdesc:af30ba6a98e87750b67f87cf070b90add"><td class="mdescLeft">&#160;</td><td class="mdescRight">humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can be outputed.  <a href="_human_detection_8cpp.html#af30ba6a98e87750b67f87cf070b90add">More...</a><br /></td></tr>
+<tr class="separator:af30ba6a98e87750b67f87cf070b90add"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementaion of <a class="el" href="class_human_detection.html" title="HumanDetection class runs object detection on input image or video.">HumanDetection</a> class, In order to implement detection algorithm for input video stream/ Image Frames It also helps in storing video and displays output with Bounding Boxes. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>MIT License (c) 2021 Sumedh Koppula and Pratik Acharya</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Sumedh Koppula and Pratik Acharya </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Variable Documentation</h2>
+<a id="af30ba6a98e87750b67f87cf070b90add"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af30ba6a98e87750b67f87cf070b90add">&#9670;&nbsp;</a></span>transform</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_frame_transformation.html">FrameTransformation</a> transform</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">humanId</td><td></td></tr>
+    <tr><td class="paramname">distance</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

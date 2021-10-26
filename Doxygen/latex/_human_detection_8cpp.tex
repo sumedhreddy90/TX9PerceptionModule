@@ -1,5 +1,5 @@
-\hypertarget{_human_detection_8cpp}{}\doxysection{Human\+Detection.\+cpp File Reference}
-\label{_human_detection_8cpp}\index{HumanDetection.cpp@{HumanDetection.cpp}}
+\hypertarget{_human_detection_8cpp}{}\doxysection{app/\+Human\+Detection.cpp File Reference}
+\label{_human_detection_8cpp}\index{app/HumanDetection.cpp@{app/HumanDetection.cpp}}
 
 
 Implementaion of \mbox{\hyperlink{class_human_detection}{Human\+Detection}} class, In order to implement detection algorithm for input video stream/ Image Frames It also helps in storing video and displays output with Bounding Boxes.  
@@ -13,14 +13,19 @@ Implementaion of \mbox{\hyperlink{class_human_detection}{Human\+Detection}} clas
 {\ttfamily \#include $<$opencv2/dnn.\+hpp$>$}\newline
 {\ttfamily \#include $<$opencv2/imgproc.\+hpp$>$}\newline
 {\ttfamily \#include $<$opencv2/highgui.\+hpp$>$}\newline
-Include dependency graph for Human\+Detection.\+cpp\+:
-\nopagebreak
+{\ttfamily \#include $<$Frame\+Transformation.\+hpp$>$}\newline
+Include dependency graph for Human\+Detection.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{_human_detection_8cpp__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_frame_transformation}{Frame\+Transformation}} \mbox{\hyperlink{_human_detection_8cpp_af30ba6a98e87750b67f87cf070b90add}{transform}}
+\begin{DoxyCompactList}\small\item\em human\+Position combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -32,3 +37,23 @@ M\+IT License (c) 2021 Sumedh Koppula and Pratik Acharya
 \begin{DoxyAuthor}{Author}
 Sumedh Koppula and Pratik Acharya 
 \end{DoxyAuthor}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_human_detection_8cpp_af30ba6a98e87750b67f87cf070b90add}\label{_human_detection_8cpp_af30ba6a98e87750b67f87cf070b90add}} 
+\index{HumanDetection.cpp@{HumanDetection.cpp}!transform@{transform}}
+\index{transform@{transform}!HumanDetection.cpp@{HumanDetection.cpp}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_frame_transformation}{Frame\+Transformation}} transform}
+
+
+
+human\+Position combines the distance parameter and bounding box paramters to get 3D positon which can be outputed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em human\+Id} & \\
+\hline
+{\em distance} & \\
+\hline
+\end{DoxyParams}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Achme TX9 Perception module: FrameTransformation Class Reference</title>
+<title>TX9 Mobile Robot: Perception Module: FrameTransformation Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Achme TX9 Perception module
-   &#160;<span id="projectnumber">1.0.1</span>
+   <div id="projectname">TX9 Mobile Robot: Perception Module
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">Acme Robotics is building a next generation mobile robot to be used on sports fields to detect and track players and provide analytics data about them to be utilized for broadcasting. A swarm of robots will be deployed on the field.</div>
   </td>
@@ -81,14 +81,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa4495bbd8e06ac1d793063c7a0aa0c03"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_transformation.html#aa4495bbd8e06ac1d793063c7a0aa0c03">FrameTransformation</a> ()</td></tr>
 <tr class="memdesc:aa4495bbd8e06ac1d793063c7a0aa0c03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="class_frame_transformation.html" title="A class to transform the position of detected humans from \ camera&#39;s frame of reference to robot&#39;s fr...">FrameTransformation</a> class.  <a href="class_frame_transformation.html#aa4495bbd8e06ac1d793063c7a0aa0c03">More...</a><br /></td></tr>
 <tr class="separator:aa4495bbd8e06ac1d793063c7a0aa0c03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52d013f47f05d5d3bd3aa4597321d939"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_transformation.html#a52d013f47f05d5d3bd3aa4597321d939">setTransformationMatrix</a> (std::vector&lt; std::vector&lt; double &gt;&gt; matrix)</td></tr>
-<tr class="memdesc:a52d013f47f05d5d3bd3aa4597321d939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set the transformation matrix.  <a href="class_frame_transformation.html#a52d013f47f05d5d3bd3aa4597321d939">More...</a><br /></td></tr>
-<tr class="separator:a52d013f47f05d5d3bd3aa4597321d939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ece7987d60053d1a6682aacbd5c555c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_transformation.html#a5ece7987d60053d1a6682aacbd5c555c">setTransformationMatrix</a> (const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;matrix)</td></tr>
+<tr class="memdesc:a5ece7987d60053d1a6682aacbd5c555c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set the transformation matrix.  <a href="class_frame_transformation.html#a5ece7987d60053d1a6682aacbd5c555c">More...</a><br /></td></tr>
+<tr class="separator:a5ece7987d60053d1a6682aacbd5c555c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addb1a2a6e5c7379f5522a3abb16e7837"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_transformation.html#addb1a2a6e5c7379f5522a3abb16e7837">getTransformationMatrix</a> ()</td></tr>
 <tr class="separator:addb1a2a6e5c7379f5522a3abb16e7837"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3e649e454002b62c6cdf6e2559c3daa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_transformation.html#aa3e649e454002b62c6cdf6e2559c3daa">transformFrame</a> (std::vector&lt; double &gt; position)</td></tr>
-<tr class="memdesc:aa3e649e454002b62c6cdf6e2559c3daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to get the input from YOLO and transform the position of detected humans into robot's frame  <a href="class_frame_transformation.html#aa3e649e454002b62c6cdf6e2559c3daa">More...</a><br /></td></tr>
-<tr class="separator:aa3e649e454002b62c6cdf6e2559c3daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a802d7d97968530c0d903ef6dd14186f4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_transformation.html#a802d7d97968530c0d903ef6dd14186f4">transformFrame</a> (const std::vector&lt; double &gt; &amp;position)</td></tr>
+<tr class="memdesc:a802d7d97968530c0d903ef6dd14186f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to get the input from YOLO and transform the position of detected humans into robot's frame  <a href="class_frame_transformation.html#a802d7d97968530c0d903ef6dd14186f4">More...</a><br /></td></tr>
+<tr class="separator:a802d7d97968530c0d903ef6dd14186f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6db4d1bb1d72c02855aa2732205cd313"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_frame_transformation.html#a6db4d1bb1d72c02855aa2732205cd313">~FrameTransformation</a> ()</td></tr>
 <tr class="memdesc:a6db4d1bb1d72c02855aa2732205cd313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="class_frame_transformation.html" title="A class to transform the position of detected humans from \ camera&#39;s frame of reference to robot&#39;s fr...">FrameTransformation</a> class.  <a href="class_frame_transformation.html#a6db4d1bb1d72c02855aa2732205cd313">More...</a><br /></td></tr>
 <tr class="separator:a6db4d1bb1d72c02855aa2732205cd313"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,8 +174,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a52d013f47f05d5d3bd3aa4597321d939"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52d013f47f05d5d3bd3aa4597321d939">&#9670;&nbsp;</a></span>setTransformationMatrix()</h2>
+<a id="a5ece7987d60053d1a6682aacbd5c555c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ece7987d60053d1a6682aacbd5c555c">&#9670;&nbsp;</a></span>setTransformationMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +183,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void FrameTransformation::setTransformationMatrix </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>matrix</em></td><td>)</td>
           <td></td>
         </tr>
@@ -201,8 +201,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa3e649e454002b62c6cdf6e2559c3daa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3e649e454002b62c6cdf6e2559c3daa">&#9670;&nbsp;</a></span>transformFrame()</h2>
+<a id="a802d7d97968530c0d903ef6dd14186f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a802d7d97968530c0d903ef6dd14186f4">&#9670;&nbsp;</a></span>transformFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +210,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">std::vector&lt; double &gt; FrameTransformation::transformFrame </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>position</em></td><td>)</td>
           <td></td>
         </tr>
@@ -225,12 +225,24 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_frame_transformation_a802d7d97968530c0d903ef6dd14186f4_icgraph.png" border="0" usemap="#class_frame_transformation_a802d7d97968530c0d903ef6dd14186f4_icgraph" alt=""/></div>
+<map name="class_frame_transformation_a802d7d97968530c0d903ef6dd14186f4_icgraph" id="class_frame_transformation_a802d7d97968530c0d903ef6dd14186f4_icgraph">
+<area shape="rect" title="function to get the input from YOLO and transform the position of detected humans into robot&#39;s frame" alt="" coords="964,5,1127,47"/>
+<area shape="rect" href="class_human_detection.html#a7a04011e473c63f2730646aae5bd6f24" title="humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can ..." alt="" coords="679,13,916,39"/>
+<area shape="rect" href="class_human_detection.html#ad7e076f14a2e4b3e5dddf150f0f75efb" title="This method predicts the best bounding box for each detection and eliminates the redundant/ overlappi..." alt="" coords="404,13,631,39"/>
+<area shape="rect" href="class_human_detection.html#a6e3d8293c185e88f90c4bc19e230f48b" title="Our Human Detection algorithm is implemented in this method." alt="" coords="108,13,356,39"/>
+<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,39"/>
+</map>
+</div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/sumedh/Desktop/perceptionModule/TX9PerceptionModule/include/<a class="el" href="_frame_transformation_8hpp_source.html">FrameTransformation.hpp</a></li>
-<li><a class="el" href="_frame_transformation_8cpp.html">FrameTransformation.cpp</a></li>
+<li>include/<a class="el" href="_frame_transformation_8hpp_source.html">FrameTransformation.hpp</a></li>
+<li>app/<a class="el" href="_frame_transformation_8cpp.html">FrameTransformation.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

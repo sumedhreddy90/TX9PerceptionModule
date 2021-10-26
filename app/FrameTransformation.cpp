@@ -43,8 +43,16 @@ FrameTransformation::getTransformationMatrix() {
  */
 std::vector<double> FrameTransformation::transformFrame(
     const std::vector<double> &position) {
-  std::vector<double> test { 1, 2, 3 };
-  return test;
+    double mult_sum = 0;
+    std::vector<double> finalPosition;
+    for (int i = 0; i < 4; i++) {
+      for (int j = 0; j < 4; j++) {
+        mult_sum += transformationMatrix[i][j]*position[j];
+      }
+      finalPosition.push_back(mult_sum);
+      mult_sum = 0;
+    }
+  return finalPosition;
 }
 /**
  * @fn  ~FrameTransformation()

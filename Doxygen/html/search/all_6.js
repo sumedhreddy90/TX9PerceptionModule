@@ -4,5 +4,5 @@ var searchData=
   ['humandetection_2ecpp_26',['HumanDetection.cpp',['../_human_detection_8cpp.html',1,'']]],
   ['humandetection_2ehpp_27',['HumanDetection.hpp',['../_human_detection_8hpp.html',1,'']]],
   ['humandistance_28',['humanDistance',['../class_human_detection.html#a6bfcbaf3ba28b3c44a994db457717c14',1,'HumanDetection']]],
-  ['humanposition_29',['humanPosition',['../class_human_detection.html#a318707648a63f8f242c0fb5f57b7e0ba',1,'HumanDetection']]]
+  ['humanposition_29',['humanPosition',['../class_human_detection.html#a7a04011e473c63f2730646aae5bd6f24',1,'HumanDetection']]]
 ];

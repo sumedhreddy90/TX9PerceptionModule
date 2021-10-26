@@ -1,0 +1,4 @@
+<map id="HumanDetection::humanPosition" name="HumanDetection::humanPosition">
+<area shape="rect" id="node1" title="humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can ..." alt="" coords="5,13,243,39"/>
+<area shape="rect" id="node2" href="$class_frame_transformation.html#a802d7d97968530c0d903ef6dd14186f4" title="function to get the input from YOLO and transform the position of detected humans into robot&#39;s frame" alt="" coords="291,5,453,47"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="HumanDetection::eliminateBox" name="HumanDetection::eliminateBox">
+<area shape="rect" id="node1" title="This method predicts the best bounding box for each detection and eliminates the redundant/ overlappi..." alt="" coords="5,56,232,83"/>
+<area shape="rect" id="node2" href="$class_human_detection.html#a322f52742594461f3b73c28dc9bc18ad" title="This Method helps in drawing the bounding box for detected object with its label/ class ID." alt="" coords="303,5,500,32"/>
+<area shape="rect" id="node3" href="$class_human_detection.html#a6bfcbaf3ba28b3c44a994db457717c14" title="humanDistance method calculates the distance between the robot and detected human by assuming the hei..." alt="" coords="280,56,523,83"/>
+<area shape="rect" id="node4" href="$class_human_detection.html#a7a04011e473c63f2730646aae5bd6f24" title="humanPosition combines the distance parameter and bounding box paramters to get 3D positon which can ..." alt="" coords="283,107,520,133"/>
+<area shape="rect" id="node5" href="$class_frame_transformation.html#a802d7d97968530c0d903ef6dd14186f4" title="function to get the input from YOLO and transform the position of detected humans into robot&#39;s frame" alt="" coords="571,99,733,141"/>
+</map>
