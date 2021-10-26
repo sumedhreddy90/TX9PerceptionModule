@@ -8,7 +8,7 @@
 
 ---
 
-## Overview
+## Overview 
 
 Acme Robotics is building a next generation mobile robot to be used on sports fields to detect and track players and provide analytics data about them to be utilized for broadcasting. A swarm of robots will be deployed on the field.
 
